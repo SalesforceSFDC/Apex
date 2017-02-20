@@ -6,6 +6,7 @@ Apex triggers, classes, web services,...
 - [Packages](#packages)
 	- [Lists](#lists)
 	- [Maps](#maps)
+	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)
 
 ## Packages
 
@@ -75,4 +76,4 @@ System.assertEquals('Second entry', value);
 Set<Integer> s = m.keySet();       // Return a set that contains all of the keys in the map
 ```
 
-
+### Using Maps and Sets in Bulk Triggers

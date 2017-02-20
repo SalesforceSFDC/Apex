@@ -77,3 +77,31 @@ Set<Integer> s = m.keySet();       // Return a set that contains all of the keys
 ```
 
 ### Maps and Sets
+
+Set and map data structures are critical for successful coding of bulk triggers. Sets can be used to isolate distinct records, while maps can be used to hold query results organized by record ID.
+
+For example, this bulk trigger from the sample quoting application first adds each pricebook entry associated with the OpportunityLineItem records in Trigger.new to a set, ensuring that the set contains only distinct elements. It then queries the PricebookEntries for their associated product color, and places the results in a map. Once the map is created, the trigger iterates through the OpportunityLineItems in Trigger.new and uses the map to assign the appropriate color.
+
+```Apex
+// When a new line item is added to an opportunity, this trigger copies the value of the
+// associated product's color to the new record.
+trigger oppLineTrigger on OpportunityLineItem (before insert) {
+
+    // For every OpportunityLineItem record, add its associated pricebook entry
+    // to a set so there are no duplicates.
+    Set<Id> pbeIds = new Set<Id>();
+    for (OpportunityLineItem oli : Trigger.new) 
+        pbeIds.add(oli.pricebookentryid);
+
+    // Query the PricebookEntries for their associated product color and place the results
+    // in a map.
+    Map<Id, PricebookEntry> entries = new Map<Id, PricebookEntry>(
+        [select product2.color__c from pricebookentry 
+         where id in :pbeIds]);
+         
+    // Now use the map to set the appropriate color on every OpportunityLineItem processed
+    // by the trigger.
+    for (OpportunityLineItem oli : Trigger.new) 
+        oli.color__c = entries.get(oli.pricebookEntryId).product2.color__c;  
+}
+```

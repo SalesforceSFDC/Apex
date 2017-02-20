@@ -109,3 +109,13 @@ trigger oppLineTrigger on OpportunityLineItem (before insert) {
 #### Correlating Records with Query Results in Bulk Triggers
 
 Use the Trigger.newMap and Trigger.oldMap ID-to-sObject maps to correlate records with query results. For example, this trigger from the sample quoting app uses Trigger.oldMap to create a set of unique IDs (Trigger.oldMap.keySet()). The set is then used as part of a query to create a list of quotes associated with the opportunities being processed by the trigger. For every quote returned by the query, the related opportunity is retrieved from Trigger.oldMap and prevented from being deleted:
+
+```Apex
+trigger oppTrigger on Opportunity (before delete) {
+    for (Quote__c q : [SELECT opportunity__c FROM quote__c 
+                       WHERE opportunity__c IN :Trigger.oldMap.keySet()]) {
+        Trigger.oldMap.get(q.opportunity__c).addError('Cannot delete 
+                                                       opportunity with a quote');
+    }
+}
+```

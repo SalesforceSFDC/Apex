@@ -136,3 +136,6 @@ else
 
 A class static variable is a global variable that is associated with a particular class.  It exists regardless of whether you have actually created an instance of the class, and that a single instance of the variable is shared by all instances of the class and, in fact, by the entire application.
 
+```Apex
+
+```

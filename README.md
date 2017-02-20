@@ -4,9 +4,12 @@ Apex triggers, classes, web services,...
 ## Table of Contents
 
 - [Packages](#packages)
+	- [Lists](#lists)
 	- [Maps](#maps)
 
 ## Packages
+
+### Lists
 
 ### Maps
 

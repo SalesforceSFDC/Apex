@@ -120,7 +120,7 @@ trigger oppTrigger on Opportunity (before delete) {
 }
 ```
 
-Use the following design pattern in the trigger to determine if this was the first or sunsequent call for this execution context:
+Use the following design pattern in the trigger to determine if this was the first or subsequent call for this execution context:
 
 ```Apex
 if (!myclass.firstcall)

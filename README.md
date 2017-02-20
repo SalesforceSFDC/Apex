@@ -14,5 +14,5 @@ Apex triggers, classes, web services,...
 
 ### Maps
 
-- [webtorrent](https://github.com/feross/webtorrent) - Streaming torrent client for Node.js and the browser.
+- [maps](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_collections_maps.htm) - 
 

@@ -76,4 +76,4 @@ System.assertEquals('Second entry', value);
 Set<Integer> s = m.keySet();       // Return a set that contains all of the keys in the map
 ```
 
-### Using Maps and Sets in Bulk Triggers
+### Maps and Sets

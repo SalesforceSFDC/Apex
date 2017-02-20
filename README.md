@@ -24,3 +24,11 @@ Map<String, String> country_currencies = new Map<String, String>();
 Map<ID, Set<String>> m = new Map<ID, Set<String>>();
 ```
 
+As with lists, you can populate map key-value pairs when the map is declared by using curly brace ({}) syntax. Within the curly braces, specify the key first, then specify the value for that key using =>. 
+For example:
+
+```
+Map<String, String> MyStrings = new Map<String, String>{'a' => 'b', 'c' => 'd'.toUpperCase()};
+```
+
+

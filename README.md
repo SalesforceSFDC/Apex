@@ -11,6 +11,21 @@ Apex triggers, classes, web services,...
 
 ### Lists
 
+A list is an ordered collection of elements that are distinguished by their indices. List elements can be of any data type—primitive types, collections, sObjects, user-defined types, and built-in Apex types. 
+
+Lists can contain any collection and can be nested within one another and become multidimensional. For example, you can have a list of lists of sets of Integers. A list can contain up to four levels of nested collections inside it, that is, a total of five levels overall.
+
+To declare a list, use the List keyword followed by the primitive data, sObject, nested list, map, or set type within <> characters. 
+
+For example:
+
+```Apex
+// Create an empty list of String
+List<String> my_list = new List<String>();
+// Create a nested list
+List<List<Set<Integer>>> my_list_2 = new List<List<Set<Integer>>>();
+```
+
 ### Maps
 
 - [Maps](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_collections_maps.htm) 

@@ -138,4 +138,5 @@ A class static variable is a global variable that is associated with a particula
 
 ```Apex
 
+
 ```

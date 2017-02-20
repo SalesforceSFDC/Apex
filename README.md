@@ -20,7 +20,7 @@ A map is a collection of key-value pairs where each unique key maps to a single 
 
 Map keys and values can contain any collection, and can contain nested collections.  Map keys can contain up to only four levels of nested collections.
 
-```
+``` Apex
 Map<String, String> country_currencies = new Map<String, String>();
 Map<ID, Set<String>> m = new Map<ID, Set<String>>();
 ```

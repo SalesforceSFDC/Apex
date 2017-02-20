@@ -5,10 +5,6 @@ Apex triggers, classes, web services,...
 
 - [Packages](#packages)
 	- [Maps](#maps)
-	- [Command-line apps](#command-line-apps)
-	- [Functional programming](#functional-programming)
-	- [HTTP](#http)
-	- [Debugging / Profiling](#debugging--profiling)
 
 ## Packages
 
@@ -20,7 +16,10 @@ A map is a collection of key-value pairs where each unique key maps to a single 
 
 Map keys and values can contain any collection, and can contain nested collections.  Map keys can contain up to only four levels of nested collections.
 
-``` Apex
+To declare a map, use the Map keyword followed by the data types of the key and the value within <> characters. 
+For example:
+
+```Apex
 Map<String, String> country_currencies = new Map<String, String>();
 Map<ID, Set<String>> m = new Map<ID, Set<String>>();
 ```

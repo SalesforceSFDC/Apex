@@ -1,0 +1,150 @@
+public class LeadBeforeUpdateTriggerHandler extends TriggerHandler {
+	private Map<Id, Lead> newLeadMap;
+	private Map<Id, Lead> oldLeadMap;
+
+	public LeadBeforeUpdateTriggerHandler() {
+		this.setMaxLoopCount(2);
+		this.newLeadMap = (Map<Id, Lead>)Trigger.newMap;
+		this.oldLeadMap = (Map<Id, Lead>)Trigger.oldMap;
+	}
+
+	protected override void beforeUpdate() {
+		Set<Id> matchedLeadIdSet   = new Set<Id>();
+		Set<String> enrichedIdSet  = new Set<String>();
+		Set<String> duIdentiferSet = new Set<String>();
+		for (Id newId : newLeadMap.keySet()) {
+			Lead newLead = newLeadMap.get(newId);
+			Lead oldLead = oldLeadMap.get(newId);
+			if (newLead.Enriched_Company_ID__c != null && newLead.Enriched_Company_ID__c != oldLead.Enriched_Company_ID__c) {
+				enrichedIdSet.add(newLead.Enriched_Company_ID__c);
+			}
+			if (newLead.DU_Unique_Identifier__c != null && newLead.DU_Unique_Identifier__c != oldLead.DU_Unique_Identifier__c) {
+				duIdentiferSet.add(newLead.DU_Unique_Identifier__c);
+			}
+		}
+		System.debug('enrichedIdSet: ' + enrichedIdSet);
+		System.debug('duIdentiferSet: ' + duIdentiferSet);
+		if (!enrichedIdSet.isEmpty()) {
+			// SR : Added LS_Company_ID__c to the fields
+			List<Account> acctListEN = [select Id, OwnerId, Owner.Name, Owner.Email, Enriched_Company_ID__c, LS_Company_ID__c, Name from Account 
+										where Enriched_Company_ID__c in :enrichedIdSet];
+			System.debug('acctListEN: ' + acctListEN);
+			Map<String, List<Account>> acctMapByEN = new Map<String, List<Account>>();
+			for (Account acc : acctListEN) {
+				List<Account> accList = acctMapByEN.get(acc.Enriched_Company_ID__c);
+				if (accList == null) {
+					accList = new List<Account>();
+					acctMapByEN.put(acc.Enriched_Company_ID__c, accList);
+				}
+				accList.add(acc);
+			}
+			for (Id newId : newLeadMap.keySet()) {
+				Lead newLead = newLeadMap.get(newId);
+				List<Account> accList = acctMapByEN.get(newLead.Enriched_Company_ID__c);
+				if (accList != null) {
+
+					// SR WOS ERE
+
+					for (Account acc: accList) {
+						if (newLead.Site_LS_ID__c == acc.LS_Company_ID__c) {
+							if (acc.KTA__c != true) {
+								newLead.KTA__c = false;
+							}
+						}
+					}
+					// SR LEFT ERE
+
+
+
+					matchedLeadIdSet.add(newLead.Id);
+					newLead.Matched_with_Account__c = true;
+					if (accList.size() == 1) {
+						System.debug('ECID - one match found');
+						newLead.OwnerId = accList.get(0).OwnerId;
+						String emailBody = 'Hello ' + accList.get(0).Owner.Name + ',\n' + 
+								'A new lead has been created for your account, ' + accList.get(0).Name + '. Please check the lead and convert it to your account.\n' +
+								'Lead Link: ' + System.Url.getSalesforceBaseURL().toExternalForm() + '/' + newId  + '\n\n' +
+								'Thank you,\n' + 'Marketing';
+						sendEmailAlert(accList.get(0).Owner.Email, 'Lead Match Found and Assigned', emailBody);
+					} else {
+						System.debug('ECID - multiple matches found');
+						newLead.OwnerId = App_Settings__c.getOrgDefaults().Sales_Queue_Id__c;
+						String emailBody = 'Multiple account matches on the Enriched Company ID: ' + newLead.Enriched_Company_ID__c + 
+								' were found for the lead: ' +
+								newLead.Name + '. The lead has been assigned to the Sales Queue.';
+						sendEmailAlert(accList.get(0).Owner.Email, 'Lead Match Found', emailBody);						
+					}
+				}
+			}
+		}
+		if (!duIdentiferSet.isEmpty()) {
+			// SR : Added LS_Company_ID__c to the fields
+			List<Account> acctListDU = [select Id, OwnerId, Owner.Name, Owner.Email, DU_Unique_Identifier__c, LS_Company_ID__c, Name from Account 
+										where DU_Unique_Identifier__c in :duIdentiferSet];
+			System.debug('acctListDU: ' + acctListDU);							
+			Map<String, List<Account>> acctMapByDU = new Map<String, List<Account>>();
+			for (Account acc : acctListDU) {
+				List<Account> accList = acctMapByDU.get(acc.DU_Unique_Identifier__c);
+				if (accList == null) {
+					accList = new List<Account>();
+					acctMapByDU.put(acc.DU_Unique_Identifier__c, accList);
+				}
+				accList.add(acc);
+			}
+			for (Id newId : newLeadMap.keySet()) {
+				if (!matchedLeadIdSet.contains(newId)) {
+					Lead newLead = newLeadMap.get(newId);
+					List<Account> accList = acctMapByDU.get(newLead.DU_Unique_Identifier__c);
+					if (accList != null) {
+
+						// SR WOS ERE
+
+						for (Account acc: accList) {
+							if (newLead.Site_LS_ID__c == acc.LS_Company_ID__c) {
+								if (acc.KTA__c != true) {
+									newLead.KTA__c = false;
+								}
+							}
+						}
+						// SR LEFT ERE
+
+						newLead.Matched_with_Account__c = true;
+						if (accList.size() == 1) {
+							System.debug('DUID - one match found');
+							newLead.OwnerId = accList.get(0).OwnerId;
+							String emailBody = 'Hello ' + accList.get(0).Owner.Name + ',\n' + 
+								'A new lead has been created for your account, ' + accList.get(0).Name + '. Please check the lead and convert it to your account.\n' +
+								'Lead Link: ' + System.Url.getSalesforceBaseURL().toExternalForm() + '/' + newId + '\n\n' +
+								'Thank you,\n' + 'Marketing';
+							sendEmailAlert(accList.get(0).Owner.Email, 'Lead Match Found and Assigned', emailBody);
+						} else {
+							System.debug('DUID - multiple matches found');
+							newLead.OwnerId = App_Settings__c.getOrgDefaults().Sales_Queue_Id__c;
+							String emailBody = 'Multiple account matches on the DU – Unique Identifier: ' + newLead.DU_Unique_Identifier__c + 
+									' were found for the lead: ' +
+									newLead.Name + '. The lead has been assigned to the Sales Queue.';
+							sendEmailAlert(accList.get(0).Owner.Email, 'Lead Match Found', emailBody);						
+						}
+					}
+				}
+			}
+		}
+	}
+
+	private void sendEmailAlert(String toAddress, String subject, String body) {
+		System.debug('toAddress: ' + toAddress);
+		System.debug('subject: ' + subject);
+		System.debug('body: ' + body);
+		List<Messaging.SingleEmailMessage> mails = new List<Messaging.SingleEmailMessage>();
+		Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+		List<String> sendTo = new List<String>();
+      	sendTo.add(toAddress);
+      	mail.setToAddresses(sendTo);
+      	mail.setReplyTo('');
+      	mail.setSenderDisplayName('Marketing');
+      	mail.setSubject(subject);
+      	mail.setPlainTextBody(body);
+      	mails.add(mail);
+      	Messaging.sendEmail(mails);
+	}
+}

@@ -53,7 +53,7 @@ global class createTask {
 				List<Contact> queriedContacts = [SELECT Id FROM Contact WHERE Email = :emailAddress ORDER BY CreatedDate DESC LIMIT 1]; //query for a Contact that has the email address
 				if (!queriedContacts.isEmpty()) { //if the list is not empty
 					if (body.containsKey('source')) { //if there is a key of source in our body map
-						src = (Map<String, Object>)body.get('source'); //grab the value for the source key from the body map and cast it to a new map (String > primative data types)
+						src = (Map<String, Object>)body.get('source'); //grab the value for the source key from the body map and cast it to a new map (String > primitive data types)
 						if (src.containsKey('brand')) { //if there is a key of brand in our src map
 							typeOfCard = (String)src.get('brand'); //grab the value for the brand key from the src map and cast it to a string
 						}

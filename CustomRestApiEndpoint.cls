@@ -1,29 +1,29 @@
 /**
-	
+
 	Notes:
 		- API endpoint accepts JSON similar to:
 			{
-				"id": "ch_abcdefghijklmnopqrstuvwx", 
-				"amount": 9900, 
-				"description": "greg@interactiveties.com", 
-				"source": { 
-					"id": "card_123456789123456789123456", 
-					"brand": "American Express", 
-					"exp_month": 11, 
-					"exp_year": 2021, 
-					"last4": "2222", 
-					"name": "greg@interactiveties.com"
-				}, 
-				"status": "succeeded", 
-				"type": "charge.succeeded" 
+				"id": "ch_abcdefghijklmnopqrstuvwx",
+				"amount": 9900,
+				"description": "vukdukic@gmail.com",
+				"source": {
+					"id": "card_123456789123456789123456",
+					"brand": "Visa",
+					"exp_month": 11,
+					"exp_year": 2021,
+					"last4": "2222",
+					"name": "vukdukic@gmail.com"
+				},
+				"status": "succeeded",
+				"type": "charge.succeeded"
 			}
 		- queries for the Contact with the email address provided in the description key/value pair from the JSON request
 		- creates a Task
 		- returns JSON similar to:
 			{
-				"status": "success", 
-				"contactid": "0033000000YVLQWAA5", 
-				"taskid": "00T3000000rEvJtEAK", 
+				"status": "success",
+				"contactid": "0033000000YVLQWAA5",
+				"taskid": "00T3000000rEvJtEAK",
 				"message": ""
 			}
 **/

@@ -1,5 +1,5 @@
 # Apex
-Apex triggers, classes, web services,...
+Apex triggers, classes, web services, ...
 
 ## Table of Contents
 

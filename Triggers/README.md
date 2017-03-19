@@ -42,3 +42,5 @@ trigger ContextVariableExampleTrigger on Account (before insert, after insert, a
          }
  }
 ````
+
+ * ``Custom transactional logic - logic that occurs over the entire transaction, not just with a single record or object.``

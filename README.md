@@ -137,6 +137,11 @@ Trigger MileageTrigger on Mileage__c (before insert, before update) {
 
 This pattern respects the bulk nature of the trigger by passing the Trigger.new collection to a set, then using the set in a single SOQL query.  This pattern captures all incoming records within the request while limiting the number of SOQL queries.
 
+Best practices for designing `bulk patterns`:
+
+ * Minimize the number of DML operations by adding records to collections and performing DML operations against these collections.  
+ * Minimize the number of SOQL statements by preprocessing records and generating sets, which can be places in single SOQL statement used with the IN clause.
+
 
 ### Correlating Records with Query Results in Bulk Triggers
 

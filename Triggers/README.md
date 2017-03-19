@@ -7,7 +7,7 @@ Test
 ```
 ``test``
 
-```
+```apex
 tigger HelloWorldTrigger on Account (before insert) {
     System.debug('Hello World!');
 }

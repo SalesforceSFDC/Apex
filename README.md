@@ -1,6 +1,10 @@
 # Apex
 Apex triggers, classes, web services, ...
 
+## How Does Apex Work?
+
+When a developer writes and saves Apex code to the platform, the platform application server first compiles the code into an abstract set of instructions that can be understood by the Apex runtime interpreter, and then saves those instructions as metadata.
+
 ## Table of Contents
 
 - [Packages](#packages)

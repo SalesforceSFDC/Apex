@@ -1,6 +1,14 @@
 # Apex
 Apex triggers, classes, web services, ...
 
+
+## Table of Contents
+
+- [Packages](#packages)
+	- [Lists](#lists)
+	- [Maps](#maps)
+	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)
+
 ## How Does Apex Work?
 
 When a developer writes and saves Apex code to the platform, the platform application server first compiles the code into an abstract set of instructions that can be understood by the Apex runtime interpreter, and then saves those instructions as metadata.
@@ -13,12 +21,6 @@ All Apex code runs on the Force.com platform.  To guarantee consistent performan
 All Apex requests return a collection that contains from 1 to 50,000 records.   You cannot assume that your code works only on a single records at a time.  Therefore, you must implement programming patterns that take bulk processing into account.  Otherwise, you may run into governor limits.
 ```
 
-## Table of Contents
-
-- [Packages](#packages)
-	- [Lists](#lists)
-	- [Maps](#maps)
-	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)
 
 ## Packages
 

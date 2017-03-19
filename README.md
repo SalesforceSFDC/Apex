@@ -5,6 +5,8 @@ Apex triggers, classes, web services, ...
 
 When a developer writes and saves Apex code to the platform, the platform application server first compiles the code into an abstract set of instructions that can be understood by the Apex runtime interpreter, and then saves those instructions as metadata.
 
+When an end-user triggers the execution Apex, perhaps by clicking a button or accessing a Visualforce page, the platform application server retrieves the compiled instructions from the metadata and sends them through the runtime interpreter before returning results.  
+
 ## Table of Contents
 
 - [Packages](#packages)

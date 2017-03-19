@@ -124,6 +124,17 @@ trigger oppLineTrigger on OpportunityLineItem (before insert) {
 
 ### Trigger and Bulk Request Best Practices
 
+Apex triggers are optimized to operate in bulk, which, by definition, requires developers to write logic that supports bulk operations.  
+
+This example demonstrates the correct pattern to support the bulk nature of triggers while respecting the governor limits:
+
+```Apex 
+Trigger MileageTrigger on Mileage__c (before insert, before update) {
+	Set<ID> ids = Trigger.newMap.keySet();
+	List<User> c = [SELECT Id FROM user WHERE mileage__c in :ids];
+}
+```
+
 ### Correlating Records with Query Results in Bulk Triggers
 
 Use the Trigger.newMap and Trigger.oldMap ID-to-sObject maps to correlate records with query results. For example, this trigger from the sample quoting app uses Trigger.oldMap to create a set of unique IDs (Trigger.oldMap.keySet()). The set is then used as part of a query to create a list of quotes associated with the opportunities being processed by the trigger. For every quote returned by the query, the related opportunity is retrieved from Trigger.oldMap and prevented from being deleted:

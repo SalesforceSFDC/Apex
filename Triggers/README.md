@@ -8,3 +8,8 @@ tigger HelloWorldTrigger on Account (before insert) {
     System.debug('Hello World!');
 }
 ```
+
+```Apex
+Account a = new Account(Name='Test Trigger');
+insert a;
+```

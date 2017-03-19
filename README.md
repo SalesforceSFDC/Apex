@@ -5,6 +5,7 @@ Apex triggers, classes, web services, ...
 ## Table of Contents
 
 - [Packages](#packages)
+	- [How Does Apex Work?](#how-does-apex-work)
 	- [Lists](#lists)
 	- [Maps](#maps)
 	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)

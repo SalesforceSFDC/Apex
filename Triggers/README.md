@@ -19,3 +19,11 @@ insert a;
 ``Trigger.New contains all the records that were inserted in insert or update triggers.``
 
 ``Trigger.Old provides the old version of sObjects before they were updated in update triggers, or a list of deletd sObjects in delete triggers.``
+
+```Apex
+trigger HelloWorldTrigger on Account (before insert) {
+        for(Account a : Trigger.New) {
+            a.Description = 'New description';
+        }
+}
+```

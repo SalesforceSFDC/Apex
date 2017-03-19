@@ -6,7 +6,7 @@ Apex triggers, classes, web services, ...
 
 ## Table of Contents
 
-- [Packages](#packages)
+- [Sections](#sections)
 	- [How Does Apex Work?](#how-does-apex-work)
 	- [Apex Core Concepts](#apex-core-concepts)
 	- [Lists](#lists)
@@ -30,8 +30,6 @@ All Apex requests return a collection that contains from 1 to 50,000 records.   
 
 [<img src="https://developer.salesforce.com/docs/resources/img/en-us/206.0?doc_id=dev_guides%2Fapex%2Fimages%2FAC_Elements.png&folder=apexcode" align="center" width="1000">](https://login.salesforce.com/)
 
-
-## Packages
 
 ### Lists
 

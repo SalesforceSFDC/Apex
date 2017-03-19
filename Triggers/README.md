@@ -13,3 +13,7 @@ tigger HelloWorldTrigger on Account (before insert) {
 Account a = new Account(Name='Test Trigger');
 insert a;
 ```
+
+ * To access the records that caused the trigger to fire, use context variables.  
+
+``Trigger.New contains all the records that were inserted in insert or update triggers.``

@@ -8,6 +8,7 @@ Apex triggers, classes, web services, ...
 	- [How Does Apex Work?](#how-does-apex-work)
 	- [Lists](#lists)
 	- [Maps](#maps)
+	- [Trigger and Bulk Request Best Practices](#trigger-and-bulk-request-best-practices)
 	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)
 
 ## How Does Apex Work?
@@ -24,9 +25,6 @@ All Apex requests return a collection that contains from 1 to 50,000 records.   
 
 
 ## Packages
-
-
-##
 
 ### Lists
 
@@ -124,7 +122,9 @@ trigger oppLineTrigger on OpportunityLineItem (before insert) {
 }
 ```
 
-#### Correlating Records with Query Results in Bulk Triggers
+### Trigger and Bulk Request Best Practices
+
+### Correlating Records with Query Results in Bulk Triggers
 
 Use the Trigger.newMap and Trigger.oldMap ID-to-sObject maps to correlate records with query results. For example, this trigger from the sample quoting app uses Trigger.oldMap to create a set of unique IDs (Trigger.oldMap.keySet()). The set is then used as part of a query to create a list of quotes associated with the opportunities being processed by the trigger. For every quote returned by the query, the related opportunity is retrieved from Trigger.oldMap and prevented from being deleted:
 

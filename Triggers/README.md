@@ -6,3 +6,9 @@
 Test
 ```
 ``test``
+
+```
+tigger HelloWorldTrigger on Account (before insert) {
+    System.debug('Hello World!');
+}
+```

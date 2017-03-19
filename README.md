@@ -8,12 +8,13 @@ Apex triggers, classes, web services, ...
 
 - [Packages](#packages)
 	- [How Does Apex Work?](#how-does-apex-work)
+	- [Apex Core Concepts](#apex-core-concepts)
 	- [Lists](#lists)
 	- [Maps](#maps)
 	- [Trigger and Bulk Request Best Practices](#trigger-and-bulk-request-best-practices)
 	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)
 
-## How Does Apex Work?
+### How Does Apex Work?
 
 When a developer writes and saves Apex code to the platform, the platform application server first compiles the code into an abstract set of instructions that can be understood by the Apex runtime interpreter, and then saves those instructions as metadata.
 
@@ -24,6 +25,10 @@ All Apex code runs on the Force.com platform.  To guarantee consistent performan
 
 All Apex requests return a collection that contains from 1 to 50,000 records.   You cannot assume that your code works only on a single records at a time.  Therefore, you must implement programming patterns that take bulk processing into account.  Otherwise, you may run into governor limits.
 ```
+
+### Apex Core Concepts
+
+[<img src="https://developer.salesforce.com/docs/resources/img/en-us/206.0?doc_id=dev_guides%2Fapex%2Fimages%2FAC_Elements.png&folder=apexcode" align="center" width="300">](https://login.salesforce.com/)
 
 
 ## Packages
@@ -174,8 +179,3 @@ else
 ```
 
 A class static variable is a global variable that is associated with a particular class.  It exists regardless of whether you have actually created an instance of the class, and that a single instance of the variable is shared by all instances of the class and, in fact, by the entire application.
-
-```Apex
-
-
-```

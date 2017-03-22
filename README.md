@@ -30,6 +30,14 @@ All Apex requests return a collection that contains from 1 to 50,000 records.   
 [<img src="https://developer.salesforce.com/docs/resources/img/en-us/206.0?doc_id=dev_guides%2Fapex%2Fimages%2FAC_Elements.png&folder=apexcode" align="center" width="1000">](https://login.salesforce.com/)
 
 
+### Variables
+
+Use the following syntax when declaring variables:
+
+```Apex
+datatype variable_name [ = value];
+```
+
 ### Lists
 
 - [List Class](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_list.htm#apex_methods_system_list)

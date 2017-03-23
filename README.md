@@ -38,6 +38,11 @@ Use the following syntax when declaring variables:
 datatype variable_name [ = value];
 ```
 
+### Using Statements
+
+In Apex, statements must end in a semicolon and can be one of the following types:
+ * Assignment, such as assigning a value to a variable
+
 ### Lists
 
 - [List Class](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_list.htm#apex_methods_system_list)

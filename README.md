@@ -14,7 +14,7 @@ Apex triggers, classes, web services, ...
 	- [Trigger and Bulk Request Best Practices](#trigger-and-bulk-request-best-practices)
 	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)
 	- [Loops](#loops)
-	_ [Test Driven Development Process](#test-driven-development-process)
+	- [Test Driven Development Process](#test-driven-development-process)
 
 ### How Does Apex Work?
 

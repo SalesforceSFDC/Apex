@@ -41,7 +41,17 @@ datatype variable_name [ = value];
 ### Using Statements
 
 In Apex, statements must end in a semicolon and can be one of the following types:
- * Assignment, such as assigning a value to a variable
+ * Assignment, such as assigning a value to a variable.
+ * Conditional (if-else)
+ * Loops:
+ 	* Do-while
+	* While
+	* For
+ * Locking 
+ * Data Manipulation Language
+ * Transaction control
+ * Method invoking
+ * Exception handling
 
 ### Lists
 

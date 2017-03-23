@@ -16,6 +16,7 @@ Apex triggers, classes, web services, ...
 	- [Loops](#loops)
 	- [Test Driven Development Process](#test-driven-development-process)
 	- [Classes, Objects and Interfaces](#classes-objects-and-interfaces)
+	- [Static and Instance Methods, Variables, and Initialization Code](#static-and-instance-methods-variables-and-initialization-code)
 
 ### How Does Apex Work?
 
@@ -300,3 +301,5 @@ Apex supports the creation and execution of unit tests.  Unit tests are class me
 ### Classes, Objects and Interfaces
 https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes.htm
 
+### Static and Instance Methods, Variables, and Initialization Code
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_static.htm

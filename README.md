@@ -333,4 +333,6 @@ trigger HelloWorldTrigger on Book__c (before insert) {
 }
 ```
 
-`Book__c[] books = Trigger.new;` creates a list of book records named *books* and assigns it the contents of a trigger context variable called Trigger.new.  
+`Book__c[] books = Trigger.new;` creates a list of book records named *books* and assigns it the contents of a trigger context variable called Trigger.new.  Trigger context variables are implicitly defined in all triggers and provide access to the records that caused the trigger to fire.  In this case, Trigger.new contains all the new books that are about to be inserted.  
+
+`MyHelloWorld.applyDiscount (books);` the code calls the method *applyDiscount* in the *MyHelloWorld* class.  It passes in the array of new books.

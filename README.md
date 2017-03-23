@@ -144,6 +144,8 @@ Set<datatype> set_name
 ;
 ```
 
+Set<String> My_String = new Set<String>{'a', 'b', 'c'};
+
 ### Maps
 
 - [Maps](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_collections_maps.htm) 

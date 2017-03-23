@@ -17,6 +17,7 @@ Apex triggers, classes, web services, ...
 	- [Test Driven Development Process](#test-driven-development-process)
 	- [Classes, Objects and Interfaces](#classes-objects-and-interfaces)
 	- [Static and Instance Methods, Variables, and Initialization Code](#static-and-instance-methods-variables-and-initialization-code)
+	- [Triggers](#triggers)
 
 ### How Does Apex Work?
 
@@ -321,3 +322,13 @@ public class MyHelloWorld {
 }
 ```
 
+### Triggers
+
+```Apex
+trigger HelloWorldTrigger on Book__c (before insert) {
+	
+	Book__c[] books = Trigger.new;
+	
+	MyHelloWorld.applyDiscount (books);
+}
+```

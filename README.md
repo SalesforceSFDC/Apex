@@ -332,3 +332,5 @@ trigger HelloWorldTrigger on Book__c (before insert) {
 	MyHelloWorld.applyDiscount (books);
 }
 ```
+
+`Book__c[] books = Trigger.new;` creates a list of book records names *books*

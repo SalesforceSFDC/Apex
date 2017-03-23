@@ -13,6 +13,7 @@ Apex triggers, classes, web services, ...
 	- [Maps](#maps)
 	- [Trigger and Bulk Request Best Practices](#trigger-and-bulk-request-best-practices)
 	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)
+	- [Loops](#loops)
 
 ### How Does Apex Work?
 
@@ -270,3 +271,14 @@ else
 ```
 
 A class static variable is a global variable that is associated with a particular class.  It exists regardless of whether you have actually created an instance of the class, and that a single instance of the variable is shared by all instances of the class and, in fact, by the entire application.
+
+### Loops
+
+While the `if` statement enables your application to do things based on a condition, loops tell your application to do the same thing again and again based on a condition.  Apex supports the following types of loops:
+ * Do-While
+ * While
+ * For
+
+A `Do-While` loop checks the condition after the code has executed.
+A `While` loop checks the condition at the start, before the code executes.
+A `For` loop enables you to more finely control the condition used with the loop.  Apex supports traditional `For` loops where you set the conditions, as well as For loops that use lists and SOQL queries as part of the condition.

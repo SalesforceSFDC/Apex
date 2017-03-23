@@ -303,3 +303,21 @@ https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_cl
 
 ### Static and Instance Methods, Variables, and Initialization Code
 https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_static.htm
+
+With `Static Methods` you do not need to create an instance of the class to access the method - you can just use the name of the class followed by a dot(.) notation and the name of the method.  
+
+```Apex
+b.Price__c *= 0.9;
+```
+This statement takes the old value of `b.Price__c` multiples it by 0.9 and then stores the new value into the `b.Price__c` field.
+
+```Apex
+public class MyHelloWorld {
+	public static void applyDiscount (Book__c[] books) {
+		for (Book__c b :books) {
+			b.Price__c *= 0.9;
+		}
+	}
+}
+```
+

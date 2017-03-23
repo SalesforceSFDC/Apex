@@ -53,6 +53,18 @@ In Apex, statements must end in a semicolon and can be one of the following type
  * Method invoking
  * Exception handling
 
+A `block` is a series of statements that are grouped together with curly braces and can be used in any place where a single statement would be allowed.  
+
+```Apex
+if (true) {
+	System.debug(1);
+	System.debug(2);
+} else {
+	System.debug(3);
+	System.debug(4);
+}
+```
+
 ### Lists
 
 - [List Class](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_list.htm#apex_methods_system_list)

@@ -289,4 +289,11 @@ Test driven development process is test development that occurs at the same time
 
 Apex supports the creation and execution of unit tests.  Unit tests are class methods that verify whether a particular piece of code is working properly.  Unit test methods take no arguments, commit no data to the database, send no emails, are flagged with the `testMethod` keyword or the `isTest` annotation in the method definition.  Test methods must be defined in test classes, that is, classes annotated with `isTest`.
 
+ * At least 75% of Apex code must be covered by unit tests and all of those tests must complete successfully.
+ * When deploying Apex to a production org, each unit test in org namespace is executed bu default
+ * Calls to `System.debug` are not counted as part of Apex code coverage.
+ * Test methods and test classes are not counted as part of Apex code coverage.
+ * Every trigger must have some code coverage.
+ * All classes and triggers must compile successfully.
+ 
 

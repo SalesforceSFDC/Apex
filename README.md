@@ -127,6 +127,23 @@ myList.set(0, 1);                           // Adds the integer 1 to the list at
 myList.clear();                    // Removes all elements from the list
 ```
 
+### Sets
+
+A set is a collection of unique unordered elements.   
+
+To create a set:
+ * Use the new keyword
+ * Use the Set keyword followed by the primitive data type contained within <> characters.
+
+Syntax for creating a `Set`:
+
+```Apex
+Set<datatype> set_name
+	[= new Set<datatype>();] |
+	[= new Set<datatype>{value [, value2...]};] |
+;
+```
+
 ### Maps
 
 - [Maps](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_collections_maps.htm) 

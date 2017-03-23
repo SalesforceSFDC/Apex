@@ -285,3 +285,6 @@ A `For` loop enables you to more finely control the condition used with the loop
 
 ### Test Driven Development Process
 
+Test driven development process is test development that occurs at the same time as development of code.
+
+Apex supports the creation and execution of unit tests.  Unit tests are class methods that verify whether a particular piece of code is working properly.  

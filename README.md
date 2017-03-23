@@ -65,9 +65,34 @@ if (true) {
 }
 ```
 
+### Collections
+
+Apex has the following types of collections:
+ * Lists (Arrays)
+ * Maps
+ * Sets
+
 ### Lists
 
 - [List Class](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_list.htm#apex_methods_system_list)
+
+A `list` is a collection of elements, such as Integers, Strings, objects, or other collections.  Use a list when the sequence of elements is important.  You can have duplicate elements in a list.
+
+The first index position in a list is always [0].
+
+To create a list:
+
+ * Use the `new` keyword
+ * Use the `List` keyword followed by the element type contained within <> characters.
+ 
+To create a list:
+
+```Apex
+List<datatype> list_name
+	[= new List<datatype>();] |
+	[= new List<datatype>{value, [, value2...]};] |
+	;
+```
 
 A list is an ordered collection of elements that are distinguished by their indices. List elements can be of any data type—primitive types, collections, sObjects, user-defined types, and built-in Apex types. 
 

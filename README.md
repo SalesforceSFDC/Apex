@@ -287,4 +287,6 @@ A `For` loop enables you to more finely control the condition used with the loop
 
 Test driven development process is test development that occurs at the same time as development of code.
 
-Apex supports the creation and execution of unit tests.  Unit tests are class methods that verify whether a particular piece of code is working properly.  
+Apex supports the creation and execution of unit tests.  Unit tests are class methods that verify whether a particular piece of code is working properly.  Unit test methods take no arguments, commit no data to the database, send no emails, are flagged with the `testMethod` keyword or the `isTest` annotation in the method definition.  Test methods must be defined in test classes, that is, classes annotated with `isTest`.
+
+

@@ -15,6 +15,7 @@ Apex triggers, classes, web services, ...
 	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)
 	- [Loops](#loops)
 	- [Test Driven Development Process](#test-driven-development-process)
+	- [Classes, Objects and Interfaces](#classes-objects-and-interfaces)
 
 ### How Does Apex Work?
 
@@ -296,4 +297,6 @@ Apex supports the creation and execution of unit tests.  Unit tests are class me
  * Every trigger must have some code coverage.
  * All classes and triggers must compile successfully.
  
+### Classes, Objects and Interfaces
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes.htm
 

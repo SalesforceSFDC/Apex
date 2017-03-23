@@ -144,6 +144,7 @@ Set<datatype> set_name
 ;
 ```
 
+The following example creates a set of String.  The values for the set are passed in curly braces.
 ```Apex
 Set<String> My_String = new Set<String>{'a', 'b', 'c'};
 ```
@@ -211,6 +212,12 @@ trigger oppLineTrigger on OpportunityLineItem (before insert) {
     for (OpportunityLineItem oli : Trigger.new) 
         oli.color__c = entries.get(oli.pricebookEntryId).product2.color__c;  
 }
+```
+
+The following example creates a map that has a data type of Integer for the key and String for the value.  In this example, the values for the map are being passed in between the curly braces as the map is being created.
+
+```Apex
+Map<Integer, String> My_Map = new Map<Integer, String>{1 => 'a', 2=> 'b', 3 => 'c'};
 ```
 
 ### Trigger and Bulk Request Best Practices

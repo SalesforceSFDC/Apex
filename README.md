@@ -9,7 +9,7 @@ Apex triggers, classes, web services, ...
 - [Sections](#sections)
 	- [How Does Apex Work?](#how-does-apex-work)
 	- [Apex Core Concepts](#apex-core-concepts)
-	- [Lists](#lists)
+	- [List](#lists)
 	- [Maps](#maps)
 	- [Trigger and Bulk Request Best Practices](#trigger-and-bulk-request-best-practices)
 	- [Using Maps and Sets in Bulk Triggers](#maps-and-sets)
@@ -92,6 +92,12 @@ List<datatype> list_name
 	[= new List<datatype>();] |
 	[= new List<datatype>{value, [, value2...]};] |
 	;
+```
+
+The following example creates a list of Integer, and assigns it to the variable My_List.  Because Apex is strongly typed, you must declare the data type of My_List as a list of Integer.
+
+```Apex
+List<Integer> My_List = new List<Integer>();
 ```
 
 A list is an ordered collection of elements that are distinguished by their indices. List elements can be of any data type—primitive types, collections, sObjects, user-defined types, and built-in Apex types. 

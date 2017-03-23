@@ -144,7 +144,9 @@ Set<datatype> set_name
 ;
 ```
 
+```Apex
 Set<String> My_String = new Set<String>{'a', 'b', 'c'};
+```
 
 ### Maps
 

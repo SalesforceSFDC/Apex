@@ -333,4 +333,4 @@ trigger HelloWorldTrigger on Book__c (before insert) {
 }
 ```
 
-`Book__c[] books = Trigger.new;` creates a list of book records names *books*
+`Book__c[] books = Trigger.new;` creates a list of book records named *books* and assigns it the contents of a trigger context variable called Trigger.new.  _books_

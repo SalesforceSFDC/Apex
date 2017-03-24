@@ -19,6 +19,7 @@ Apex triggers, classes, web services, ...
 	- [Static and Instance Methods, Variables, and Initialization Code](#static-and-instance-methods-variables-and-initialization-code)
 	- [Triggers](#triggers)
 	- [Apex Test Classes](#apex-test-classes)
+	- [Execution Governor and Limits](#execution-governor-and-limits)
 
 ### How Does Apex Work?
 
@@ -361,3 +362,6 @@ private class HelloWorldTestClass {
 }
 ```
 
+### Execution Governor and Limits
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm#total_heap_size_limit_desc

@@ -54,3 +54,6 @@ Static variable - a variable that has been allocated statically so that its life
 
 Static memory allocation in general is the allocation of memory at compile time before the associated program is executed, unlike dynamic memory allocation automatic memory allocation where memory is allocated as required at runtime.
 
+Automatic variables - (local variables are generally automatic) the storage is allocated and deallocated on the call stack.
+
+Objects - storage is dynamically allocated in heap memory.

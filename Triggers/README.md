@@ -48,4 +48,4 @@ trigger ContextVariableExampleTrigger on Account (before insert, after insert, a
 
 Utility class - a class that defines a set of methods that perform common, often re-used functions.  Most utility classes define these common methods under static scope.  
 
-Static variable - 
+Static variable - a variable that has been allocated statically so that its lifetime or 'extent' extends across the entire run of the program.

@@ -49,3 +49,5 @@ trigger ContextVariableExampleTrigger on Account (before insert, after insert, a
 Utility class - a class that defines a set of methods that perform common, often re-used functions.  Most utility classes define these common methods under static scope.  
 
 Static variable - a variable that has been allocated statically so that its lifetime or 'extent' extends across the entire run of the program.
+
+Static memory allocation in general is the allocation of memory at compile time before the associated program is executed, unlike dynamic memory allocation automatic memory allocation where memory is allocated as required at runtime.

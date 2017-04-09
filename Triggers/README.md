@@ -57,3 +57,7 @@ Static memory allocation in general is the allocation of memory at compile time 
 Automatic variables - (local variables are generally automatic) the storage is allocated and deallocated on the call stack.
 
 Objects - storage is dynamically allocated in heap memory.
+
+### Scope
+
+In terms of scope and context, static variables have extent the entire run of the program, but may have more limited scope.  A basic distinction is between a static global variable, which has global scope and thus is in context throughout the program, and a static local variable, which has local scope.  A `static local variable` is different from a local variable as a static local variable is initialized only once no matter how many times the function in which it resides is called and its value is retained and accessible through many calls to the function in which it is declared.

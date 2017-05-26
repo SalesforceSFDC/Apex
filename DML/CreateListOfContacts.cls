@@ -14,7 +14,7 @@ List<Contact> listToUpdate = new List<Contact>();
 // Iterate through the list and add a title only
 //  if the Department is Finance.
 for(Contact con : conList) {
-  if (con.Department == "Finance') {
+  if (con.Department == 'Finance') {
       con.Title = 'Financial Analyst';
       // Add updated contact sObject to the list.
       listToUpdate.add(con);

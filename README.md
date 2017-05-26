@@ -373,6 +373,10 @@ https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_go
 
 DML provides a straightforward way to manage records by providing simple statements to insert, update, merge, delete, and restore records.
 
+The upsert DML operation creates new records and updates sObject records within a single statement, using a specified field to determine the presence of existing objects, or the ID field if no field is specified.
+
+The merge statement merges up to three records of the same sObject type into one of the records, deleting the others, and re-parenting any related records.
+
 This example adds the Acme account to Salesforce. An account sObject is created first and then passed as an argument to the insert statement, which persists the record in Salesforce.
 ```Apex
 // Create the account sObject

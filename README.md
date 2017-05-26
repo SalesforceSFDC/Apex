@@ -20,6 +20,7 @@ Apex triggers, classes, web services, ...
 	- [Triggers](#triggers)
 	- [Apex Test Classes](#apex-test-classes)
 	- [Execution Governor and Limits](#execution-governor-and-limits)
+	- [Data Maninpulation Language](#data-manipulation-language)
 
 ### How Does Apex Work?
 
@@ -369,3 +370,4 @@ private class HelloWorldTestClass {
 
 https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm#total_heap_size_limit_desc
 	
+### Data Manipulation Language

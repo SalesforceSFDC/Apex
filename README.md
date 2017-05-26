@@ -324,6 +324,9 @@ public class MyHelloWorld {
 }
 ```
 
+#### Calling a Static Method
+Static methods are easier to call than instance methods because they don’t need to be called on an instance of the class but are called directly on the class name.
+
 ### Triggers
 
 ```Apex
@@ -365,3 +368,4 @@ private class HelloWorldTestClass {
 ### Execution Governor and Limits
 
 https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm#total_heap_size_limit_desc
+	

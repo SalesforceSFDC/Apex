@@ -15,5 +15,11 @@ List<Contact> listToUpdate = new List<Contact>();
 //  if the Department is Finance.
 for(Contact con : conList) {
   if (con.Department == "Finance') {
-      
+      con.Title = 'Financial Analyst';
+      // Add updated contact sObject to the list.
+      listToUpdate.add(con);
       }
+}
+
+// Bulk update all contacts with one DML call
+update listToUpdate;

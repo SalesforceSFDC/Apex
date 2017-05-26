@@ -11,4 +11,9 @@ insert conList;
 // List to hold the new contacts to update
 List<Contact> listToUpdate = new List<Contact>();
 
-
+// Iterate through the list and add a title only
+//  if the Department is Finance.
+for(Contact con : conList) {
+  if (con.Department == "Finance') {
+      
+      }

@@ -381,3 +381,19 @@ Account acct = new Account (Name='Acme', Phone='(415)-635-9877', NumberOfEmploye
 // Insert the account by using DML
 insert acct;
 ```
+
+This example shows how to get the ID on the sObject that corresponds to the inserted account.
+```Apex
+// Create the account sObject 
+Account acct = new Account(Name='Acme', Phone='(415)555-1212', NumberOfEmployees=100);
+// Insert the account by using DML
+insert acct;
+
+// Get the new ID on the inserted sObject argument
+ID acctID = acct.Id;
+// Display this ID in the debug log
+System.debug('ID = ' + acctID);
+
+// Debug log result (the ID will be different in your case)
+// DEBUG|ID = 001D000000JmKkeIAF
+```

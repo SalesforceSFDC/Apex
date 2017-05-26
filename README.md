@@ -397,3 +397,5 @@ System.debug('ID = ' + acctID);
 // Debug log result (the ID will be different in your case)
 // DEBUG|ID = 001D000000JmKkeIAF
 ```
+
+Performing bulk DML operations is the recommended way because it helps avoid hitting governor limits, such as the DML limit of 150 statements per Apex transaction. 

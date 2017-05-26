@@ -378,6 +378,8 @@ The upsert DML operation creates new records and updates sObject records within 
 
 The merge statement merges up to three records of the same sObject type into one of the records, deleting the others, and re-parenting any related records.
 
+If a DML operation fails, it returns an exception of type DmlException. You can catch exceptions in your code to handle error conditions.
+
 This example adds the Acme account to Salesforce. An account sObject is created first and then passed as an argument to the insert statement, which persists the record in Salesforce.
 ```Apex
 // Create the account sObject

@@ -371,3 +371,13 @@ private class HelloWorldTestClass {
 https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_gov_limits.htm#total_heap_size_limit_desc
 	
 ### Data Manipulation Language
+
+DML provides a straightforward way to manage records by providing simple statements to insert, update, merge, delete, and restore records.
+
+This example adds the Acme account to Salesforce. An account sObject is created first and then passed as an argument to the insert statement, which persists the record in Salesforce.
+```Apex
+// Create the account sObject
+Account acct = new Account (Name='Acme', Phone='(415)-635-9877', NumberOfEmployees=100);
+// Insert the account by using DML
+insert acct;
+```

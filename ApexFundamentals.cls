@@ -17,3 +17,5 @@ For (Account acc : accs) {
   cons.add(new Contact(lastName = acc.nam + '2'));
 }
 insert cons; //data (DML) operation
+
+

@@ -80,4 +80,4 @@ In terms of scope and context, static variables have extent the entire run of th
 | Syntax | Action | Output |
 |------|-----|---|
 |`addError`| prevent saving records in a trigger | throws a fatal error inside a trigger |
-|`@future(callout=true) | make a callout from a trigger | call a class method that executes asynchronously | 
+|`@future(callout=true)` | make a callout from a trigger | call a class method that executes asynchronously | 

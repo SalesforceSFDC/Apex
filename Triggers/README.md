@@ -1,5 +1,9 @@
 # Apex Triggers
 
+## Table of Contents  
+* [Apex Trigger Methods](#apex-trigger-methods)
+* [Static Variables](#static-variables)
+
 * [Apex Trigger Context Variables](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_context_variables.htm)
 
 * Before triggers are used to update or validate record values before they’re saved to the database.

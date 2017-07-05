@@ -7,6 +7,7 @@
 ##
 
 * [Apex Trigger Context Variables](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_context_variables.htm)
+* [Invoking Callouts Using Apex](https://developer.salesforce.com/docs/atlas.en-us.208.0.apexcode.meta/apexcode/apex_callouts.htm)
 
 * Before triggers are used to update or validate record values before they’re saved to the database.
  * After triggers are used to access field values that are set by the system (such as a record's Id or LastModifiedDate field), and to affect changes in other records. The records that fire the after trigger are read-only.

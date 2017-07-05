@@ -77,3 +77,4 @@ In terms of scope and context, static variables have extent the entire run of th
 ## Apex Trigger Methods
 | Syntax | Definition |
 |------|-----|
+|`addError`|prevent saving records in a trigger|

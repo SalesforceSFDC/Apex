@@ -75,3 +75,5 @@ In terms of scope and context, static variables have extent the entire run of th
 `Global Variable` is a variable with a global scope, meaning that it is visible (hence accessible) throughout the program, unless shadowed.  The set of all global variables is known as global environment or global state.
 
 ## Apex Trigger Methods
+| Syntax | Definition |
+|------|-----|

@@ -7,7 +7,6 @@
 
 ## Table of Contents
 
-
 - [Sections](#sections)
 	- [How Does Apex Work?](#how-does-apex-work)
 	- [Apex Core Concepts](#apex-core-concepts)

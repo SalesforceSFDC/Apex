@@ -471,3 +471,167 @@ public class {{ api_name }} implements Auth.RegistrationHandler {
     }
 }
 ```
+### Batch
+```Apex
+global class {{ api_name }} implements Database.Batchable<sObject> {
+	
+	String query;
+	
+	global {{ api_name }}() {
+		
+	}
+	
+	global Database.QueryLocator start(Database.BatchableContext BC) {
+		return Database.getQueryLocator(query);
+	}
+
+   	global void execute(Database.BatchableContext BC, List<sObject> scope) {
+	
+	}
+	
+	global void finish(Database.BatchableContext BC) {
+		
+	}
+	
+}
+```
+### BDD Unit Test
+```Apex
+@isTest
+private class {{ api_name }}
+{
+	@isTest
+	static void itShould()
+	{
+		// Given
+
+
+		// When
+
+
+		// Then
+
+	}
+}
+```
+### Controller Extension
+```Apex
+public with sharing class {{ api_name }} {
+
+	private final sObject mysObject;
+
+    // The extension constructor initializes the private member
+    // variable mysObject by using the getRecord method from the standard
+    // controller.
+    public {{ api_name }}(ApexPages.StandardController stdController) {
+        this.mysObject = (sObject)stdController.getRecord();
+    }
+
+    public String getRecordName() {
+        return 'Hello ' + (String)mysObject.get('name') + ' (' + (Id)mysObject.get('Id') + ')';
+    }
+}
+```
+### Custom Exception
+```Apex
+public class {{ api_name }} extends Exception {
+
+}
+```
+### Custom Iterable
+```Apex
+public with sharing class {{ api_name }} implements Iterable<{{ type_name }}> {
+
+  public Iterator<{{ type_name }}> Iterator(){
+    return new {{ iterator_class_name }}();
+  }
+  
+}
+```
+### Custom Iterator
+```Apex
+public class {{ api_name }} implements Iterator<{{ type_name }}> {
+
+  {{ type_name }}[] results { get;set; }
+  Integer index { get;set; }
+  String query;
+
+  public {{ api_name }}() {
+    index = 0;
+    results = Database.query(query);   
+  }
+
+  public Boolean hasNext(){ 
+   return results != null && !results.isEmpty() && index < results.size(); 
+  }    
+
+  public {{ type_name }} next() { 
+    return results[index++];
+  }    
+
+}
+```
+### Domain Class
+```Apex
+/**
+ * See https://github.com/financialforcedev/fflib-apex-common for more info
+ *
+ * Install library via 
+ *   https://githubsfdeploy.herokuapp.com/app/githubdeploy/financialforcedev/fflib-apex-common
+ */
+
+/**
+ * Encapsulates all behaviour logic relating to the {{ object_name }} object
+ * 
+ * For more guidelines and details see 
+ *   https://developer.salesforce.com/page/Apex_Enterprise_Patterns_-_Domain_Layer
+ *
+ **/
+public class {{ api_name }} extends fflib_SObjectDomain 
+{
+	public {{ api_name }}(List<{{ object_name }}> records) 
+	{
+		super(records);	
+	}
+
+	public override void onValidate()
+	{
+		for({{ object_name }} record : (List<{{ object_name }}>) Records)
+		{
+		}
+	}
+
+	public override void onValidate(Map<Id,SObject> existingRecords)
+	{
+		for({{ object_name }} record : (List<{{ object_name }}>) Records)
+		{
+		}
+	}
+
+	public override void onBeforeInsert()
+	{
+		for({{ object_name }} record : (List<{{ object_name }}>) Records)
+		{
+		}
+	}
+
+	public void someMethod()
+	{
+		for({{ object_name }} record : (List<{{ object_name }}>) Records)
+		{
+		}		
+	}
+
+	public class Constructor implements fflib_SObjectDomain.IConstructable2
+	{
+		public fflib_SObjectDomain construct(List<SObject> sObjectList)
+		{
+			return new {{ api_name }}(sObjectList);
+		}
+
+		public fflib_SObjectDomain construct(List<SObject> sObjectList, SObjectType sObjectType)
+		{
+			return new {{ api_name }}(sObjectList);
+		}			
+	}	
+}

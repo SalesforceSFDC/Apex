@@ -22,6 +22,7 @@
 	- [Apex Test Classes](#apex-test-classes)
 	- [Execution Governor and Limits](#execution-governor-and-limits)
 	- [Data Maninpulation Language](#data-manipulation-language)
+	- [Apex Class Metadata Templates](#apex-class-metadata-templates)
 
 ### How Does Apex Work?
 
@@ -438,3 +439,35 @@ for(Contact con : conList) {
 update listToUpdate;
 ```
 Persistence refers to the characteristic of state that outlives the process that created it. This is achieved in practice by storing the state as data in computer data storage. Programs have to transfer data to and from storage devices and have to provide mappings from the native programming-language data structures to the storage device data structures.
+
+## Apex Class Metadata Templates
+
+### Apex Interface
+```Apex
+public interface {{ api_name }} {
+
+	//Define the method signature to be implemented in classes that implements the interface
+	//Example method
+	Integer operation();
+}
+```
+### Auth Registration Handler
+```Apex
+public class {{ api_name }} implements Auth.RegistrationHandler {
+    
+    public User createUser(Id portalId, Auth.UserData data) {
+        
+		// Match the Auth.UserData to an existing user?
+		// Update user details from Auth.UserData?
+		// Provision a new user where the User does not exist?
+		
+        return null;
+    }
+    
+    public void updateUser(Id userId, Id portalId, Auth.UserData data) {
+        
+		// Update user details from Auth.UserData?
+		
+    }
+}
+```

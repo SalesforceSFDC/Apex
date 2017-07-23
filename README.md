@@ -4,6 +4,9 @@
 
  * [Apex Reserved Keywords](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_reserved_words.htm)
  * [Object Reference for Salesforce and Force.com](https://developer.salesforce.com/docs/atlas.en-us.206.0.object_reference.meta/object_reference/sforce_api_objects_concepts.htm)
+ * The global access modifier, which is more permissive than the public modifier and allows access across namespaces and applications.
+ 
+ 
 
 ## Table of Contents
 

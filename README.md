@@ -687,3 +687,24 @@ for(Contact con : conList) {
 // Bulk update all contacts with one DML call
 update listToUpdate;
 ```
+* You can insert records related to existing records if a relationship has already been defined between the two objects, such as a lookup or master-detail relationship.
+* A record is associated with a related record through a foreign key ID. 
+* For example, if inserting a new contact, you can specify the contact's related account record by setting the value of the AccountId field.
+* This example shows how to add a contact to an account (the related record) by setting the AccountId field on the contact. Contact and Account are linked through a lookup relationship.
+```Apex
+Account acct = new Account(Name='SFDC Account');
+insert acct;
+
+// Once the account is inserted, the sObject will be 
+// populated with an ID.
+// Get this ID.
+ID acctID = acct.ID;
+
+// Add a contact to this account.
+Contact mario = new Contact(
+    FirstName='Mario',
+    LastName='Ruiz',
+    Phone='415.555.1212',
+    AccountId=acctID);
+insert mario;
+```

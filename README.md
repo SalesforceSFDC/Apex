@@ -641,3 +641,20 @@ public class {{ api_name }} extends fflib_SObjectDomain
 ### Manipulate records with DML
 
 * The `upsert` DML operation creates new records and updates sObject records within a single statement, using a specified field to determine the presence of existing objects, or the ID field if no field is specified.
+* The `merge` statement merges up to three records of the same sObject type into one of the records, deleting the others, and re-parenting any related records.
+* When inserting records, the system assigns an ID for each record. In addition to persisting the ID value in the database, the ID value is also autopopulated on the sObject variable that you used as an argument in the DML call.
+* This example shows how to get the ID on the sObject that corresponds to the inserted account.
+```Apex
+// Create the account sObject 
+Account acct = new Account(Name='Acme', Phone='(415)555-1212', NumberOfEmployees=100);
+// Insert the account by using DML
+insert acct;
+
+// Get the new ID on the inserted sObject argument
+ID acctID = acct.Id;
+// Display this ID in the debug log
+System.debug('ID = ' + acctID);
+
+// Debug log result (the ID will be different in your case)
+// DEBUG|ID = 001D000000JmKkeIAF
+```

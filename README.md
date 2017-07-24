@@ -24,6 +24,7 @@
 	- [Execution Governor and Limits](#execution-governor-and-limits)
 	- [Data Maninpulation Language](#data-manipulation-language)
 	- [Apex Class Metadata Templates](#apex-class-metadata-templates)
+	- [Manipulate records with DML](#manipulate-records-with-dml)
 
 ### How Does Apex Work?
 
@@ -636,3 +637,7 @@ public class {{ api_name }} extends fflib_SObjectDomain
 		}			
 	}	
 }
+```
+### Manipulate records with DML
+
+* The `upsert` DML operation creates new records and updates sObject records within a single statement, using a specified field to determine the presence of existing objects, or the ID field if no field is specified.

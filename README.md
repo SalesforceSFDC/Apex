@@ -8,6 +8,11 @@
  * The `global` access modifier, which is more permissive than the `public` modifier and allows access across namespaces and applications.
  * http://avionsalesforce.blogspot.com/
  * https://trendspro.builtwith.com/dashboard
+ * https://success.salesforce.com/ideaView?id=08730000000DfGeAAK
+ * https://medium.com/airbnb-engineering/airflow-a-workflow-management-platform-46318b977fd8
+ * https://salesforce.stackexchange.com/questions/23338/trigger-to-update-parent-object-value-with-child-value
+ 
+ 
  
 ## Table of Contents
 

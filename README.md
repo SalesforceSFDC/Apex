@@ -176,6 +176,11 @@ A map is a collection of key-value pairs where each unique key maps to a single 
 
 Map keys and values can contain any collection, and can contain nested collections.  Map keys can contain up to only four levels of nested collections.
 
+- Map keys can contain up to four levels of nested collections.
+- To declare a map, use the Map keyword by the data types of the key and the within <> characters.
+- Apex uses hash structure for all maps.
+- The iteration order of map elements is deterministic. You can rely on the order being the same in each subsequent execution of the same code. However, we recommend to always access map elements by key. 
+
 To declare a map, use the Map keyword followed by the data types of the key and the value within <> characters. 
 For example:
 

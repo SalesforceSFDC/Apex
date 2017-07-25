@@ -180,6 +180,22 @@ Map keys and values can contain any collection, and can contain nested collectio
 - To declare a map, use the Map keyword by the data types of the key and the within <> characters.
 - Apex uses hash structure for all maps.
 - The iteration order of map elements is deterministic. You can rely on the order being the same in each subsequent execution of the same code. However, we recommend to always access map elements by key. 
+- A map key can hold the null value.
+- Adding a map entry with a key that matches an existing key in the map overwrites the existing entry with that key with the new entry.
+- Map keys of type String are case-sensitive. Two keys that differ only by the case are considered unique and have corresponding distinct Map entries. Subsequently, the Map methods, including put, get, containsKey, and remove treat these keys as distinct.
+- A Map object is serializable into JSON only if it uses one of the following data types as a key.
+    - Boolean
+    - Date
+    - DateTime
+    - Decimal
+    - Double
+    - Enum
+    - Id
+    - Integer
+    - Long
+    - String
+    - Time
+
 
 To declare a map, use the Map keyword followed by the data types of the key and the value within <> characters. 
 For example:

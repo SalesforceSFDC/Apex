@@ -12,8 +12,6 @@
  * https://medium.com/airbnb-engineering/airflow-a-workflow-management-platform-46318b977fd8
  * https://salesforce.stackexchange.com/questions/23338/trigger-to-update-parent-object-value-with-child-value
  
- 
- 
 ## Table of Contents
 
 - [Sections](#sections)

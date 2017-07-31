@@ -1,3 +1,6 @@
+Account masterAcct = new Account(Name = 'Acme Inc.');
+
+
 // Queries to get the inserted accounts
 Account masterAcct = [SELECT Id, Name FROM Account WHERE Name = 'Acme Inc.' LIMIT 1]
 Account mergeAcct = [SELECT Id, Name FROM Account WHERE Name = 'Acme' LIMIT 1];

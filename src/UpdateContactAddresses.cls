@@ -13,6 +13,7 @@ global class UpdateContactAddresses implements
         );
     }
 
+    
     global void execute(Database.BatchableContext bc, List<Account> scope){
         // process each batch of records
         List<Contact> contacts = new List<Contact>();

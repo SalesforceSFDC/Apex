@@ -9,4 +9,13 @@ This method is called a future method and is annotated with `@future(callout=tru
 
 ## Named Credentials
 * A named credential specifies the URL of a callout endpoint and its required authentication parameters in one definition. Salesforce manages all authentication for Apex callouts that specify a named credential as the callout endpoint so that your code doesn’t have to. You can also skip remote site settings, which are otherwise required for callouts to external sites, for the site defined in the named credential.
-  
+
+#### In the following Apex code, a named credential and an appended path specify the callout’s endpoint.
+```Apex
+HttpRequest req = new HttpRequest();
+req.setEndpoint('callout:***My_Named_Credential***/some_path');
+req.setMethod('GET');
+Http http = new Http();
+HTTPResponse res = http.send(req);
+System.debug(res.getBody());
+```

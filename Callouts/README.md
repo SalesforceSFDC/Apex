@@ -19,3 +19,32 @@ Http http = new Http();
 HTTPResponse res = http.send(req);
 System.debug(res.getBody());
 ```
+
+#### Apex code looks like without a named credential. 
+```Apex
+HttpRequest req = new HttpRequest();
+req.setEndpoint('***https://my_endpoint.example.com/some_path***');
+req.setMethod('GET');
+
+// Because we didn't set the endpoint as a named credential, 
+// our code has to specify:
+// - The required username and password to access the endpoint
+// - The header and header information
+ 
+String username = 'myname';
+String password = 'mypwd';
+  
+Blob headerValue = Blob.valueOf(username + ':' + password);
+String authorizationHeader = 'BASIC ' +
+EncodingUtil.base64Encode(headerValue);
+req.setHeader('Authorization', authorizationHeader);
+   
+// Create a new http object to send the request object
+// A response object is generated as a result of the request  
+  
+Http http = new Http();
+HTTPResponse res = http.send(req);
+System.debug(res.getBody());
+
+```
+

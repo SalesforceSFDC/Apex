@@ -31,6 +31,7 @@
 	- [Data Maninpulation Language](#data-manipulation-language)
 	- [Apex Class Metadata Templates](#apex-class-metadata-templates)
 	- [Manipulate records with DML](#manipulate-records-with-dml)
+	- [Getter Setter](#getter-setter)
 
 ### How Does Apex Work?
 
@@ -757,7 +758,5 @@ queriedContact.Account.Industry = 'Technology';
 update queriedContact;
 // 2. This call is to update the related account's Industry field.
 update queriedContact.Account; 
-
 ````
-
-#### 
+### Getter Setter

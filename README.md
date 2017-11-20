@@ -782,3 +782,4 @@ public class MyClass {
 ```
 
 ### Class Methods
+* `void` - if the method does not return a value.

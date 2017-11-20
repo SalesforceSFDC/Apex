@@ -32,6 +32,7 @@
 	- [Apex Class Metadata Templates](#apex-class-metadata-templates)
 	- [Manipulate records with DML](#manipulate-records-with-dml)
 	- [Getter Setter](#getter-setter)
+	- [Class Methods](#class-methods)
 
 ### How Does Apex Work?
 
@@ -779,3 +780,5 @@ public class MyClass {
 	}
 }
 ```
+
+### Class Methods

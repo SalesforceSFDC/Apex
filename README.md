@@ -760,3 +760,22 @@ update queriedContact;
 update queriedContact.Account; 
 ````
 ### Getter Setter
+```Apex
+public class MyClass {
+	public String myVariable {get; set;}
+}
+```
+
+```Apex
+public class MyClass {
+	public String myVariable;
+	
+	public void setMyVariable(String input){
+		myVariable = input;
+	}
+	
+	public String getMyVariable(){
+		return myVariable;
+	}
+}
+```

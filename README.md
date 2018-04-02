@@ -33,6 +33,7 @@
 	- [Manipulate records with DML](#manipulate-records-with-dml)
 	- [Getter Setter](#getter-setter)
 	- [Class Methods](#class-methods)
+	- [Batch](#batch)
 
 ### How Does Apex Work?
 

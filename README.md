@@ -504,6 +504,8 @@ public class {{ api_name }} implements Auth.RegistrationHandler {
 }
 ```
 ### Batch
+* process records asynchronously in batches to stay within platform limits.
+
 ```Apex
 global class {{ api_name }} implements Database.Batchable<sObject> {
 	

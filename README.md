@@ -505,7 +505,14 @@ public class {{ api_name }} implements Auth.RegistrationHandler {
 ```
 ### Batch
 * process records asynchronously in batches to stay within platform limits.
-
+* The execution logic of the batch class is called once for each batch of records you are processing.
+* Each time you invoke a batch class, the job is placed on the Apex job queue and is executed as a discrete transaction.
+	* Advantages:
+	* Every transaction starts with a new set of governor limits, making it easier to ensure that your code stays within the governor execution limits.
+	* If one batch fails to process successfully, all other successful batch transactions aren’t rolled back.
+	
+* class must implement the Database.Batchable interface and include the following three methods:
+	* start - Used to collect the records or objects to be passed to the interface method execute for processing. This method is called once at the beginning of a Batch Apex job and returns either a Database.QueryLocator object or an Iterable that contains the records or objects passed to the job.
 ```Apex
 global class {{ api_name }} implements Database.Batchable<sObject> {
 	

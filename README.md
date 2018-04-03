@@ -513,6 +513,7 @@ public class {{ api_name }} implements Auth.RegistrationHandler {
 	
 * class must implement the Database.Batchable interface and include the following three methods:
 	* start - Used to collect the records or objects to be passed to the interface method execute for processing. This method is called once at the beginning of a Batch Apex job and returns either a Database.QueryLocator object or an Iterable that contains the records or objects passed to the job.
+* To ensure fast execution of batch jobs, minimize Web service callout times and tune queries used in your batch Apex code.
 ```Apex
 global class {{ api_name }} implements Database.Batchable<sObject> {
 	

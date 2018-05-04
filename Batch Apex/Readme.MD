@@ -16,3 +16,5 @@
   * To send confirmation emails or execute post-processing operations, use the finish method. 
   * This method is called after all batches are processed.
 * Each execution of a batch Apex job is considered a discrete transaction.
+* All the methods in the `Database.Batchable` interface require a reference to a `Database.BatchableContext` object. Use this object to track the progress of the batch job.
+

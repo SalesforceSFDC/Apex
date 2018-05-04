@@ -15,3 +15,4 @@
   * <b>Finish Method</b> = `global void finish(Database.BatchableContext ***BC***){}`
   * To send confirmation emails or execute post-processing operations, use the finish method. 
   * This method is called after all batches are processed.
+* Each execution of a batch Apex job is considered a discrete transaction.

@@ -11,6 +11,14 @@
   * Callouts to external Web services. If you are making callouts from a trigger or after performing a DML operation, you must use a future or queueable method. A callout in a trigger would hold the database connection open for the lifetime of the callout and that is a "no-no" in a multitenant environment.
   * Operations you want to run in their own thread, when time permits such as some sort of resource-intensive calculation or processing of records.
   * Isolating DML operations on different sObject types to prevent the mixed DML error. This is somewhat of an edge-case but you may occasionally run across this issue. See sObjects That Cannot Be Used Together in DML Operations for more details.
+  
+* Future methods must be static methods, and can only return a void type. 
+*  The specified parameters must be primitive data types, arrays of primitive data types, or collections of primitive data types.
+* future methods can’t take standard or custom objects as arguments.
+* A common pattern is to pass the method a List of record IDs that you want to process asynchronously.
+
+
+
 
 ### Single vs multiprocessor systems
 * Systems with a single processor generally implement multithreading by time slicing: the central processing unit (CPU) switches between different software threads. This context switching generally happens very often and rapidly enough that users perceive the threads or tasks as running in parallel. 

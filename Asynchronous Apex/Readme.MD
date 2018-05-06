@@ -16,7 +16,8 @@
 *  The specified parameters must be primitive data types, arrays of primitive data types, or collections of primitive data types.
 * future methods can’t take standard or custom objects as arguments.
 * A common pattern is to pass the method a List of record IDs that you want to process asynchronously.
-
+* The reason why objects can’t be passed as arguments to future methods is because the object can change between the time you call the method and the time that it actually executes. 
+* Future methods are executed when system resources become available.
 
 
 

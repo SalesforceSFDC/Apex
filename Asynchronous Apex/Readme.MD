@@ -5,3 +5,4 @@
 * When using synchronous processing, all method calls are made from the same thread that is executing the Apex code, and no additional processing can occur until the process is complete. 
 * <b>thread</b> of execution is the smallest sequence of programmed instructions that can be managed independently by a scheduler, which is typically a part of the operating system.
 * <b>thread</b> is a component of a process
+* <b>thread</b> of a process share its executable code and the values of its variables at any given time.

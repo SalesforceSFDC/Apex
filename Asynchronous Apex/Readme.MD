@@ -27,3 +27,6 @@
 * On a multiprocessor or multi-core system, multiple threads can execute in parallel, with every processor or core executing a separate thread simultaneously; on a processor or core with hardware threads, separate software threads can also be executed concurrently by separate hardware threads.
 * <b>single-threading</b> is the processing of one command at a time. The opposite of single-threading is multithreading. 
 * <b>Multithreading</b> is a programming and execution model that allows multiple threads to exist within the context of one process. These threads share the process's resources, but are able to execute independently. The threaded programming model provides developers with a useful abstraction of concurrent execution. Multithreading can also be applied to one process to enable parallel execution on a multiprocessing system.
+
+### Testing Future Methods
+* To test future methods, enclose your test code between the `startTest` and `stopTest` test methods. The system collects all asynchronous calls made after the `startTest`. When `stopTest` is executed, all these collected asynchronous processes are then run synchronously.

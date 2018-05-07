@@ -43,3 +43,4 @@ Since every future method invocation adds one request to the asynchronous queue,
 * Future methods can’t be used in Visualforce controllers in `getMethodName()`, `setMethodName()`, nor in the constructor.
 * You can’t call a future method from a future method. Nor can you invoke a trigger that calls a future method while running a future method.
 * The `getContent()` and `getContentAsPDF()` methods can’t be used in methods with the future annotation.
+* You’re limited to 50 future calls per Apex invocation, and there’s an additional limit on the number of calls in a 24-hour period.

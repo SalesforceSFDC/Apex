@@ -39,4 +39,5 @@ Since every future method invocation adds one request to the asynchronous queue,
 * Consider using Batch Apex instead of future methods to process large number of records asynchronously. This is more efficient than creating a future request for each record.
 * Methods with the future annotation must be static methods, and can only return a `void` type.
 * The specified parameters must be primitive data types, arrays of primitive data types, or collections of primitive data types; future methods can’t take objects as arguments.
-* 
+* Future methods won’t necessarily execute in the same order they are called. In addition, it’s possible that two future methods could run concurrently, which could result in record locking if the two methods were updating the same record.
+* Future methods can’t be used in Visualforce controllers in `getMethodName()`, `setMethodName()`, nor in the constructor.

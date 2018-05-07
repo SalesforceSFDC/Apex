@@ -18,6 +18,7 @@
 * A common pattern is to pass the method a List of record IDs that you want to process asynchronously.
 * The reason why objects can’t be passed as arguments to future methods is because the object can change between the time you call the method and the time that it actually executes. 
 * Future methods are executed when system resources become available.
+* future methods are not guaranteed to execute in the same order as they are called
 
 
 

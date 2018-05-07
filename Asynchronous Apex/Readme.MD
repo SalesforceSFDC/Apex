@@ -37,3 +37,6 @@ Since every future method invocation adds one request to the asynchronous queue,
 * If using Web service callouts, try to bundle all callouts together from the same future method, rather than using a separate future method for each callout.
 * Conduct thorough testing at scale. Test that a trigger enqueuing the @future calls is able to handle a trigger collection of 200 records. This helps determine if delays may occur given the design at current and future volumes.
 * Consider using Batch Apex instead of future methods to process large number of records asynchronously. This is more efficient than creating a future request for each record.
+* Methods with the future annotation must be static methods, and can only return a `void` type.
+* The specified parameters must be primitive data types, arrays of primitive data types, or collections of primitive data types; future methods can’t take objects as arguments.
+* 

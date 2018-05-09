@@ -13,3 +13,6 @@ global with sharing class MyRestResource {
 }
 ```
 https://na22.salesforce.com/services/apexrest/Account/*
+
+## How to Expose a Class as a SOAP Service
+* Define the class as `global`

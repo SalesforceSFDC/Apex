@@ -3,7 +3,7 @@
 ## Table of Contents  
 * [Apex Trigger Methods](#apex-trigger-methods)
 * [Static Variables](#static-variables)
-
+* [Trigger.new](#trigger.new)
 ##
 
 * [Apex Trigger Context Variables](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_context_variables.htm)
@@ -26,6 +26,8 @@ insert a;
 ```
 
  * To access the records that caused the trigger to fire, use context variables.  
+## [Trigger.new]
+
 
 ``Trigger.New contains all the records that were inserted in insert or update triggers.``
 

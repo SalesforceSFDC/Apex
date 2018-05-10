@@ -27,7 +27,7 @@ insert a;
 
  * To access the records that caused the trigger to fire, use context variables.  
 
-### Trigger.new
+## Trigger.new
 * 
 
 

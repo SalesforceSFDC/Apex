@@ -26,7 +26,7 @@ insert a;
 ```
 
  * To access the records that caused the trigger to fire, use context variables.  
-## [Trigger.new]
+* [Trigger.new]
 
 
 ``Trigger.New contains all the records that were inserted in insert or update triggers.``

@@ -3,7 +3,7 @@
 ## Table of Contents  
 * [Apex Trigger Methods](#apex-trigger-methods)
 * [Static Variables](#static-variables)
-* [Trigger.new](#trigger.new)
+* [Trigger.new](#trigger.new--)
 ##
 
 * [Apex Trigger Context Variables](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_context_variables.htm)

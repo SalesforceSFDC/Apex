@@ -13,3 +13,11 @@ try {
   //List exception handling code
 }
 ```
+### class
+Defines a class.
+```apex 
+private class Foo {
+  private Integer x;
+  public Integer getX() { return x; }
+}
+```

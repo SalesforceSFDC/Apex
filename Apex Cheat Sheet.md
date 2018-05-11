@@ -1,4 +1,4 @@
 ## Important Reserved Keywords
 | Keyword | Description | Example |
 |------|-----|---|
-|`addError`| prevent saving records in a trigger | throws a fatal error inside a trigger |
+|abstract| Declares a class that contains abstract methods that only have their signature and no body defined.  Can also define method. | ` |

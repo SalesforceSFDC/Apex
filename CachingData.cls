@@ -4,8 +4,13 @@ public class CachingData {
   
   public static Boolean IsUserSpecial() {
     if(IsUserSpecialChecked) return UserIsSpecial;
-      User u = [SELECT UserIsSpecial__c FROM User 
+    
+    User u = [SELECT UserIsSpecial__c FROM User 
         WHERE Id = :UserInfo.getUserId()];  
+    
+    UserIsSpecial = u.UserIsSpecial__c;
+    IsUserSpecialChecked = true;
+    return UserIsSpecial;
   }
   
 }

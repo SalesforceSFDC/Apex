@@ -90,6 +90,10 @@ All objects have state and behavior, that is, things that an object knows about 
 [<img src="https://developer.salesforce.com/docs/resources/img/en-us/206.0?doc_id=dev_guides%2Fapex%2Fimages%2FAC_Elements.png&folder=apexcode" align="center" width="1000">](https://login.salesforce.com/)
 
 ### Execution Context
+An execution context has two characteristics:
+* It defines the scope and lifetime of static variables.
+* It defines the context for those governor limits that are preset between execution contexts.
+
 
 ### Variables
 

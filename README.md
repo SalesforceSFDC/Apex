@@ -17,6 +17,7 @@
 - [Sections](#sections)
 	- [How Does Apex Work?](#how-does-apex-work)
 	- [Apex Core Concepts](#apex-core-concepts)
+	- [Execution Context](#execution-context)
 	- [List](#lists)
 	- [Maps](#maps)
 	- [Trigger and Bulk Request Best Practices](#trigger-and-bulk-request-best-practices)
@@ -87,6 +88,8 @@ All objects have state and behavior, that is, things that an object knows about 
 ### Apex Core Concepts
 
 [<img src="https://developer.salesforce.com/docs/resources/img/en-us/206.0?doc_id=dev_guides%2Fapex%2Fimages%2FAC_Elements.png&folder=apexcode" align="center" width="1000">](https://login.salesforce.com/)
+
+### Execution Context
 
 ### Variables
 

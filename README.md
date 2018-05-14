@@ -94,6 +94,8 @@ An execution context has two characteristics:
 * It defines the scope and lifetime of static variables.
 * It defines the context for those governor limits that are preset between execution contexts.
 
+#### Static Variables
+There lifetime and scope is defined by the execution context.  In other words, static variables can only be accessed from within the execution context in which they are created, and are deleted when the execution context completes.
 
 ### Variables
 

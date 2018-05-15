@@ -96,6 +96,9 @@ An execution context has two characteristics:
 
 #### Static Variables
 There lifetime and scope is defined by the execution context.  In other words, static variables can only be accessed from within the execution context in which they are created, and are deleted when the execution context completes.
+* Static variables do not persist information between execution contexts.  They cannot be used to keep track of the overall execution of the app, or to cache data or objects for use while the app is running.  
+* Apex does not support the equivalent of application or session variables.  Anything you wish to persist must be stored in database objects or custom settings.
+* There is no need for synchronization.  A given execution context runs on a single thread, so static variables are, in effect, the equivalent of thread local storage - each thread has its own copy of these variables and there is no need to synchronize access.  
 
 ### Variables
 

@@ -39,7 +39,7 @@ insert acct2;
 * `SELECT Name,Phone FROM Account ORDER BY Name ASC`
 * `SELECT Name,Phone FROM Account ORDER BY Name DESC`
 * `Account oneAccountOnly = [SELECT Name,Phone FROM Account LIMIT 1];`
-* ```Apex
+```Apex
 SELECT Name,Phone FROM Account 
                    WHERE (Name = 'SFDC Computing' AND NumberOfEmployees>25)
                    ORDER BY Name

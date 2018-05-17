@@ -60,3 +60,11 @@ System.debug(accts);
 Phone=(415)555-1212, Id=001F000001WosIvIAJ}, Account:{Name=SFDC Computing, 
 Phone=(415)555-1212, Id=001F000001iEWzRIAW})
 
+## Accessing Variables in SOQL Queries
+* SOQL statements in Apex can reference Apex code variables and expressions if they are preceded by a colon (:). The use of a local variable within a SOQL statement is called a bind.
+* `targetDepartment` variable in the WHERE clause:
+```Apex
+String targetDepartment = 'Wingo';
+Contact[] techContacts = [SELECT FirstName,LastName 
+                          FROM Contact WHERE Department=:targetDepartment];
+```

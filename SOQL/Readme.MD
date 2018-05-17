@@ -32,3 +32,4 @@ Account acct2 = new Account(
 insert acct2;
 
 ```
+* You don’t need to specify the Id field in the query as it is always returned in Apex queries, whether it is specified in the query or not. For example: SELECT Id,Phone FROM Account and SELECT Phone FROM Account are equivalent statements. The only time you may want to specify the Id field if it is the only field you’re retrieving because you have to list at least one field: SELECT Id FROM Account. You may want to specify the Id field also when running a query in the Query Editor as the ID field won’t be displayed unless specified.

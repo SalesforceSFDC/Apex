@@ -5,7 +5,7 @@
   * A `class` can contain `variables` and `methods`.  
   * `Variables` are used to specify the state and `methods` are used to control behavior.
 * `Interface` is like a class in which none of the methods have been implemented - the method signatures are there, but the body of each method is empty.  To use an interface, another class must implement it by providing a body for all of the methods contained in the interface.
-
+* `void` - method does not return a value.
 
 
 ## Important Reserved Keywords

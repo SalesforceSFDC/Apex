@@ -1,7 +1,10 @@
 * `Constants` - variables whose values don't change after being initialized once.  It can be defined using `final` keyword.
 * `final` - means that the variable can be assigned at most once, either in the declaration itself, or with a static method in in class.
 * `class` - a template from which objects are created.
-* `object` - 
+* `object` - instance of a class, instaniate the object.  All objects have a state and behavior.  Things that an object knows about itself and that it can do.
+  * A `class` can contain `variables` and `methods`.  
+  * `Variables` are used to specify the state and `methods` are used to control behavior.
+* `Interface` is like a class in which none of the methods have been implemented - the method signatures are there, but the body of each method is empty.  To use an interface, another class must implement it by providing a body for all of the methods contained in the interface.
 
 
 

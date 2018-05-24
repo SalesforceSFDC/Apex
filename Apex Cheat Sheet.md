@@ -1,4 +1,4 @@
-* Constants - variables whose values don't change after being initialized once.  
+* Constants - variables whose values don't change after being initialized once.  It can be defined using `final` keyword.
 
 ## Important Reserved Keywords
 | Keyword | Description | Example |

@@ -1,3 +1,5 @@
+* Constants - variables whose values don't change after being initialized once.  
+
 ## Important Reserved Keywords
 | Keyword | Description | Example |
 |------|-----|---|

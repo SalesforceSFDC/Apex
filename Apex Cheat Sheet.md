@@ -17,6 +17,7 @@
   * Before an object of a class is created, all static member variables in a class are initialized, and all static initialization code blocks are executed.
   * A static method is used as a utility method, and it never depends on the value of an instance member variable. 
   * Because a static method is only associated with a class, it can’t access the instance member variable values of its class.
+  * A static variable is static only within the scope of the Apex transaction. It’s not static across the server or the entire organization. 
 
 ## Important Reserved Keywords
 | Keyword | Description | Example |

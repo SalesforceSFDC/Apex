@@ -23,6 +23,11 @@
   * To store information that is shared across instances of a class, use a static variable.
   * All instances of the same class share a single copy of the static variable. 
   * Local variable names are evaluated before class names.
+
+## Instance Methods and Variables
+* Instance methods and member variables are used by an instance of a class, that is, by an object. 
+* An instance member variable is declared inside a class, but not within a method. 
+* Instance methods usually use instance member variables to affect the behavior of the method.
 ## Important Reserved Keywords
 | Keyword | Description | Example |
 |------|-----|---|

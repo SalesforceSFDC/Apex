@@ -7,6 +7,7 @@
 * `Interface` is like a class in which none of the methods have been implemented - the method signatures are there, but the body of each method is empty.  To use an interface, another class must implement it by providing a body for all of the methods contained in the interface.
 * `void` - method does not return a value.
 ## Static Methods
+[Static and Instance Methods, Variables, and Initialization Code](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_static.htm?search_text=static)
 * Apex classes cannot be static.  
 * Static methods, member variables and initialization code have these characteristics:
   * They are associated with a class

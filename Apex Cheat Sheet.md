@@ -19,7 +19,8 @@
   * Because a static method is only associated with a class, it can’t access the instance member variable values of its class.
   * A static variable is static only within the scope of the Apex transaction. It’s not static across the server or the entire organization. 
   * The value of a static variable persists within the context of a single transaction and is reset across transaction boundaries. 
-
+  * To store information that is shared across instances of a class, use a static variable.
+  * All instances of the same class share a single copy of the static variable. 
 ## Important Reserved Keywords
 | Keyword | Description | Example |
 |------|-----|---|

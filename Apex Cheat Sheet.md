@@ -9,10 +9,10 @@
 ## Static Methods
 * Apex classes cannot be static.  
 * Static methods, member variables and initialization code have these characteristics:
- * They are associated with a class
- * They are allowed only in outer classes
- * They are initialized only when a class is loaded.
- * They are not transmitted as part of the view state for a Visualforce page.
+  * They are associated with a class
+  * They are allowed only in outer classes
+  * They are initialized only when a class is loaded.
+  * They are not transmitted as part of the view state for a Visualforce page.
 
 ## Important Reserved Keywords
 | Keyword | Description | Example |

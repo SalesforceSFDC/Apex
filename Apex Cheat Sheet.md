@@ -13,6 +13,10 @@
   * They are allowed only in outer classes
   * They are initialized only when a class is loaded.
   * They are not transmitted as part of the view state for a Visualforce page.
+  * Inner classes have no static methods or variables.
+  * Before an object of a class is created, all static member variables in a class are initialized, and all static initialization code blocks are executed.
+  * A static method is used as a utility method, and it never depends on the value of an instance member variable. 
+  * Because a static method is only associated with a class, it can’t access the instance member variable values of its class.
 
 ## Important Reserved Keywords
 | Keyword | Description | Example |

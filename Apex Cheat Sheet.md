@@ -6,7 +6,13 @@
   * `Variables` are used to specify the state and `methods` are used to control behavior.
 * `Interface` is like a class in which none of the methods have been implemented - the method signatures are there, but the body of each method is empty.  To use an interface, another class must implement it by providing a body for all of the methods contained in the interface.
 * `void` - method does not return a value.
-
+## Static Methods
+* Apex classes cannot be static.  
+* Static methods, member variables and initialization code have these characteristics:
+ * They are associated with a class
+ * They are allowed only in outer classes
+ * They are initialized only when a class is loaded.
+ * They are not transmitted as part of the view state for a Visualforce page.
 
 ## Important Reserved Keywords
 | Keyword | Description | Example |

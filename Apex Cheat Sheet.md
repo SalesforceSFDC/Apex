@@ -22,6 +22,7 @@
   * The value of a static variable persists within the context of a single transaction and is reset across transaction boundaries. 
   * To store information that is shared across instances of a class, use a static variable.
   * All instances of the same class share a single copy of the static variable. 
+  * Local variable names are evaluated before class names.
 ## Important Reserved Keywords
 | Keyword | Description | Example |
 |------|-----|---|

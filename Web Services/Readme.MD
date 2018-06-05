@@ -8,6 +8,7 @@
 5. Define each exposed method as global static and add an annotation to associate it with an HTTP method.
 6. You can use each annotation only once in each Apex class.
 7. Version your API endpoints so that you can provide upgrades in functionality without breaking existing code.
+8. Methods annotated with @HttpGet or @HttpDelete should have no parameters.
 
 * `RestRequest` - Formats REST API requests from the data your app provides.  Also serves as a factory for instance itself.  Do not directly create instance of `RestRequest`.  Instead, call an appropriate `RestRequest` static getter function such as 
 `RestRequest.getRestForCreate()`.  
@@ -15,3 +16,6 @@
 and closes the content stream.  The `RestRequest` class creates instances of `RestResponse` and returns them to your app through your implementation of the `RestClient.AsyncRequestCallback` interface.  
 * The `RestRequest` class natively handles the standard Salesforce data operations offered by the Salesforce REST and SOAP APIs.
 
+| Operation | Parameters | Description |
+| --- | --- | --- |
+| 

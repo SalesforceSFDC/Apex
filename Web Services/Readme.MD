@@ -24,3 +24,4 @@ and closes the content stream.  The `RestRequest` class creates instances of `Re
 ## Apex JSON
 
 * [Getting Started with Apex JSON](https://developer.salesforce.com/index.php?title=Getting_Started_with_Apex_JSON)
+* [JSON Support - Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_json_overview.htm)

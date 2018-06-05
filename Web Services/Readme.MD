@@ -8,7 +8,7 @@
 5. Define each exposed method as global static and add an annotation to associate it with an HTTP method.
 6. You can use each annotation only once in each Apex class.
 7. Version your API endpoints so that you can provide upgrades in functionality without breaking existing code.
-8. Methods annotated with @HttpGet or @HttpDelete should have no parameters.
+8. Methods annotated with @HttpGet or @HttpDelete should have no parameters.  This is because GET and DELETE requests have no request body, so there's nothing to deserialize.
 
 * `RestRequest` - Formats REST API requests from the data your app provides.  Also serves as a factory for instance itself.  Do not directly create instance of `RestRequest`.  Instead, call an appropriate `RestRequest` static getter function such as 
 `RestRequest.getRestForCreate()`.  

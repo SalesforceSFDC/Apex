@@ -22,7 +22,7 @@ and closes the content stream.  The `RestRequest` class creates instances of `Re
 | 
 
 ## Supported Data Types for Apex REST
-Apex REST supports these data types for parameters and return values.
+Apex REST supports these data types for parameters and return values:
   * Apex primitives (excluding sObject and Blob).
   * sObjects
   * Lists or maps of Apex primitives or sObjects (only maps with String keys are supported).

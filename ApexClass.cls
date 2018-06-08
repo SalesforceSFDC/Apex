@@ -20,7 +20,15 @@
 
 public class MyClass { // Class and its methods are implicitly final by default (no overridable)
   public final Integer FINAL_VAR1;
-  public final Integer FINAL_VAR2; 
+  public final Integer FINAL_VAR2; // A final class variable can be assogned only at declaration or in a constructor
   public final static Integer STATIC_FINAL_VAR3;
   public final static Integer STATIC_FINAL_VAR4 = 4; // Static final var can be assigned at declaration or in static initialization
+  
+  Static {
+    STATIC_FINAL_VAR3 = 3; // Static final var can be assigned at declaration or in static initialization
+  }
+  
+  Public MyClass() {
+    FINAL_VAR1 = 1; // A final class variable can be assogned only at declaration or in a constructor
+  }
 }

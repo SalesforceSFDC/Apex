@@ -7,4 +7,7 @@
 - Declaration  = is a language construct that specifies properties of an identifier: it declares what a word (identifier) "means"
 - Declarations are most commonly used for functions, variables, constants, and classes, but can also be used for other entities such as enumerations and type definitions.
 - Declaration is used to announce the existence of the entity to the compiler
+
+- Constructor is a special type of subroutine called to create an object.
+- 
 */

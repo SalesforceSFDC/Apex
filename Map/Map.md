@@ -8,5 +8,6 @@
 This example creates a map of integer keys and string values. It adds two entries, checks for the existence of the first key, retrieves the value for the second entry, and finally gets the set of all keys.
 ```Apex
 Map<Integer, String> m = new Map<Integer, String>(); // Define a new map
-
+m.put(1, 'First Entry'); // Insert a new key-value pair in the map
+m.put(2, 'Second Entry'); // Insert the key-value pair in the map
 ```

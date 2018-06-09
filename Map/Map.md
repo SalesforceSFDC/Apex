@@ -7,5 +7,6 @@
 ## Example 1
 This example creates a map of integer keys and string values. It adds two entries, checks for the existence of the first key, retrieves the value for the second entry, and finally gets the set of all keys.
 ```Apex
-Map<Integer, 
+Map<Integer, String> m = new Map<Integer, String>(); // Define a new map
+
 ```

@@ -8,5 +8,9 @@ public class PairNumbers {
     y=b;
   }
   
-  
+  public Boolean equals (Object obj) {
+    if (obj instanceof PairNumbers) {
+      
+    }
+  }
 }

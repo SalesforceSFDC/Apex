@@ -42,3 +42,25 @@ Set<datatype> set_name
    [= new Set<datatype>{value [, value2. . .] };] |
    ;
 ```
+### Maps
+A map is a collection of key-value pairs. Keys can be any primitive data type. Values can include primitive data types, as well as objects and other collections. Use a map when finding something by key matters. You can have duplicate values in a map, but each key must be unique.
+```Apex
+Map<key_datatype, value_datatype> map_name
+   [=new map<key_datatype, value_datatype>();] | 
+   [=new map<key_datatype, value_datatype>
+   {key1_value => value1_value 
+   [, key2_value => value2_value. . .]};] |
+   ;
+```
+### Using Loops
+While the if statement enables your application to do things based on a condition, loops tell your application to do the same thing again and again based on a condition. Apex supports the following types of loops:
+
+Do-while
+While
+For
+A Do-while loop checks the condition after the code has executed.
+
+A While loop checks the condition at the start, before the code executes.
+
+A For loop enables you to more finely control the condition used with the loop. In addition, Apex supports traditional For loops where you set the conditions, as well as For loops that use lists and SOQL queries as part of the condition.
+

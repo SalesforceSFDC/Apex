@@ -35,3 +35,10 @@ List<datatype> list_name
    [= new List<datatype>{value [, value2...]};] |
    ;
 ```
+### Sets
+```Apex
+Set<datatype> set_name 
+   [= new Set<datatype>();] |
+   [= new Set<datatype>{value [, value2. . .] };] |
+   ;
+```

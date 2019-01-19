@@ -36,4 +36,12 @@ In Apex, statements must end with a semicolon and can be one of the following ty
 * Exception Handling
 ##
 A block is a series of statements that are grouped together with curly braces and can be used in any place where a single statement would be allowed. 
-### Governor Limits
+## Governor Limits
+Different Governor Limits in Salesforce are:
+* Per-Transaction Apex Limits
+* Force.com Platform Apex Limits
+* Static Apex Limits
+* Size-Specific Apex Limits
+* Miscellaneous Apex Limits
+* Email Limits
+* Push Notification Limits

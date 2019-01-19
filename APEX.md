@@ -28,3 +28,10 @@ In Apex, statements must end with a semicolon and can be one of the following ty
 * Transaction Control
 * Method Invoking
 * Exception Handling
+### Lists
+```Apex
+List<datatype> list_name
+   [= new List<datatype>();] |
+   [= new List<datatype>{value [, value2...]};] |
+   ;
+```

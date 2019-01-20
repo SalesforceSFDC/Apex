@@ -3,6 +3,7 @@
   * [Email Templates](#email-templates)
    * [Governor Limits](#governor-limits)
    * [Links](#links)
+   * [Sharing Rules](#sharing-rules)
    * [Visualforce](#visualforce)
    
 

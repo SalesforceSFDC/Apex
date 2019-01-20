@@ -4,7 +4,7 @@
   * [Email Templates](#email-templates)
    * [Governor Limits](#governor-limits)
    * [Links](#links)
-   * [Object Relationship](#object-relationships)
+   * [Object Relationships](#object-relationships)
    * [Salesforce Reports](#salesforce-reports)
    * [Sharing Rules](#sharing-rules)
    * [Visualforce](#visualforce)
@@ -78,10 +78,10 @@ The advantage is that earlier, we had to create custom fields to group or segmen
 * Matrix reports -	Two-dimensional reports which allow you to group records both by row and column
 * Joined reports -	Multiple blocks showing data from different reports based on same or different report types
 * only Summary reports and Matrix reports can be fed as data source for dashboards. Tabular and Joined reports cannot be used as data source for dashboards.
-## Object Relationship
-* Master-Detail Relationship (1:n):- 
-It is a parent-child relationship in which the master object controls the behavior of the dependent child object. It is a 1:n relationship, in which there can be only one parent, but many children.The main concept you need to be know is that, being the controlling object, the master field cannot be empty. If a record/ field in master object is deleted, the corresponding fields in the dependent object are also deleted. This is called a cascade delete. Dependent fields will inherit the owner, sharing and security settings from its master.You can define master-detail relationships between two custom objects, or between a custom object and standard object as long as the standard object is the master in the relationship.
-* Lookup Relationship (1:n):- 
+## Object Relationships
+### Master-Detail Relationship (1:n):- 
+It is a parent-child relationship in which the master object controls the behavior of the dependent child object. It is a 1:n relationship, in which there can be only one parent, but many children.The main concept you need to be know is that, being the controlling object, the master field cannot be empty. If a record/ field in master object is deleted, the corresponding fields in the dependent object are also deleted. This is called a cascade delete. Dependent fields will inherit the owner, sharing and security settings from its master.You can define master-detail relationships between two custom objects, or between a custom object and standard object as long as the standard object is the master in the relationship.  You can have a roll-up summary in case of a master-detail relationship. But not in case of a lookup relationship.
+### Lookup Relationship (1:n):- 
 Lookup relationships are used when you want to create a link between two objects, but without the dependency on the parent object. Similar to Master-Detail relationship, you can think of this as a form of parent-child relationship where there is only one parent, but many children i.e. 1:n relationship.The difference here is that despite being controlling field, deleting a record will not result in automatic deletion of the lookup field in the child object. Thus the records in the child object will not be affected and there is no cascade delete here. Neither will the child fields inherit the owner, sharing or security settings of its parent.
-* Junction Relationship (Many-To-Many):-
+### Junction Relationship (Many-To-Many):-
 This kind of a relationship can exist when there is a need to create two master-detail relationships. Two master-detail relationships can be created by linking 3 custom objects. Here, two objects will be master objects and the third object will be dependent on both the objects. In simpler words, it will be a child object for both the master objects.

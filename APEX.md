@@ -1,5 +1,6 @@
 # Apex
 ## Table of Content
+  * [Email Templates](#email-templates)
    * [Governor Limits](#governor-limits)
    * [Links](#links)
    * [Visualforce](#visualforce)
@@ -51,3 +52,14 @@ Different Governor Limits in Salesforce are:
 ## Links
 https://www.edureka.co/blog/interview-questions/salesforce-interview-questions/
 ## Visualforce
+Visualforce pages are served from a different domain to improve security standards and block cross site scripting. 
+##
+WhoID refers to people. Typically: contacts or leads. Example: LeadID, ContactID
+
+WhatID refers to objects. Example: AccountID, OpportunityID
+## Sharing Rules
+Sharing rules are written to give edit access (public read and write) or public read only access to certain individuals in Salesforce org. Sharing rules are used to extend sharing access to users in public groups or roles. We cannot use sharing rules to restrict data access. It is only used for allowing greater access to records.
+## Email templates
+* Text - All users can create or change this template
+* HTML with letterhead -	Only Administrators and users having “Edit HTML Templates” permissions can create this template based on a letterhead.
+* Custom HTML -	Administrators and users having “Edit HTML Templates” permissions can create this template without the need of a letterhead

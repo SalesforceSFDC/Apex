@@ -2,7 +2,7 @@
 ## Table of Content
   * [Automatically Indexed Fields](#automatically-indexed-fields)
   * [Bucket Fields in Reports](#bucket-fields-in-reports)
-  * [Comma within a field while uploading using Data Loader](#comma-within-a-field-while-uploading-using-data -loader)
+  * [Comma within a field while uploading using Data Loader](#comma-within-a-field-while-uploading-using-data-loader)
   * [Data Skew](#data-skew)
   * [Email Templates](#email-templates)
    * [Governor Limits](#governor-limits)

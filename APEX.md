@@ -1,6 +1,9 @@
 # Apex
 ## Table of Content
+  * [Automatically Indexed Fields](#automatically-indexed-fields)
   * [Bucket Fields in Reports](#bucket-fields-in-reports)
+  * [Comma within a field while uploading using Data Loader](#comma-within-a-field-while-uploading-using-data -loader)
+  * [Data Skew](#data-skew)
   * [Email Templates](#email-templates)
    * [Governor Limits](#governor-limits)
    * [Links](#links)
@@ -9,10 +12,7 @@
    * [Sharing Rules](#sharing-rules)
    * [Visualforce](#visualforce)
    
-
-
 ##
-   
 * execute flow and transaction control statements on Salesforce servers in conjunction with calls to the API.
 * add business logic to system events (button clicks, related record updates, Vf pages)
 * Apex acts like database stored procedures
@@ -79,13 +79,25 @@ The advantage is that earlier, we had to create custom fields to group or segmen
 * Joined reports -	Multiple blocks showing data from different reports based on same or different report types
 * only Summary reports and Matrix reports can be fed as data source for dashboards. Tabular and Joined reports cannot be used as data source for dashboards.
 ## Object Relationships
-### Master-Detail Relationship (1:n):- 
+### Master-Detail Relationship (1:n)
 It is a parent-child relationship in which the master object controls the behavior of the dependent child object. It is a 1:n relationship, in which there can be only one parent, but many children.The main concept you need to be know is that, being the controlling object, the master field cannot be empty. If a record/ field in master object is deleted, the corresponding fields in the dependent object are also deleted. This is called a cascade delete. Dependent fields will inherit the owner, sharing and security settings from its master.You can define master-detail relationships between two custom objects, or between a custom object and standard object as long as the standard object is the master in the relationship.  You can have a roll-up summary in case of a master-detail relationship. But not in case of a lookup relationship.
 #### Roll-up Summary 
 A roll-up summary field is used to display a value in a master record based on the values of a set of fields in a detail record. The detail record must be related to the master through a master-detail relationship.
 
 There are 4 calculations that you can do using roll-up summary field. You can count the number of detail records related to a master record. Or, you can calculate the sum, minimum value, or maximum value of a field in the detail records.
-### Lookup Relationship (1:n):- 
+### Lookup Relationship (1:n)
 Lookup relationships are used when you want to create a link between two objects, but without the dependency on the parent object. Similar to Master-Detail relationship, you can think of this as a form of parent-child relationship where there is only one parent, but many children i.e. 1:n relationship.The difference here is that despite being controlling field, deleting a record will not result in automatic deletion of the lookup field in the child object. Thus the records in the child object will not be affected and there is no cascade delete here. Neither will the child fields inherit the owner, sharing or security settings of its parent.
-### Junction Relationship (Many-To-Many):-
+### Junction Relationship (Many-To-Many)
 This kind of a relationship can exist when there is a need to create two master-detail relationships. Two master-detail relationships can be created by linking 3 custom objects. Here, two objects will be master objects and the third object will be dependent on both the objects. In simpler words, it will be a child object for both the master objects.
+## Data Skew
+“Data skew” is a condition which you will encounter when working for a big client where there are over 10,000 records. When one single user owns that many records we call that condition ‘ownership data skew’.
+
+When such users perform updates, performance issues will be encountered because of “data skew”. This happens when a single user/ members of a single role own most of the records for a particular object.
+## Automatically Indexed Fields
+Only the following fields are automatically indexed in Salesforce:
+* Primary keys (Id, Name and Owner fields).
+* Foreign keys (lookup or master-detail relationship fields).
+* Audit dates (such as SystemModStamp).
+## Comma within a field while uploading using Data Loader
+In a Data Loader .CSV, if there is a comma in field content, you will have to enclose the contents within double quotation marks: ” “.
+* Custom fields marked as an External ID or a unique field.

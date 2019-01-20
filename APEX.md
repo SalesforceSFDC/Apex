@@ -1,5 +1,6 @@
 # Apex
 ## Table of Content
+  * [Bucket Fields in Reports](#bucket-fields-in-reports)
   * [Email Templates](#email-templates)
    * [Governor Limits](#governor-limits)
    * [Links](#links)
@@ -64,3 +65,14 @@ Sharing rules are written to give edit access (public read and write) or public 
 * Text - All users can create or change this template
 * HTML with letterhead -	Only Administrators and users having “Edit HTML Templates” permissions can create this template based on a letterhead.
 * Custom HTML -	Administrators and users having “Edit HTML Templates” permissions can create this template without the need of a letterhead
+* Visualforce -	Only administrators and developers can create this template. Advanced functionalities like merging data from multiple records is available only in this template
+## Bucket Fields in Reports
+A bucket field lets you group related records together by ranges and segments, without the use of complex formulas and custom fields. Bucketing can thus be used to group, filter, or arrange report data. When you create a bucket field, you need to define multiple categories (buckets) that are used to group report values.
+
+The advantage is that earlier, we had to create custom fields to group or segment certain data.
+## Salesforce Reports
+* Tabular reports -	Simple Excel type tables which provide a list of items with the grand total
+* Summary reports -	Similar to Tabular reports, but also have functionality of grouping rows, viewing subtotals & creating charts
+* Matrix reports -	Two-dimensional reports which allow you to group records both by row and column
+* Joined reports -	Multiple blocks showing data from different reports based on same or different report types
+* only Summary reports and Matrix reports can be fed as data source for dashboards. Tabular and Joined reports cannot be used as data source for dashboards.

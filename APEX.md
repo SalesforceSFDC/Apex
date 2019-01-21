@@ -547,4 +547,11 @@ Apps on the Salesforce platform use an Apex method to publish events and an Apex
 * An Apex trigger can receive a batch of events at once. 
 * The order of events is preserved within each batch. 
 * The events in a batch can originate from one or more publishers.
-* 
+#### Asynchronous Trigger Execution
+A platform event trigger runs in its own process asynchronously and isn’t part of the transaction that published the event. As a result, there might be a delay between when an event is published and when the trigger processes the event.
+#### Automated Process System User
+* event triggers don’t run under the user who executes them (the running user) but under the Automated Process system user
+*  If you create a Salesforce record with an OwnerId field in the trigger, such as a case or opportunity, explicitly set the owner ID. 
+* For cases and leads, you can, alternatively, use assignment rules to set the owner.
+* system fields of records created or updated in the event trigger, such as CreatedById and LastModifiedById, reference the Automated Process entity and not the running user. 
+* the Apex `UserInfo.getUserId()` statement returns the Automated Process entity.

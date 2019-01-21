@@ -300,3 +300,5 @@ An Apex transaction represents a set of operations that are executed as a single
 * Global class is accessible across the Salesforce instance irrespective of namespaces.
 * Whereas, public classes are accessible only in the corresponding namespaces.
 ## Getter and Setter Methods
+* Get (getter) method is used to pass values from the controller to the VF page.
+* Whereas, the set (setter) method is used to set the value back to controller variable.

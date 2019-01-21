@@ -1,9 +1,15 @@
 # Apex
 ## Table of Content
+  * [Apex Transaction](#apex-transaction)
   * [Assignment Rules](#assignment-rules)
+  * [Asynchronous Apex](#asynchronous-apex)
   * [Automatically Indexed Fields](#automatically-indexed-fields)
+  * [Batch Apex](#batch-apex)
   * [Bucket Fields in Reports](#bucket-fields-in-reports)
+  * [Collections](#collections)
+    * [Sets](#sets)
   * [Comma within a field while uploading using Data Loader](#comma-within-a-field-while-uploading-using-data-loader)
+  * [Components](#components)
   * [Controllers](#controllers)
   * [Custom Labels](#custom-labels)
   * [Custom Settings](#custom-settings)
@@ -11,13 +17,18 @@
   * [Deterministic and Nondeterministic Formula Fields](#deterministic-nondeterministic-formula-fields)
   * [Email Templates](#email-templates)
   * [External ID](#external-id)
+  * [Getter and Setter Methods](#getter-and-setter-methods)
    * [Governor Limits](#governor-limits)
    * [Integration Patterns](#integration-patterns)
    * [Links](#links)
    * [Object Relationships](#object-relationships)
    * [Profiles and Roles](profiles-and-roles)
+   * [sObjects](#sobjects)
    * [Salesforce Reports](#salesforce-reports)
    * [Sharing Rules](#sharing-rules)
+   * [SOQL](#soql)
+   * [SOSL](#sosl)
+   * [Triggers](#triggers)
    * [Visualforce](#visualforce)
    * [Workflow Rules](#workflow-rules)
    
@@ -61,6 +72,9 @@ Different Governor Limits in Salesforce are:
 * Miscellaneous Apex Limits
 * Email Limits
 * Push Notification Limits
+* The Governor Limits enforces the following:
+  * Maximum number of records that can be retrieved by SOQL command: 50,000.
+  * Maximum number of records that can be retrieved by SOSL command: 2,000.
 
 ## Links
 https://www.edureka.co/blog/interview-questions/salesforce-interview-questions/
@@ -84,10 +98,18 @@ To control the number of records displayed on each page, we use pagination. By d
  </apex:pageBlock>
 </apex:page>
 ```
+Data bindings and Action bindings are the most common and they will be used in every Visualforce page.
+There are three types of bindings used in Salesforce:
+* Data bindings, which refer to the data set in the controller
+* Action bindings, which refer to action methods in the controller
+* Component bindings, which refer to other Visualforce components.
+
 ##
 WhoID refers to people. Typically: contacts or leads. Example: LeadID, ContactID
 
 WhatID refers to objects. Example: AccountID, OpportunityID
+
+You can get the ID’s of all the currently logged in users by using this global function: UserInfo.getUserId().
 ## Sharing Rules
 Sharing rules are written to give edit access (public read and write) or public read only access to certain individuals in Salesforce org. Sharing rules are used to extend sharing access to users in public groups or roles. We cannot use sharing rules to restrict data access. It is only used for allowing greater access to records.
 ## Email templates
@@ -193,3 +215,88 @@ global class AccountPlan {
 Standard controller in Apex, inherits all the standard object properties and standard button functionality directly. It contains the same functionality and logic that are used for standard Salesforce pages.
 
 Custom controller is an Apex class that implements all of the logic for a page without leveraging a standard controller. Custom Controllers are associated with Visualforce pages through the controller attribute.
+* To call a controller method (Apex function) from JavaScript, you need to use actionfunction.
+```javascript
+<script>
+function JSmethodCallFromAnyAction()
+{
+callfromJS();
+}
+</apex:page>
+```
+## Components
+An attribute tag is a definition of an attribute of a custom component and it can only be a child of a component tag.
+
+Note that you cannot define attributes with names like id or rendered. These attributes are automatically created for all custom component definitions. 
+```apex
+<apex:component>
+ <apex:attribute name="myValue" description="This is the value for the component." type="String" required="true"/>
+ <apex:attribute name="borderColor" description="This is color for the border." type="String" required="true"/>
+  
+</p>
+<p>
+</p>
+<h1 style="border:{!borderColor}">
+ <apex:outputText value="{!myValue}"/>
+ </h1>
+<p>
+</p>
+<p>
+ 
+</apex:component>
+```
+## Collections
+Collections are the type of variables which can be used to store multiple number of records (data).
+It is useful because Governor Limits restrict the number of records you can retrieve per transaction. Hence, collections can be used to store multiple records in a single variable defined as type collection and by retrieving data in the form of collections, Governor Limits will be in check. Collections are similar to how arrays work.
+There are 3 collection types in Salesforce:
+* Lists
+* Maps
+* Sets
+Maps are used to store data in the form of key-value pairs, where each unique key maps to a single value. 
+Syntax: `Map<String, String> country_city = new Map<String, String>();`
+## Asynchronous Apex
+Future annotations are used to identify and execute methods asynchronously. If the method is annotated with “@future”, then it will be executed only when Salesforce has the available resources.
+
+For example, you can use it while making an asynchronous web service callout to an external service. Whereas without using the annotation, the web service callout is made from the same thread that is executing the Apex code, and no additional processing will occur until that callout is complete (synchronous processing).
+## Batch Apex
+Database.Batchable interface contains three methods that must be implemented:
+* Start method:
+global (Database.QueryLocator | Iterable<sObject>) start(Database.BatchableContext bc) {}
+* Execute method:
+global void execute(Database.BatchableContext BC, list<P>){}
+* Finish method:
+global void finish(Database.BatchableContext BC){}
+
+## Triggers
+Triger.new is a command which returns the list of records that have been added recently to the sObjects. To be more precise, those records will be returned which are yet to be saved to the database. Note that this sObject list is only available in insert and update triggers, and the records can only be modified in before triggers.
+
+But just for your information, Trigger.old returns a list of the old versions of the sObject records. Note that this sObject list is only available in update and delete triggers.
+## Sets
+Sets can have any of the following data types:
+* Primitive types
+* Collections
+* sObjects
+* User-defined types
+* Built-in Apex types
+## sObjects
+An sObject is any object that can be stored in the Force.com platform database. Apex allows the use of generic sObject abstract type to represent any object.
+
+For example, Vehicle is a generic type and Car, Motor Bike all are concrete types of Vehicle.
+In SFDC, sObject is generic and Account, Opportunity, CustomObject__c are its concrete type.
+## SOQL
+* Only one object can be searched at a time
+* Can query any type of field
+* Can be used in classes and triggers
+* DML Operation can be performed on query results
+* Returns records
+## SOSL
+* Many objects can be searched at a time
+* Can query only on email, text or phone
+* Can be used in classes, but not triggers
+* DML Operation cannot be performed on search results
+* Returns fields
+## Apex Transaction
+An Apex transaction represents a set of operations that are executed as a single unit. The operations here include the DML operations which are responsible for querying records. All the DML operations in a transaction either complete successfully, or if an error occurs even in saving a single record, then the entire transaction is rolled back.
+* Global class is accessible across the Salesforce instance irrespective of namespaces.
+* Whereas, public classes are accessible only in the corresponding namespaces.
+## Getter and Setter Methods

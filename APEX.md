@@ -1,16 +1,22 @@
 # Apex
 ## Table of Content
+  * [Assignment Rules](#assignment-rules)
   * [Automatically Indexed Fields](#automatically-indexed-fields)
   * [Bucket Fields in Reports](#bucket-fields-in-reports)
   * [Comma within a field while uploading using Data Loader](#comma-within-a-field-while-uploading-using-data-loader)
+  * [Custom Labels](#custom-labels)
+  * [Custom Settings](#custom-settings)
   * [Data Skew](#data-skew)
+  * [Deterministic and Nondeterministic Formula Fields](#deterministic-nondeterministic-formula-fields)
   * [Email Templates](#email-templates)
    * [Governor Limits](#governor-limits)
    * [Links](#links)
    * [Object Relationships](#object-relationships)
+   * [Profiles and Roles](profiles-and-roles)
    * [Salesforce Reports](#salesforce-reports)
    * [Sharing Rules](#sharing-rules)
    * [Visualforce](#visualforce)
+   * [Workflow Rules](#workflow-rules)
    
 ##
 * execute flow and transaction control statements on Salesforce servers in conjunction with calls to the API.
@@ -101,3 +107,31 @@ Only the following fields are automatically indexed in Salesforce:
 ## Comma within a field while uploading using Data Loader
 In a Data Loader .CSV, if there is a comma in field content, you will have to enclose the contents within double quotation marks: ” “.
 * Custom fields marked as an External ID or a unique field.
+## Workflow Rules
+* Time dependent workflow action cannot be create for: “created, and every time it’s edited”.
+## Custom Settings
+There are two types of custom settings in Salesforce: List Custom Settings and Hierarchy Custom Settings.
+
+List Custom Settings are a type of custom settings that provides a reusable set of static data that can be accessed across your organization irrespective of user/ profile. 
+Hierarchy Custom Settings are another type of custom settings that uses built-in hierarchical logic for “personalizing” settings for specific profiles or users.
+
+The advantage of using custom settings is that it allows developers to create a custom set of access rules for various users and profiles.
+## Assignment Rules
+* Only one rule can be active at a time.
+## Custom Labels
+Custom labels are custom text values that can be accessed from Apex classes or Visualforce pages. The values here can be translated into any language supported by Salesforce. 
+Their benefit is that they enable developers to create multilingual applications which automatically presents information in a user’s native language.
+
+You can create up to 5,000 custom labels for your organization, and they can be up to 1,000 characters in length.
+## Profiles and Roles
+As mentioned in one of the previous Salesforce interview questions, a profile will ultimately control access to which records a user has in a Salesforce org. No user can work on the Salesforce org without being assigned a profile. The Profile is therefore mandatory for every user.
+
+Role however is not mandatory for every user. The primary function of the Role/ Role hierarchy is that it allows higher level users in hierarchy get access to records owned by lower level users in the hierarchy. An example of that is Sales Managers getting access to records owned by Sales Reps while their peers do not get access to it.
+## Deterministic and Nondeterministic Formula Fields
+Formula fields whose value will be static are referred to as deterministic fields. Whereas, formula fields whose value will be changed dynamically or whose values will have to be calculated on the fly, they are referred to as non-deterministic formula fields. A classic example of that is a formula returning the current date and time.
+
+Some examples of non-deterministic fields in Force.com are:
+
+Lookup fields
+Formula fields whose reference spans over other entities
+Fields having dynamic date functions like:- TODAY() or NOW()

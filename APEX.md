@@ -32,6 +32,7 @@
    * [Platform Events](#platform-events)
      * [Components of Event-Driven Systems](#components-of-event-driven-systems)
      * [Platform Events and sObjects](#platform-events-and-sobjects)
+     * [Subscribe to Platform Event Notifications with Apex Triggers](#subscribe-to-platform-event-notifications-with-apex-triggers)
      * [Using Platform Events in Native and External Apps](#using-platform-driven-events-in-native-and-external-apps)
    * [Profiles and Roles](profiles-and-roles)
    * [sObjects](#sobjects)
@@ -534,3 +535,12 @@ An event message is an instance of a platform event, similar to how a record is 
 You can set read and create permissions for platform events. You grant permissions to users in profiles or in permission sets.
 ### Using Platform Events in Native and External Apps
 Apps on the Salesforce platform use an Apex method to publish events and an Apex trigger to consume events. Also, Visualforce and Lightning component apps can subscribe to events using CometD. As an alternative to code, you can publish events with declarative tools, such as Process Builder and Cloud Flow Designer. Finally, external apps publish events using the sObject API and consume events using CometD clients. 
+### Subscribe to Platform Event Notifications with Apex Triggers
+* write an after insert Apex trigger on the event object to subscribe to incoming events. 
+* Triggers provide an autosubscription mechanism in Apex.
+* Triggers receive event notifications from various sources—whether they’re published through Apex or APIs.
+* Platform events support only after insert triggers.
+* After an event message is published, the after insert trigger is fired.
+#### Order of Event Processing
+* A trigger processes platform event notifications sequentially in the order they’re received.
+* 

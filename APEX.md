@@ -9,7 +9,9 @@
   * [Data Skew](#data-skew)
   * [Deterministic and Nondeterministic Formula Fields](#deterministic-nondeterministic-formula-fields)
   * [Email Templates](#email-templates)
+  * [External ID](#external-id)
    * [Governor Limits](#governor-limits)
+   * [Integration Patterns](#integration-patterns)
    * [Links](#links)
    * [Object Relationships](#object-relationships)
    * [Profiles and Roles](profiles-and-roles)
@@ -135,3 +137,36 @@ Some examples of non-deterministic fields in Force.com are:
 Lookup fields
 Formula fields whose reference spans over other entities
 Fields having dynamic date functions like:- TODAY() or NOW()
+## External ID
+An external ID is a custom field which can be used as a unique identifier in a record. External IDs are mainly used while importing records/ data. When importing records, one among the many fields in those records need to be marked as an external ID (unique identifier).
+
+An important point to note is that only custom fields can be used as External IDs. The fields that can be marked as external IDs are: Text, Number, E-Mail and Auto-Number.
+## Integration Patterns
+You can expose your Apex class and methods so that external applications can access your code and your application through the REST architecture. This is done by defining your Apex class with the @RestResource annotation to expose it as a REST resource. You can then use global classes and a WebService callback method.
+
+Invoking a custom Apex REST Web service method always uses system context. Consequently, the current user’s credentials are not used, and any user who has access to these methods can use their full power, regardless of permissions, field-level security, or sharing rules. 
+
+Developers who expose methods using the Apex REST annotations should therefore take care that they are not inadvertently exposing any sensitive data. 
+```apex
+global class AccountPlan {
+  webservice String area; 
+  webservice String region; 
+  //Define an object in apex that is exposed in apex web service
+  global class Plan {
+  webservice String name;
+  webservice Integer planNumber;
+  webservice Date planningPeriod;
+  webservice Id planId;
+ }
+  webservice static Plan createAccountPlan(Plan vPlan) {
+  //A plan maps to the Account object in salesforce.com. 
+  //So need to map the Plan class object to Account standard object
+  Account acct = new Account();
+  acct.Name = vPlan.name;
+  acct.AccountNumber = String.valueOf(vPlan.planNumber);
+  insert acct;
+  vPlan.planId=acct.Id;
+  return vPlan;
+ } 
+}
+```

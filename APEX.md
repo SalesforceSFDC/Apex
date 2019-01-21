@@ -7,6 +7,11 @@
   * [Batch Apex](#batch-apex)
   * [Bucket Fields in Reports](#bucket-fields-in-reports)
   * [Change Data Capture](#change-data-capture)
+    * [Object Support](#object-support)
+    * [Required User Permissions](#required-user-permissions)
+    * [Streaming Events](#streaming-events)
+    * [Subscribing to an Event Channel](#subscribing-to-an-event-channel)
+    * [Subscription Channels](#subscription-channels)
   * [Collections](#collections)
     * [Sets](#sets)
   * [Comma within a field while uploading using Data Loader](#comma-within-a-field-while-uploading-using-data-loader)
@@ -361,3 +366,10 @@ Streaming events are instant notification messages that one system (the publishe
 | All objects | `/data/ChangeEvents` | N/A |
 | A standard object | `/data/<Standard_Object_Name>ChangeEvent` | For accounts, the channel is: /data/AccountChangeEvent |
 | A custom object | `/data/<Custom_Object_Name>__ChangeEvent` | For Employee__c records, the channel is: /data/Employee__ChangeEvent |
+### Required User Permissions
+Change Data Capture ignores sharing settings and sends change events for all records of a Salesforce object. To receive change events, the subscribed user must have one or more permissions depending on the channel that is subscribed to.
+| Channel | Required Permission |
+| --- | --- |
+| `/data/ChangeEvents` | View All Data AND View All Users |
+| `/data/UserChangeEvent` | View All Users |
+| `/data/<Standard_Object_Name>ChangeEvent` OR `/data/<Custom_Object_Name>__ChangeEvent` | View All for the object OR View All Data Some standard objects don’t have the View All permission, such as Task and Event. In this case, the View All Data permission is required. |

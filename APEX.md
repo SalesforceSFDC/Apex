@@ -4,6 +4,7 @@
   * [Automatically Indexed Fields](#automatically-indexed-fields)
   * [Bucket Fields in Reports](#bucket-fields-in-reports)
   * [Comma within a field while uploading using Data Loader](#comma-within-a-field-while-uploading-using-data-loader)
+  * [Controllers](#controllers)
   * [Custom Labels](#custom-labels)
   * [Custom Settings](#custom-settings)
   * [Data Skew](#data-skew)
@@ -65,6 +66,24 @@ Different Governor Limits in Salesforce are:
 https://www.edureka.co/blog/interview-questions/salesforce-interview-questions/
 ## Visualforce
 Visualforce pages are served from a different domain to improve security standards and block cross site scripting. 
+To control the number of records displayed on each page, we use pagination. By default, a list controller returns 20 records on the page. To customize it, we can use a controller extension to set the pageSize. 
+```apex
+<apex:page standardController="Account" recordSetvar="accounts">
+ <apex:pageBlock title="Viewing Accounts">
+ <apex:form id="theForm">
+ <apex:pageBlockSection >
+ <apex:dataList var="a" value="{!accounts}" type="1">
+ {!a.name}
+ </apex:dataList>
+ </apex:pageBlockSection>
+ <apex:panelGrid columns="2">
+ <apex:commandLink action="{!previous}">Previous</apex:commandlink>
+ <apex:commandLink action="{!next}">Next</apex:commandlink>
+ </apex:panelGrid>
+ </apex:form>
+ </apex:pageBlock>
+</apex:page>
+```
 ##
 WhoID refers to people. Typically: contacts or leads. Example: LeadID, ContactID
 
@@ -170,3 +189,7 @@ global class AccountPlan {
  } 
 }
 ```
+## Controllers
+Standard controller in Apex, inherits all the standard object properties and standard button functionality directly. It contains the same functionality and logic that are used for standard Salesforce pages.
+
+Custom controller is an Apex class that implements all of the logic for a page without leveraging a standard controller. Custom Controllers are associated with Visualforce pages through the controller attribute.

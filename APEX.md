@@ -310,3 +310,41 @@ Change Data Capture is part of the data replication process for the cloud. Data 
 * Continuous synchronization of new and updated data to the external system (it publishes the deltas of Salesforce data, whether for new records or changed records. Change Data Capture requires an integration app for receiving events and performing updates in the external system)
 * Reconciliation of duplicate data between the two systems
 * Receiving events for new, changed, deleted, and undeleted Salesforce records is the best suited scenario for Changed Data Capture.
+### Streaming Events
+Streaming events are instant notification messages that one system (the publisher) sends to another (the subscriber). With push technology, the publisher pushes data to the subscriber. This is the opposite of pull technology. With pull technology, clients request data from the server periodically. When you connect systems through pull technology, clients poll the server for data updates, and freshness of data depends on the poll frequency.  Notification  messages are sent to the event bus to which clients can subscribe through a channel. Event-driven systems streamline the communication between distributed enterprise systems, increase scalability, and deliver real-time data.
+### Object Support
+* Change Data Capture can generate change events for all custom objects defined in your Salesforce org and a subset of standard objects.
+* It supports change events for the most popular standard objects including Account, Contact, Lead, User, Order, OrderItem, Product2, and others.
+```json
+{
+   "schema":"TIOb-jG_qRb2ucSBIdByMA",
+   "payload":{
+     "ChangeEventHeader":{
+       "entityName":"Employee__c",
+       "recordIds":[
+          "a00xx0000004GvqAAE"
+       ],
+       "changeType":"CREATE",
+       "changeOrigin":"com/salesforce/api/soap/44.0;client=GetCloudy",
+       "transactionKey":"00059b44-a6c7-ffa7-af68-8a455868ed30",
+       "sequenceNumber":1,
+       "isTransactionEnd":true,
+       "commitTimestamp":1533160499000,
+       "commitUser":"005xx000001SwSiAAK",
+       "commitNumber":356619267
+    },
+    "First_Name__c":"Jane",
+    "Last_Name__c":"Smith",
+    "Name":"e-100",
+    "Tenure__c":2.0,     
+    "LastModifiedDate":"2018-08-01T21:54:58Z",
+    "OwnerId":"005xx000001SwSiAAK",
+    "CreatedById":"005xx000001SwSiAAK",
+    "CreatedDate":"2018-08-01T21:54:58Z",
+    "LastModifiedById":"005xx000001SwSiAAK",
+   },
+   "event":{
+     "replayId":1
+   }
+}
+```

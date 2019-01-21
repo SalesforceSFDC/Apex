@@ -402,3 +402,98 @@ EMP Connector is an open-source sample tool that subscribes to streaming channel
   }
 }
 ```
+#### Undelete an Employee Record
+```json
+{
+  "schema":"TIOb-jG_qRb2ucSBIdByMA",
+  "payload":{
+    "LastModifiedDate":"2018-09-20T21:52:27Z",
+    "OwnerId":"005B0000004xULvIAM",
+    "CreatedById":"005B0000004xULvIAM",
+    "ChangeEventHeader":{  
+      "isTransactionEnd":true,
+      "commitNumber":10341195374106,
+      "commitUser":"005B0000004xULvIAM",
+      "sequenceNumber":1,
+      "entityName":"Employee__c",
+      "changeType":"UNDELETE",
+      "changeOrigin":"com/salesforce/api/soap/44.0;client=devconsole",
+      "transactionKey":"000a9934-32e1-ed11-a74d-8c735d12841c",
+      "commitTimestamp":1537480347000,
+      "recordIds":[  
+        "a00B00000098x4aIAA"
+      ]
+    },
+    "CreatedDate":"2018-09-20T21:30:06Z",
+    "First_Name__c":"Trish",
+    "LastModifiedById":"005B0000004xULvIAM",
+    "Tenure__c":3.0,
+    "Name":"e-100",
+    "Last_Name__c":"Smith"
+  },
+  "event":{  
+    "replayId":16908128
+  }
+}
+```
+#### Update an Employee Record
+```json
+{
+  "schema":"TIOb-jG_qRb2ucSBIdByMA",
+  "payload":{
+    "LastModifiedDate":"2018-09-20T21:31:08Z",
+    "ChangeEventHeader":{ 
+      "isTransactionEnd":true,
+      "commitNumber":10341190536560,
+      "commitUser":"005B0000004xULvIAM",
+      "sequenceNumber":1,
+      "entityName":"Employee__c",
+      "changeType":"UPDATE",
+      "changeOrigin":"com/salesforce/api/soap/44.0;client=SfdcInternalAPI/",
+      "transactionKey":"000861c7-a3cb-f5bf-8c8a-a5e3cf9b8278",
+      "commitTimestamp":1537479068000,
+      "recordIds":[
+        "a00B00000098x4aIAA"
+      ]
+    },
+    "First_Name__c":"Trish",
+    "Tenure__c":3.0
+  },
+  "event":{ 
+    "replayId":16907799
+  }
+}
+```
+#### Create an Employee Record
+```json
+{  
+  "schema":"TIOb-jG_qRb2ucSBIdByMA",
+  "payload":{
+    "LastModifiedDate":"2018-09-20T21:30:06Z",
+    "OwnerId":"005B0000004xULvIAM",
+    "CreatedById":"005B0000004xULvIAM",
+    "ChangeEventHeader":{
+      "isTransactionEnd":true,
+      "commitNumber":10341190291016,
+      "commitUser":"005B0000004xULvIAM",
+      "sequenceNumber":1,
+      "entityName":"Employee__c",
+      "changeType":"CREATE",
+      "changeOrigin":"com/salesforce/api/soap/44.0;client=SfdcInternalAPI/",
+      "transactionKey":"000861b9-2218-2464-9404-c16b0e2fee71",
+      "commitTimestamp":1537479006000,
+      "recordIds":[ 
+        "a00B00000098x4aIAA"
+      ]
+    },
+    "CreatedDate":"2018-09-20T21:30:06Z",
+    "First_Name__c":"Patricia",
+    "LastModifiedById":"005B0000004xULvIAM",
+    "Name":"e-100",
+    "Last_Name__c":"Smith"
+  },
+  "event":{  
+    "replayId":16907794
+  }
+}
+```

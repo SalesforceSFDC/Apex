@@ -12,6 +12,7 @@
     * [Streaming Events](#streaming-events)
     * [Subscribing to an Event Channel](#subscribing-to-an-event-channel)
     * [Subscription Channels](#subscription-channels)
+    * [Subscribe Using EMP Connector](#subscribe-using-emp-connector)
   * [Collections](#collections)
     * [Sets](#sets)
   * [Comma within a field while uploading using Data Loader](#comma-within-a-field-while-uploading-using-data-loader)
@@ -374,3 +375,30 @@ Change Data Capture ignores sharing settings and sends change events for all rec
 | `/data/ChangeEvents` | View All Data AND View All Users |
 | `/data/UserChangeEvent` | View All Users |
 | `/data/<Standard_Object_Name>ChangeEvent` OR `/data/<Custom_Object_Name>__ChangeEvent` | View All for the object OR View All Data |
+### Subscribe Using EMP Connector
+EMP Connector is an open-source sample tool that subscribes to streaming channels using Streaming API and CometD.  EMP Connector is a thin wrapper around the CometD library and is implemented in Java. The tool subscribes to a channel, receives notifications, and prints them out to the console. It also supports replaying events with durable streaming. 
+#### Delete an Employee Record
+```json
+{
+  "schema":"TIOb-jG_qRb2ucSBIdByMA",
+  "payload":{  
+    "ChangeEventHeader":{  
+      "isTransactionEnd":true,
+      "commitNumber":10341190702886,
+      "commitUser":"005B0000004xULvIAM",
+      "sequenceNumber":1,
+      "entityName":"Employee__c",
+      "changeType":"DELETE",
+      "changeOrigin":"com/salesforce/api/soap/44.0;client=SfdcInternalAPI/",
+      "transactionKey":"000861d2-b189-aa52-d7f6-4a635aa1ce03",
+      "commitTimestamp":1537479116000,
+      "recordIds":[  
+        "a00B00000098x4aIAA"
+      ]
+    }
+  },
+  "event":{
+    "replayId":16907802
+  }
+}
+```

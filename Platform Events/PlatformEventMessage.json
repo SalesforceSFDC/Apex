@@ -1,0 +1,16 @@
+{
+  "data": {
+    "schema": "_2DBiqh-utQNAjUH78FdbQ", 
+    "payload": {
+      "CreatedDate": "2017-04-27T16:50:40Z", 
+      "CreatedById": "005D0000001cSZs", 
+      "Location__c": "San Francisco", 
+      "Urgent__c": true, 
+      "News_Content__c": "Large highway is closed due to asteroid collision."
+    }, 
+    "event": {
+      "replayId": 2
+    }
+  }, 
+  "channel": "/event/Cloud_News__e"
+}

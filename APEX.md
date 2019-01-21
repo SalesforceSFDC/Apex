@@ -368,8 +368,9 @@ Streaming events are instant notification messages that one system (the publishe
 | A custom object | `/data/<Custom_Object_Name>__ChangeEvent` | For Employee__c records, the channel is: /data/Employee__ChangeEvent |
 ### Required User Permissions
 Change Data Capture ignores sharing settings and sends change events for all records of a Salesforce object. To receive change events, the subscribed user must have one or more permissions depending on the channel that is subscribed to.
+
 | Channel | Required Permission |
 | --- | --- |
 | `/data/ChangeEvents` | View All Data AND View All Users |
 | `/data/UserChangeEvent` | View All Users |
-| `/data/<Standard_Object_Name>ChangeEvent` OR `/data/<Custom_Object_Name>__ChangeEvent` | View All for the object OR View All Data Some standard objects don’t have the View All permission, such as Task and Event. In this case, the View All Data permission is required. |
+| `/data/<Standard_Object_Name>ChangeEvent` OR `/data/<Custom_Object_Name>__ChangeEvent` | View All for the object OR View All Data |

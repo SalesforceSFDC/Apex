@@ -29,6 +29,10 @@
    * [Integration Patterns](#integration-patterns)
    * [Links](#links)
    * [Object Relationships](#object-relationships)
+   * [Platform Events](#platform-events)
+     * [Components of Event-Driven Systems](#components-of-event-driven-systems)
+     * [Platform Events and sObjects](#platform-events-and-sobjects)
+     * [Using Platform Events in Native and External Apps](#using-platform-driven-events-in-native-and-external-apps)
    * [Profiles and Roles](profiles-and-roles)
    * [sObjects](#sobjects)
    * [Salesforce Reports](#salesforce-reports)
@@ -497,3 +501,36 @@ EMP Connector is an open-source sample tool that subscribes to streaming channel
   }
 }
 ```
+## Platform Events
+Event driven software architecture.  With platform events, you can publish any custom data. You define the schema of event data at a granular level as typed fields. Also, you can use platform events in native Salesforce platform apps and external apps alike. Use platform events in the following cases:
+* To send and receive custom event data with a predefined schema
+* To publish or subscribe to events in Apex
+* For the flexibility of publishing and processing events on and off the Salesforce platform
+
+| Feature | Generic Event | Platform Event |
+| --- | --- | --- |
+| Define event schema as typed fields | NO | YES |
+| Include user-defined payloads | YES | YES |
+| Publish events via one or more APIs | YES | YES |
+| Publish events via Apex | NO | YES |
+| Subscribe via CometD | YES | YES |
+| Subscribe via Apex triggers | NO | YES |
+Publish declaratively using Process Builder and flows | NO | YES |
+
+### Components of Event-Driven Systems
+#### Event
+A change in state that is meaningful in a business process. For example, placement of a purchase order is a meaningful event, because the order fulfillment center expects to receive a notification before processing an order.
+#### Event Message
+A message that contains data about the event. Also known as an event notification. For example, an event message can be a notification about an order placement containing information about the order.
+#### Event Producer
+The publisher of an event message over a channel. For example, an order placement app.
+#### Event Channel
+A stream of events on which an event producer sends event messages and event consumers read those messages. Also called an event bus in Salesforce.
+#### Event Consumer
+A subscriber to a channel that receives messages from the channel. For example, an order fulfillment app that is notified of new orders.
+
+### Platform Events and sObjects
+An event message is an instance of a platform event, similar to how a record is an instance of a custom object.  
+You can set read and create permissions for platform events. You grant permissions to users in profiles or in permission sets.
+### Using Platform Events in Native and External Apps
+Apps on the Salesforce platform use an Apex method to publish events and an Apex trigger to consume events. Also, Visualforce and Lightning component apps can subscribe to events using CometD. As an alternative to code, you can publish events with declarative tools, such as Process Builder and Cloud Flow Designer. Finally, external apps publish events using the sObject API and consume events using CometD clients. 

@@ -348,3 +348,14 @@ Streaming events are instant notification messages that one system (the publishe
    }
 }
 ```
+* `changeOrigin` - Use this field to detect whether your app initiated the change.
+* `transactionKey` - The transactionKey field uniquely identifies the transaction that the change is part of.
+* `sequenceNumber` - The sequenceNumber field identifies the sequence of the change within a transaction. The sequence number is useful for operations that include multiple steps, such as lead conversion or creating related records in an after insert  Apex trigger. 
+* `isTransactionEnd` - indicates whether the change is the last step in the sequence
+* `replayId` - This field contains an ID for the event message that you can use to replay past events for up to 3 days. 
+### Subscribing to an Event Channel
+*  `lightning:empApi Lightning component` - To receive instant notifications of Salesforce data changes in an app that is running on the Lightning Platform.  Your streaming app receives events in real time whenever a change occurs in Salesforce. 
+### Subscription Channels
+| Subscribe to change events for: | Channel | Example |
+| --- | --- | --- |
+| All objects | `/data/ChangeEvents` | N/A |

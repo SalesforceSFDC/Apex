@@ -541,6 +541,7 @@ Apps on the Salesforce platform use an Apex method to publish events and an Apex
 * Triggers receive event notifications from various sources—whether they’re published through Apex or APIs.
 * Platform events support only after insert triggers.
 * After an event message is published, the after insert trigger is fired.
+* Salesforce app uses a trigger to listen to events. 
 #### Order of Event Processing
 * A trigger processes platform event notifications sequentially in the order they’re received.
 * The order of events is based on the event replay ID.
@@ -555,3 +556,5 @@ A platform event trigger runs in its own process asynchronously and isn’t part
 * For cases and leads, you can, alternatively, use assignment rules to set the owner.
 * system fields of records created or updated in the event trigger, such as CreatedById and LastModifiedById, reference the Automated Process entity and not the running user. 
 * the Apex `UserInfo.getUserId()` statement returns the Automated Process entity.
+#### Apex Trigger Limitations
+Platform event triggers share many of the same limitations of custom and standard object triggers. For example, you can’t make Apex callouts synchronously from triggers.

@@ -543,4 +543,8 @@ Apps on the Salesforce platform use an Apex method to publish events and an Apex
 * After an event message is published, the after insert trigger is fired.
 #### Order of Event Processing
 * A trigger processes platform event notifications sequentially in the order they’re received.
+* The order of events is based on the event replay ID.
+* An Apex trigger can receive a batch of events at once. 
+* The order of events is preserved within each batch. 
+* The events in a batch can originate from one or more publishers.
 * 

@@ -6,6 +6,7 @@
   * [Automatically Indexed Fields](#automatically-indexed-fields)
   * [Batch Apex](#batch-apex)
   * [Bucket Fields in Reports](#bucket-fields-in-reports)
+  * [Change Data Capture](#change-data-capture)
   * [Collections](#collections)
     * [Sets](#sets)
   * [Comma within a field while uploading using Data Loader](#comma-within-a-field-while-uploading-using-data-loader)
@@ -302,3 +303,10 @@ An Apex transaction represents a set of operations that are executed as a single
 ## Getter and Setter Methods
 * Get (getter) method is used to pass values from the controller to the VF page.
 * Whereas, the set (setter) method is used to set the value back to controller variable.
+## Change Data Capture
+Change Data Capture is a streaming product on the Lightning Platform that enables you to efficiently integrate your Salesforce data with external systems. With Change Data Capture, you can receive changes of Salesforce records in real time and synchronize corresponding records in an external data store. Change Data Capture publishes events for changes in Salesforce records corresponding to create, update, delete, and undelete operations.  Use Change Data Capture to update data in an external system instead of doing periodic exports or API polling. 
+Change Data Capture is part of the data replication process for the cloud. Data replication includes the following stages:
+* Day 0 copy of the entire data set to the external system
+* Continuous synchronization of new and updated data to the external system (it publishes the deltas of Salesforce data, whether for new records or changed records. Change Data Capture requires an integration app for receiving events and performing updates in the external system)
+* Reconciliation of duplicate data between the two systems
+* Receiving events for new, changed, deleted, and undeleted Salesforce records is the best suited scenario for Changed Data Capture.

@@ -359,3 +359,5 @@ Streaming events are instant notification messages that one system (the publishe
 | Subscribe to change events for: | Channel | Example |
 | --- | --- | --- |
 | All objects | `/data/ChangeEvents` | N/A |
+| A standard object | `/data/<Standard_Object_Name>ChangeEvent` | For accounts, the channel is: /data/AccountChangeEvent |
+| A custom object | `/data/<Custom_Object_Name>__ChangeEvent` | For Employee__c records, the channel is: /data/Employee__ChangeEvent |

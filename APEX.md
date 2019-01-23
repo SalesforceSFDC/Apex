@@ -45,7 +45,17 @@
    * [Workflow Rules](#workflow-rules)
    
 ##
-* <b>Static method</b>
+* <b>Static method</b> - with this method there is no need to create an instance of a class to access the method, use the name of the class followed by dot(.) and the name of the method.
+##### Iterate over a list of books and update price field for each book
+```apex
+public class IterateOverBooks {
+  public static void applyDiscount(Book__c[] books) {
+    for (Book__c b :books) {
+      b.Price__c *= 0.9;
+    }
+  }
+}
+```
 * execute flow and transaction control statements on Salesforce servers in conjunction with calls to the API.
 * add business logic to system events (button clicks, related record updates, Vf pages)
 * Apex acts like database stored procedures

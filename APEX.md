@@ -45,6 +45,7 @@
    * [Workflow Rules](#workflow-rules)
    
 ##
+* <b>Static method</b>
 * execute flow and transaction control statements on Salesforce servers in conjunction with calls to the API.
 * add business logic to system events (button clicks, related record updates, Vf pages)
 * Apex acts like database stored procedures

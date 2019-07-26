@@ -2,6 +2,7 @@
  * Email services are automated processes that use Apex classes
  * to process the contents, headers, and attachments of inbound
  * email.
+ * [](https://www.jitendrazaa.com/blog/salesforce/email-services-in-salesforce-with-simple-example/)
  */
 global class CreateContactFrmEmail implements Messaging.InboundEmailHandler {
 

@@ -844,3 +844,76 @@ public class MyClass {
 
 ### Class Methods
 * `void` - if the method does not return a value.
+
+
+## SOQL
+Downwards traversal SOQL query:
+
+```apex
+SELECT Id, Name, Industry, AnnualRevenue,
+    ( SELECT Name, Email, BirthDate FROM Contacts )
+    FROM Account
+```
+We essentially have two queries in one SOQL statement. One to pull the general account data, and one to pull the contact related list.
+Three things when using downwards traversal:
+* The nested query is treated like another field. That’s why there is a comma after the AnnualRevenue field.
+* We use the plural version “Contacts” in the nested SOQL query, If you’re using custom relationships, add “__r” to the keyword: “Contacts__r”
+* You can combine all the SOQL techniques into one query
+
+## Variables and data types – strings, dates, numbers, booleans, and sObjects
+Data types are simply the different types of variables you can have.
+Strings are used  with all text, email, or picklist type fields in Salesforce. 
+
+### Lists
+The unique aspect of Lists is that they are ordered.  Since Lists are ordered, you can get specific elements of your List by the element’s index, or, List position. Indexes start at zero and go all the way up to number of records in your list, minus one
+```apex
+Contact firstContact = peopleToSpam[0];
+Contact lastContact  = peopleToSpam[peopleToSpam.size() - 1];
+```
+### Sets
+Sets aren’t used as often in Apex – they’re basically lists however they’re unordered and don’t allow any duplicate values. 
+
+### Maps
+A map essentially lets you “search” through a list for a particular value
+
+### Dot notation
+* use of dot notation is that you can call an object’s instance methods
+```apex
+Integer numOpps = opps.size();  // A List instance method!
+String iLoveCaps = myContact.FirstName.capitalize();
+// This is a String instance method. The result is DAVID
+```
+
+### Loops – FOR and FOREACH loops
+FOREACH loops let you repeatedly execute code on every element of a list:
+```Apex
+List<Contact> allContacts = [SELECT Id FROM Contact];
+for (Contact currentContact : allContacts) {
+    // This is my contact ID. People love me!
+    currentContact.Best_Friend__c = '003i000000Mnm1R';
+}
+```
+
+### IF Statements
+```apex
+if (insert comparison operator) {
+    // Code that runs if the above is true
+} else if (another comparison operator) {
+    // Code that runs if only the above line is true
+} else {
+    // Code that runs if everything else is false
+}
+```
+### Using Apex variables inside a SOQL query
+* output of every SOQL query is an Apex list.
+* bind variable is the term for an Apex variable used inside a SOQL query, Salesforce knows you are using a bind variable when you precede your Apex variable with a colon (:)
+
+## Heroku
+### Dynos
+Dynos are managed runtime containers with a Linux operating system.  These containers run processes that allow the code to run.
+* Containerization is a mechanism for keeping running processes isolated one from another.
+* Runtime containers keep code and configuration from touching another.
+* Containers also provide separation between two or more dynos running identical instances of the app, accepting client requests and serving up responses.
+### Slugs and Buildpacks
+Slugs are compressed and pre-packaged copies of the application optimized for distribution to the Dyno manager.
+When you push code to Heroku, your code is received by the slug compiler which transforms it into a slug.  Slug compiler is a collection of scripts called a buildpack that handle different languages.

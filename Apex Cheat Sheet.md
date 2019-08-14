@@ -16,6 +16,9 @@ for (data_type variable_name : list_name or set_name) {}
 * Example:
 ```apex
 List <String> tea = new List<String>{'Black Tea', 'Green Tea', 'Chai Tea'};
+for(String t : tea){
+    System.debug('We have ' + t);
+}
 ```
 
 #

@@ -16,6 +16,7 @@ SELECT Name,
   )
 FROM Account
 ```
+Specify these relationships using a subquery (enclosed in parentheses), where the initial member of the FROM clause in the subquery is related to the initial member of the outer query FROM clause. Note that for standard object subqueries, you should specify the plural name of the object as that is the name of the relationship for each object.
 
 ## For Loops
 ```apex

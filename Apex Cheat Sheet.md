@@ -1,3 +1,22 @@
+## Using Relationship Queries
+* Query child-to-parent relationships:
+```apex
+SELECT Id, Name, Account.Name
+FROM Contact
+WHERE Account.Industry = 'media'
+```
+This query returns the ID and name for only the contacts whose related account industry is media, and for each contact returned, the account name.
+
+* Query parent-to-child:
+```apex
+SELECT Name,
+  (
+    SELECT LastName
+    FROM Contacts
+  )
+FROM Account
+```
+
 ## For Loops
 ```apex
 for(Integer i=0; i<5; i++) {}

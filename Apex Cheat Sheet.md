@@ -2,9 +2,22 @@
 ```apex
 for(Integer i=0; i<5; i++) {}
 ```
-### Two reasons to use For-Loops instead of While and do-While Loops:
+#### Two reasons to use For-Loops instead of While and do-While Loops:
 * `For` loops are used when you know how many times the loop should run.  If you want the loop to stop based on a condition other than the number of times it runs you should use the `while` loop.
 * `For` loops are more concise because they keep the three parts - the variable, the condition, and the increment - together in one statement.
+
+### List or Set Iteration For Loops
+*  The iteration for loop, works through the items in a list or set.
+* Because the list or set has a specific number of items, you don’t need to increment a variable or check a condition. The loop works through all of the items in the list or set, and then the loop ends.
+* When you declare an iteration for loop, the data type of the variable must match the data type of the list or set. Here’s the syntax for an iteration for loop.
+```apex
+for (data_type variable_name : list_name or set_name) {}
+```
+* Example:
+```apex
+List <String> tea = new List<String>{'Black Tea', 'Green Tea', 'Chai Tea'};
+```
+
 #
 * `Constants` - variables whose values don't change after being initialized once.  It can be defined using `final` keyword.
 * `final` - means that the variable can be assigned at most once, either in the declaration itself, or with a static method in in class.

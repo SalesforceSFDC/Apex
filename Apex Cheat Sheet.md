@@ -18,6 +18,34 @@ FROM Account
 ```
 Specify these relationships using a subquery (enclosed in parentheses), where the initial member of the FROM clause in the subquery is related to the initial member of the outer query FROM clause. Note that for standard object subqueries, you should specify the plural name of the object as that is the name of the relationship for each object.
 
+### Write a Child-to-Parent Query
+This relationship query uses "dot notation" to access data from the parent, that is, a period separates the relationship name from the name of the field being queried.
+```sql
+SELECT FirstName, LastName, Account.Name FROM Contact
+```
+* you can traverse five levels up with the dot notation.
+
+### Writing Parent-to-Children Queries
+```sql
+SELECT Name, (Select FirstName, LastName FROM Contacts) FROM Account
+```
+* When working with relationship queries, the parent-to-child relationship name must be a plural name.
+* When working with custom objects, the relationship name is not only plural, but it is appended with two underscores and an r. For example, the relationship name for the custom object `My_Object__c` is `My_Objects__r`.
+
+
+### Aggregates
+To get a record count:
+```sql
+SELECT COUNT(*) FROM Account
+```
+
+Returns the number of rows where the fieldName has a non-null value:
+```sql
+SELECT Count(fieldName) FROM Account
+```
+
+* In SOQL, you can only alias fields in aggregate queries that use the GROUP BY clause.
+
 ## For Loops
 ```apex
 for(Integer i=0; i<5; i++) {}

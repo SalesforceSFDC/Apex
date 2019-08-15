@@ -46,6 +46,10 @@ SELECT Count(fieldName) FROM Account
 
 * In SOQL, you can only alias fields in aggregate queries that use the GROUP BY clause.
 
+### Best Practices
+#### Building Selective Queries
+Anytime you use one of these indexed fields in your query’s WHERE clause, you’re increasing the chance that your query is considered selective and an index used as opposed to a full table scan. 
+
 ## For Loops
 ```apex
 for(Integer i=0; i<5; i++) {}

@@ -51,6 +51,14 @@ SELECT Name, (SELECT Name
 FROM Position__c //Parent object
 ```
 
+### Right Anti-Joins in SOQL
+In SOQL, a Right Anti Join returns only orphans - children without parents.
+```sql
+SELECT Name, Status__c 
+FROM Job_Application__c
+WHERE Position__c = null
+```
+
 ### Aggregates
 To get a record count:
 ```sql

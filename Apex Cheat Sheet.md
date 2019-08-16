@@ -24,7 +24,13 @@ This relationship query uses "dot notation" to access data from the parent, that
 SELECT FirstName, LastName, Account.Name FROM Contact
 ```
 * you can traverse five levels up with the dot notation.
-
+* From the child, use dot notation to access the parent's fields:
+    * `Parent__r.ParentField`
+    ```soql
+    SELECT Name, Position__r.Name //(Dot notation:Parent__r.ParentField)
+    FROM Job_Application__c //Child object
+    ```
+    
 #### The default syntax of a custom foreign key relationship:
 * Child-to-parent: `Parent Name__r`
 * Parent-to-Child: `Children Name__r`

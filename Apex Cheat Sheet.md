@@ -65,6 +65,12 @@ FROM Position__c
 WHERE Id NOT IN (SELECT Position__c FROM Job_Application__c)
 ```
 
+### Multilevel Ancestor Joins
+```soql
+SELECT Id, Job_Application__r.Position__r.Hiring_Manager__r.Name
+FROM Offer__c
+```
+
 ### Aggregates
 To get a record count:
 ```sql

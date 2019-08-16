@@ -70,6 +70,14 @@ WHERE Id NOT IN (SELECT Position__c FROM Job_Application__c)
 SELECT Id, Job_Application__r.Position__r.Hiring_Manager__r.Name
 FROM Offer__c
 ```
+### Traverse a Complex Query Result
+```soql
+SELECT Id, Name, (SELECT Id, Name
+                  FROM Job_Application__r)
+FROM Position__c
+WHERE Id IN (SELECT Position__c
+              FROM Job_Application__c)
+```
 
 ### Aggregates
 To get a record count:

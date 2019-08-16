@@ -18,7 +18,7 @@ FROM Account
 ```
 Specify these relationships using a subquery (enclosed in parentheses), where the initial member of the FROM clause in the subquery is related to the initial member of the outer query FROM clause. Note that for standard object subqueries, you should specify the plural name of the object as that is the name of the relationship for each object.
 
-### Write a Child-to-Parent Query
+### Write a Child-to-Parent Query (Can go 5 levels up)
 This relationship query uses "dot notation" to access data from the parent, that is, a period separates the relationship name from the name of the field being queried.
 ```sql
 SELECT FirstName, LastName, Account.Name FROM Contact
@@ -30,7 +30,7 @@ SELECT FirstName, LastName, Account.Name FROM Contact
     SELECT Name, Position__r.Name //(Dot notation:Parent__r.ParentField)
     FROM Job_Application__c //Child object
     ```
-    
+In SOQL, use `Dot notation` to retrieve a parent field such as `p.Name`   
 #### The default syntax of a custom foreign key relationship:
 * Child-to-parent: `Parent Name__r`
 * Parent-to-Child: `Children Name__r`
@@ -38,7 +38,7 @@ SELECT FirstName, LastName, Account.Name FROM Contact
 #### The syntax of a standard foreign key relationship
 A standard relationship is a predefined foreign key relationship.
 
-### Writing Parent-to-Children Queries
+### Writing Parent-to-Children Queries (Can go one level down)
 ```sql
 SELECT Name, (Select FirstName, LastName FROM Contacts) FROM Account
 ```

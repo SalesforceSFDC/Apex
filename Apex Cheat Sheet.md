@@ -71,6 +71,7 @@ SELECT Id, Job_Application__r.Position__r.Hiring_Manager__r.Name
 FROM Offer__c
 ```
 ### Traverse a Complex Query Result
+In this example, the job applications associated with a position are returned as a list:
 ```sql
 SELECT Id, Name, (SELECT Id, Name
                   FROM Job_Application__r)

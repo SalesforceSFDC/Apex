@@ -59,6 +59,12 @@ FROM Job_Application__c
 WHERE Position__c = null
 ```
 
+```sql
+SELECT Id, Name
+FROM Position__c
+WHERE Id NOT IN (SELECT Position__c FROM Job_Application__c)
+```
+
 ### Aggregates
 To get a record count:
 ```sql

@@ -26,7 +26,11 @@ SELECT FirstName, LastName, Account.Name FROM Contact
 * you can traverse five levels up with the dot notation.
 
 #### The default syntax of a custom foreign key relationship:
-Child-to-parent: `Parent Name__r`
+* Child-to-parent: `Parent Name__r`
+* Parent-to-Child: `Children Name__r`
+
+#### The syntax of a standard foreign key relationship
+A standard relationship is a predefined foreign key relationship.
 
 ### Writing Parent-to-Children Queries
 ```sql

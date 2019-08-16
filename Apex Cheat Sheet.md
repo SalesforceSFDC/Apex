@@ -26,7 +26,7 @@ SELECT FirstName, LastName, Account.Name FROM Contact
 * you can traverse five levels up with the dot notation.
 * From the child, use dot notation to access the parent's fields:
     * `Parent__r.ParentField`
-    ```soql
+    ```sql
     SELECT Name, Position__r.Name //(Dot notation:Parent__r.ParentField)
     FROM Job_Application__c //Child object
     ```

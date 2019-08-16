@@ -66,7 +66,7 @@ WHERE Id NOT IN (SELECT Position__c FROM Job_Application__c)
 ```
 
 ### Multilevel Ancestor Joins
-```soql
+```sql
 SELECT Id, Job_Application__r.Position__r.Hiring_Manager__r.Name
 FROM Offer__c
 ```
@@ -79,7 +79,14 @@ FROM Position__c
 WHERE Id IN (SELECT Position__c
               FROM Job_Application__c)
 ```
-
+* Using a for-loop for the above example"
+```apex
+for (Position__c pos : [QUERY]) {
+  for (Job_application__c jobApp : pos.Job_Applications__r) {
+    // business logic
+  }
+}
+```
 ### Aggregates
 To get a record count:
 ```sql

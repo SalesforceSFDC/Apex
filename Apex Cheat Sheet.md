@@ -44,7 +44,12 @@ SELECT Name, (Select FirstName, LastName FROM Contacts) FROM Account
 ```
 * When working with relationship queries, the parent-to-child relationship name must be a plural name.
 * When working with custom objects, the relationship name is not only plural, but it is appended with two underscores and an r. For example, the relationship name for the custom object `My_Object__c` is `My_Objects__r`.
-
+* From the `parent`, use the relationship name in a nested `SELECT` to access a child's fields.
+```sql
+SELECT Name, (SELECT Name
+              FROM Job_Application__r) // Nested SELECT with parent-to-child relationship name
+FROM Position__c //Parent object
+```
 
 ### Aggregates
 To get a record count:

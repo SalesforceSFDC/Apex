@@ -1,4 +1,12 @@
 ## Using Relationship Queries
+* Relationship between objects are named
+    * Use the parent's singular name to reference the child-to-parent relationship
+    * Use the children's name (i.e. plural) to reference the parent-to-child relationship
+    * Add the suffix `__r` if the relationship is custom
+* Use dot notation to traverse child-to-parent relationships in a query
+* Use a nested `SELECT` to retrieve children's fields when traversing from parent to child
+
+
 * Query child-to-parent relationships:
 ```apex
 SELECT Id, Name, Account.Name

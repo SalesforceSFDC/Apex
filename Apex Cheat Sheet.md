@@ -100,6 +100,29 @@ SELECT Count(fieldName) FROM Account
 
 * In SOQL, you can only alias fields in aggregate queries that use the GROUP BY clause.
 
+### SOQL For Loops
+```soql
+SELECT Id, Name, (SELECT Id, Name FROM Job_Applications__r)
+FROM Position__c
+WHERE Id IN (SELECT Position__c FROM Job_Application__c)
+```
+* `Position__c` is the parent
+* `WHERE Id IN (SELECT Position__c FROM Job_Application__c)` - Limiting results to only include parents with children and we are going to get the children back
+
+Adding the query to Apex:
+```apex
+List<Position__c> ps;
+ps = [SELECT Id, Name, (SELECT Id, Name FROM Job_Applications__r)
+      FROM Position__c
+      WHERE Id IN (SELECT Position__c FROM Job_Application__c)];
+      
+for (Position__c p : ps) {
+  for (Job_Application__c ja :p.Job_Applications__r) {
+    System.debug(p.id + ' - ' + p.Name + ' - ' + ja.Name);
+  }
+}
+```
+
 ### Best Practices
 #### Building Selective Queries
 Anytime you use one of these indexed fields in your query’s WHERE clause, you’re increasing the chance that your query is considered selective and an index used as opposed to a full table scan. 

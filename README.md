@@ -35,6 +35,7 @@
 	- [Getter Setter](#getter-setter)
 	- [Class Methods](#class-methods)
 	- [Batch](#batch)
+	- [SOAP](#soap)
 
 ### How Does Apex Work?
 
@@ -917,3 +918,6 @@ Dynos are managed runtime containers with a Linux operating system.  These conta
 ### Slugs and Buildpacks
 Slugs are compressed and pre-packaged copies of the application optimized for distribution to the Dyno manager.
 When you push code to Heroku, your code is received by the slug compiler which transforms it into a slug.  Slug compiler is a collection of scripts called a buildpack that handle different languages.
+
+## SOAP
+* [Simple Object Access Protocol (SOAP) 1.1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/)

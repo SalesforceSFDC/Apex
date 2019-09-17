@@ -25,6 +25,7 @@
 	- [Loops](#loops)
 	- [Test Driven Development Process](#test-driven-development-process)
 	- [Classes, Objects and Interfaces](#classes-objects-and-interfaces)
+	- [Integrations](#integrations)
 	- [Static and Instance Methods, Variables, and Initialization Code](#static-and-instance-methods-variables-and-initialization-code)
 	- [Triggers](#triggers)
 	- [Apex Test Classes](#apex-test-classes)
@@ -846,7 +847,8 @@ public class MyClass {
 ### Class Methods
 * `void` - if the method does not return a value.
 
-
+## Integrations
+* [Integrations and Apex Utilities](https://developer.salesforce.com/docs/atlas.en-us.220.0.apexcode.meta/apexcode/apex_integration_intro.htm)
 ## SOQL
 Downwards traversal SOQL query:
 

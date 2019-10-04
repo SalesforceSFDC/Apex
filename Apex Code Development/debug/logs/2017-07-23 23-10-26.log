@@ -1,0 +1,798 @@
+40.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: // Create the account sObject 
+Execute Anonymous: Account acct = new Account(Name='Acme', Phone='(415)555-1212', NumberOfEmployees=100);
+Execute Anonymous: // Insert the account by using DML
+Execute Anonymous: insert acct;
+23:10:15.1 (1527314)|USER_INFO|[EXTERNAL]|005F0000003vMsP|glassjar2014@gmail.com|Pacific Standard Time|GMT-07:00
+23:10:15.1 (1579842)|EXECUTION_STARTED
+23:10:15.1 (1585225)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+23:10:15.1 (1797022)|VARIABLE_SCOPE_BEGIN|[2]|acct|Account|true|false
+23:10:15.1 (2287744)|HEAP_ALLOCATE|[72]|Bytes:3
+23:10:15.1 (2349184)|HEAP_ALLOCATE|[77]|Bytes:152
+23:10:15.1 (2380771)|HEAP_ALLOCATE|[342]|Bytes:408
+23:10:15.1 (2414321)|HEAP_ALLOCATE|[355]|Bytes:408
+23:10:15.1 (2440769)|HEAP_ALLOCATE|[467]|Bytes:48
+23:10:15.1 (2539068)|HEAP_ALLOCATE|[139]|Bytes:6
+23:10:15.1 (2579063)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:3
+23:10:15.1 (3558577)|STATEMENT_EXECUTE|[1]
+23:10:15.1 (3564432)|STATEMENT_EXECUTE|[2]
+23:10:15.1 (3589567)|HEAP_ALLOCATE|[2]|Bytes:4
+23:10:15.1 (3727510)|HEAP_ALLOCATE|[2]|Bytes:4
+23:10:15.1 (3818475)|VARIABLE_ASSIGNMENT|[2]|this.Name|"Acme"|0x45235ec1
+23:10:15.1 (3832143)|HEAP_ALLOCATE|[2]|Bytes:13
+23:10:15.1 (3868457)|VARIABLE_ASSIGNMENT|[2]|this.Phone|"(415)555-1212"|0x45235ec1
+23:10:15.1 (4308232)|VARIABLE_ASSIGNMENT|[2]|this.NumberOfEmployees|100|0x45235ec1
+23:10:15.1 (4395383)|VARIABLE_ASSIGNMENT|[2]|acct|{"Name":"Acme","Phone":"(415)555-1212","NumberOfEmployees":100}|0x45235ec1
+23:10:15.1 (4407208)|STATEMENT_EXECUTE|[4]
+23:10:15.1 (4451762)|HEAP_ALLOCATE|[50]|Bytes:5
+23:10:15.1 (4480101)|HEAP_ALLOCATE|[56]|Bytes:5
+23:10:15.1 (4492647)|HEAP_ALLOCATE|[64]|Bytes:7
+23:10:15.1 (4563601)|HEAP_ALLOCATE|[4]|Bytes:8
+23:10:15.1 (4607864)|DML_BEGIN|[4]|Op:Insert|Type:Account|Rows:1
+23:10:15.1 (4655103)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+23:10:16.907 (1907006752)|ENTERING_MANAGED_PKG|MC4SF
+23:10:16.923 (1923345751)|CUMULATIVE_LIMIT_USAGE
+23:10:16.923 (1923345751)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:16.923 (1923345751)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:16.923 (1923345751)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:18.926 (3926907801)|ENTERING_MANAGED_PKG|datahugapps
+23:10:18.926 (3934645001)|ENTERING_MANAGED_PKG|datahugapps
+23:10:18.926 (3934746541)|ENTERING_MANAGED_PKG|datahugapps
+23:10:18.926 (3935114680)|SOQL_EXECUTE_BEGIN|[566]|Aggregations:0|SELECT AccOn__c FROM AccountSettings__c LIMIT 1
+23:10:18.926 (3953466785)|SOQL_EXECUTE_END|[566]|Rows:1
+23:10:18.953 (3953855517)|CUMULATIVE_LIMIT_USAGE
+23:10:18.953 (3953855517)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:18.953 (3953855517)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:18.953 (3953855517)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:18.953 (3953855517)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.444 (5444509690)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5475634019)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5475733361)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5475794916)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5475849091)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5475971272)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5491673894)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5491728114)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5491765798)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5493154203)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5493183863)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506730475)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506754057)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506787891)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506799167)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506832304)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506842628)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506874043)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506883986)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506909520)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506917948)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506937983)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506945798)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506970652)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5506979340)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507008675)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507019221)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507041791)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507050153)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507072127)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507081390)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507110672)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507120003)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507142463)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507150990)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507172647)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507181286)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507209741)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507218880)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507245115)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5507253678)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541331707)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541390002)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541579857)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541597379)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541640525)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541652228)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541690846)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541701502)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541737762)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541750055)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541785785)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541796726)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541832031)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541843125)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5541883017)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.444 (5542251893)|ENTERING_MANAGED_PKG|geopointe
+23:10:20.542 (5542324270)|CUMULATIVE_LIMIT_USAGE
+23:10:20.542 (5542324270)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.542 (5542324270)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.542 (5542324270)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.542 (5542324270)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.605 (5605908172)|CODE_UNIT_STARTED|[EXTERNAL]|01q2A000001HoRT|ContextExampleTrigger on Account trigger event BeforeInsert for [new]
+23:10:20.605 (5605966472)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+23:10:20.605 (5606063096)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (5606078595)|VARIABLE_SCOPE_BEGIN|[1]|this|ContextExampleTrigger|true|false
+23:10:20.605 (5606116888)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x18e5f6c0
+23:10:20.605 (5606156734)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (5606183767)|VARIABLE_SCOPE_BEGIN|[1]|this|ContextExampleTrigger|true|false
+23:10:20.605 (5606197453)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x18e5f6c0
+23:10:20.605 (5606204835)|STATEMENT_EXECUTE|[1]
+23:10:20.605 (5606216761)|STATEMENT_EXECUTE|[2]
+23:10:20.605 (5606220851)|STATEMENT_EXECUTE|[3]
+23:10:20.606 (5606224984)|CUMULATIVE_LIMIT_USAGE
+23:10:20.606 (5606224984)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.606 (5606224984)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.606 (5606224984)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.606 (5606224984)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.605 (5607144905)|CODE_UNIT_FINISHED|ContextExampleTrigger on Account trigger event BeforeInsert for [new]
+23:10:20.605 (5640604169)|CODE_UNIT_STARTED|[EXTERNAL]|01qF0000001DWfz|DuplicateCheck on Account trigger event BeforeInsert for [new]
+23:10:20.605 (5640669224)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+23:10:20.605 (5640769713)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (5640784964)|VARIABLE_SCOPE_BEGIN|[1]|this|DuplicateCheck|true|false
+23:10:20.605 (5640821705)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x1990bf7b
+23:10:20.605 (5640863599)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (5640873348)|VARIABLE_SCOPE_BEGIN|[1]|this|DuplicateCheck|true|false
+23:10:20.605 (5640890884)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x1990bf7b
+23:10:20.605 (5640898290)|STATEMENT_EXECUTE|[1]
+23:10:20.640 (5640903044)|CUMULATIVE_LIMIT_USAGE
+23:10:20.640 (5640903044)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.640 (5640903044)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.640 (5640903044)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.640 (5640903044)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.605 (5642279695)|CODE_UNIT_FINISHED|DuplicateCheck on Account trigger event BeforeInsert for [new]
+23:10:20.605 (5675436253)|CODE_UNIT_STARTED|[EXTERNAL]|01qF0000000zsCs|HelloWorldTrigger on Account trigger event BeforeInsert for [new]
+23:10:20.605 (5675490998)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+23:10:20.605 (5675620914)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:1
+23:10:20.605 (5675644791)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (5675656259)|VARIABLE_SCOPE_BEGIN|[1]|this|HelloWorldTrigger|true|false
+23:10:20.605 (5675689966)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x78c84887
+23:10:20.605 (5675733958)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (5675752568)|VARIABLE_SCOPE_BEGIN|[1]|this|HelloWorldTrigger|true|false
+23:10:20.605 (5675765051)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x78c84887
+23:10:20.605 (5675771488)|STATEMENT_EXECUTE|[1]
+23:10:20.605 (5675773423)|STATEMENT_EXECUTE|[2]
+23:10:20.605 (5675777848)|HEAP_ALLOCATE|[2]|Bytes:12
+23:10:20.605 (5675831374)|USER_DEBUG|[2]|DEBUG|Hello World!
+23:10:20.675 (5675846156)|CUMULATIVE_LIMIT_USAGE
+23:10:20.675 (5675846156)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.675 (5675846156)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.675 (5675846156)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.675 (5675846156)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.605 (5676807241)|CODE_UNIT_FINISHED|HelloWorldTrigger on Account trigger event BeforeInsert for [new]
+23:10:20.605 (5832166242)|CODE_UNIT_STARTED|[EXTERNAL]|01qF00000015gcb|OnAccount1Trigger on Account trigger event BeforeInsert for [new]
+23:10:20.605 (5832241396)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+23:10:20.605 (5832359111)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (5832375744)|VARIABLE_SCOPE_BEGIN|[1]|this|OnAccount1Trigger|true|false
+23:10:20.605 (5832417515)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x153382c
+23:10:20.605 (5832466403)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (5832487195)|VARIABLE_SCOPE_BEGIN|[1]|this|OnAccount1Trigger|true|false
+23:10:20.605 (5832500812)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x153382c
+23:10:20.605 (5832507830)|STATEMENT_EXECUTE|[1]
+23:10:20.605 (5832509981)|STATEMENT_EXECUTE|[3]
+23:10:20.605 (5871813163)|VARIABLE_SCOPE_BEGIN|[7]|PersonAccountSupport.AccountFields|Set<String>|true|true
+23:10:20.605 (5871836785)|VARIABLE_SCOPE_BEGIN|[5]|PersonAccountSupport.FakePersonAccountDuringTest|Boolean|false|true
+23:10:20.605 (5871849470)|VARIABLE_SCOPE_BEGIN|[42]|PersonAccountSupport.FakePersonContactIDs|List<Id>|true|true
+23:10:20.605 (5871857457)|VARIABLE_SCOPE_BEGIN|[44]|PersonAccountSupport.UpdatingPersonContact|Boolean|false|true
+23:10:20.605 (5871887923)|HEAP_ALLOCATE|[3]|Bytes:10
+23:10:20.605 (5871921474)|METHOD_ENTRY|[3]|01pF0000003bHZk|PersonAccountSupport.PersonAccountSupport()
+23:10:20.605 (5871927334)|STATEMENT_EXECUTE|[3]
+23:10:20.605 (5871934106)|STATEMENT_EXECUTE|[3]
+23:10:20.605 (5871935525)|STATEMENT_EXECUTE|[5]
+23:10:20.605 (5871968658)|HEAP_ALLOCATE|[5]|Bytes:5
+23:10:20.605 (5871997561)|VARIABLE_ASSIGNMENT|[5]|PersonAccountSupport.FakePersonAccountDuringTest|false
+23:10:20.605 (5872005051)|STATEMENT_EXECUTE|[7]
+23:10:20.605 (5872013387)|VARIABLE_ASSIGNMENT|[7]|PersonAccountSupport.AccountFields|null|
+23:10:20.605 (5872018044)|STATEMENT_EXECUTE|[42]
+23:10:20.605 (5872022165)|VARIABLE_ASSIGNMENT|[42]|PersonAccountSupport.FakePersonContactIDs|null|
+23:10:20.605 (5872025569)|STATEMENT_EXECUTE|[44]
+23:10:20.605 (5872041282)|HEAP_ALLOCATE|[44]|Bytes:5
+23:10:20.605 (5872049090)|VARIABLE_ASSIGNMENT|[44]|PersonAccountSupport.UpdatingPersonContact|false
+23:10:20.605 (5872060532)|METHOD_EXIT|[3]|PersonAccountSupport
+23:10:20.605 (5872152863)|METHOD_ENTRY|[3]|01pF0000003bHZk|PersonAccountSupport.processAccountTrigger1(Boolean, List<Account>, Map<Id,Account>)
+23:10:20.605 (5872212617)|VARIABLE_SCOPE_BEGIN|[46]|isBefore|Boolean|false|false
+23:10:20.605 (5872224033)|VARIABLE_ASSIGNMENT|[46]|isBefore|true
+23:10:20.605 (5872228817)|VARIABLE_SCOPE_BEGIN|[46]|newlist|List<Account>|true|false
+23:10:20.605 (5875675903)|VARIABLE_ASSIGNMENT|[46]|newlist|[{"Account_Count__c":1,"IsDeleted":false,"cirrusadv__Created_b (19 more) ...":false,"BIG_Opportunity__c":false,"NumberOfEmployees":100,"Name":"Acme","Data_Quality_Descrip (7 more) ...":"Missing: Industry, R (29 more) ...","CleanStatus":"Pending","OwnerId":"005F0000003vMsPIAU","synety__Call_Phone__ (1 more) ...":"_HL_ENCODED_/apex/sy (129 more) ...","Potential_Value__c":0.00,"Phone":"(415)555-1212","Match_Billing_Addres (4 more) ...":false,"Account_Website__c":"_HL_ENCODED_http://w (44 more) ...","datahugapps__AutoCre (25 more) ...":false,"Data_Quality_Score__ (1 more) ...":20}]|0x3d4985d8
+23:10:20.605 (5875700550)|VARIABLE_SCOPE_BEGIN|[46]|oldmap|Map<Id,Account>|true|false
+23:10:20.605 (5875709670)|VARIABLE_ASSIGNMENT|[46]|oldmap|null|
+23:10:20.605 (5875718064)|STATEMENT_EXECUTE|[47]
+23:10:20.605 (5875739718)|METHOD_ENTRY|[48]|01pF0000003bHZk|PersonAccountSupport.IsPersonAccountOrg()
+23:10:20.605 (5875782362)|STATEMENT_EXECUTE|[10]
+23:10:20.605 (5875788177)|STATEMENT_EXECUTE|[11]
+23:10:20.605 (5876049801)|HEAP_ALLOCATE|[11]|Bytes:4
+23:10:20.605 (5880120433)|HEAP_ALLOCATE|[11]|Bytes:572
+23:10:20.605 (5880201922)|HEAP_ALLOCATE|[11]|Bytes:3033
+23:10:20.605 (5880233215)|VARIABLE_ASSIGNMENT|[11]|PersonAccountSupport.AccountFields|"List of size 142 too large to display"|0x2f166da2
+23:10:20.605 (5880241182)|STATEMENT_EXECUTE|[12]
+23:10:20.605 (5880247931)|HEAP_ALLOCATE|[12]|Bytes:15
+23:10:20.605 (5880302151)|METHOD_EXIT|[48]|01pF0000003bHZk|PersonAccountSupport.IsPersonAccountOrg()
+23:10:20.605 (5880316092)|STATEMENT_EXECUTE|[48]
+23:10:20.605 (5880320999)|METHOD_EXIT|[3]|01pF0000003bHZk|PersonAccountSupport.processAccountTrigger1(Boolean, List<Account>, Map<Id,Account>)
+23:10:20.880 (5880334680)|CUMULATIVE_LIMIT_USAGE
+23:10:20.880 (5880334680)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.880 (5880334680)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.880 (5880334680)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:20.880 (5880334680)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.605 (5881444476)|CODE_UNIT_FINISHED|OnAccount1Trigger on Account trigger event BeforeInsert for [new]
+23:10:20.605 (5887771328)|CODE_UNIT_STARTED|[EXTERNAL]|Validation:Account:new
+23:10:20.605 (5887785950)|VALIDATION_RULE|03dF0000000wIvS|Account_Number_Is_Numeric
+23:10:20.605 (5887933058)|VALIDATION_FORMULA|AND(
+NOT(ISBLANK(AccountNumber)),
+NOT(ISNUMBER(AccountNumber))
+)|AccountNumber=null
+23:10:20.605 (5887940482)|VALIDATION_PASS
+23:10:20.605 (5887982474)|CODE_UNIT_FINISHED|Validation:Account:new
+23:10:21.43 (6043886151)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6044068851)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6044109230)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6044173504)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6044304392)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6116075415)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6116296046)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6116358445)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6116420648)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6116435038)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6116660468)|ENTERING_MANAGED_PKG|geopointe
+23:10:21.43 (6117468727)|SOQL_EXECUTE_BEGIN|[349]|Aggregations:0|SELECT Id, Name FROM Map_Object__c WHERE (Sobject_Name__c = :tmpVar1 AND Real_Time_Geocode__c = TRUE AND Status__c = 'Active')
+23:10:21.43 (6137016280)|SOQL_EXECUTE_END|[349]|Rows:0
+23:10:21.137 (6137439292)|CUMULATIVE_LIMIT_USAGE
+23:10:21.137 (6137439292)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 68 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.137 (6137439292)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.137 (6137439292)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.137 (6137439292)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.137 (6137439292)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.605 (6140896044)|CODE_UNIT_STARTED|[EXTERNAL]|01q2A000001HoRT|ContextExampleTrigger on Account trigger event AfterInsert for [0012A00002DMSWM]
+23:10:20.605 (6140939740)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+23:10:20.605 (6140986752)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (6140997084)|VARIABLE_SCOPE_BEGIN|[1]|this|ContextExampleTrigger|true|false
+23:10:20.605 (6141030205)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x4785ba41
+23:10:20.605 (6141057814)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (6141064537)|VARIABLE_SCOPE_BEGIN|[1]|this|ContextExampleTrigger|true|false
+23:10:20.605 (6141075167)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x4785ba41
+23:10:20.605 (6141082378)|STATEMENT_EXECUTE|[1]
+23:10:20.605 (6141091664)|STATEMENT_EXECUTE|[2]
+23:10:20.605 (6141102875)|STATEMENT_EXECUTE|[5]
+23:10:21.141 (6141107246)|CUMULATIVE_LIMIT_USAGE
+23:10:21.141 (6141107246)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 68 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.141 (6141107246)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.141 (6141107246)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.141 (6141107246)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.141 (6141107246)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.605 (6142458064)|CODE_UNIT_FINISHED|ContextExampleTrigger on Account trigger event AfterInsert for [0012A00002DMSWM]
+23:10:20.605 (6144809490)|CODE_UNIT_STARTED|[EXTERNAL]|01qF00000015gcb|OnAccount1Trigger on Account trigger event AfterInsert for [0012A00002DMSWM]
+23:10:20.605 (6144845400)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+23:10:20.605 (6144885500)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (6144894157)|VARIABLE_SCOPE_BEGIN|[1]|this|OnAccount1Trigger|true|false
+23:10:20.605 (6144915234)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x1f85c24a
+23:10:20.605 (6144939414)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:10:20.605 (6144945001)|VARIABLE_SCOPE_BEGIN|[1]|this|OnAccount1Trigger|true|false
+23:10:20.605 (6144955314)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x1f85c24a
+23:10:20.605 (6144962038)|STATEMENT_EXECUTE|[1]
+23:10:20.605 (6144963580)|STATEMENT_EXECUTE|[3]
+23:10:20.605 (6145006729)|METHOD_ENTRY|[3]|01pF0000003bHZk|PersonAccountSupport.processAccountTrigger1(Boolean, List<Account>, Map<Id,Account>)
+23:10:20.605 (6145019136)|VARIABLE_SCOPE_BEGIN|[46]|isBefore|Boolean|false|false
+23:10:20.605 (6145030141)|VARIABLE_ASSIGNMENT|[46]|isBefore|false
+23:10:20.605 (6145034166)|VARIABLE_SCOPE_BEGIN|[46]|newlist|List<Account>|true|false
+23:10:20.605 (6146823020)|VARIABLE_ASSIGNMENT|[46]|newlist|[{"LastModifiedDate":"2017-07-24T06:10:21.000Z","Account_Count__c":1,"IsDeleted":false,"cirrusadv__Created_b (19 more) ...":false,"BIG_Opportunity__c":false,"NumberOfEmployees":100,"SystemModstamp":"2017-07-24T06:10:21.000Z","Name":"Acme","Data_Quality_Descrip (7 more) ...":"Missing: Industry, R (29 more) ...","CleanStatus":"Pending","CreatedById":"005F0000003vMsPIAU","OwnerId":"005F0000003vMsPIAU","synety__Call_Phone__ (1 more) ...":"_HL_ENCODED_/apex/sy (144 more) ...","Potential_Value__c":0.00,"Phone":"(415)555-1212","Match_Billing_Addres (4 more) ...":false,"Account_Website__c":"_HL_ENCODED_http://w (44 more) ...","CreatedDate":"2017-07-24T06:10:21.000Z","datahugapps__AutoCre (25 more) ...":false,"Id":"0012A00002DMSWMQA5","Data_Quality_Score__ (1 more) ...":20,"LastModifiedById":"005F0000003vMsPIAU"}]|0x38e52d3e
+23:10:20.605 (6146844673)|VARIABLE_SCOPE_BEGIN|[46]|oldmap|Map<Id,Account>|true|false
+23:10:20.605 (6146853115)|VARIABLE_ASSIGNMENT|[46]|oldmap|null|
+23:10:20.605 (6146859934)|STATEMENT_EXECUTE|[47]
+23:10:20.605 (6146870536)|METHOD_ENTRY|[48]|01pF0000003bHZk|PersonAccountSupport.IsPersonAccountOrg()
+23:10:20.605 (6146881874)|STATEMENT_EXECUTE|[10]
+23:10:20.605 (6146885720)|STATEMENT_EXECUTE|[11]
+23:10:20.605 (6146887125)|STATEMENT_EXECUTE|[12]
+23:10:20.605 (6146907061)|METHOD_EXIT|[48]|01pF0000003bHZk|PersonAccountSupport.IsPersonAccountOrg()
+23:10:20.605 (6146917609)|STATEMENT_EXECUTE|[48]
+23:10:20.605 (6146922126)|METHOD_EXIT|[3]|01pF0000003bHZk|PersonAccountSupport.processAccountTrigger1(Boolean, List<Account>, Map<Id,Account>)
+23:10:21.146 (6146931183)|CUMULATIVE_LIMIT_USAGE
+23:10:21.146 (6146931183)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 68 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.146 (6146931183)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.146 (6146931183)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.146 (6146931183)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.146 (6146931183)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.605 (6147859485)|CODE_UNIT_FINISHED|OnAccount1Trigger on Account trigger event AfterInsert for [0012A00002DMSWM]
+23:10:20.605 (6148581150)|CODE_UNIT_STARTED|[EXTERNAL]|Workflow:Account
+23:10:20.605 (6171634611)|WF_RULE_EVAL_BEGIN|Workflow
+23:10:20.605 (6171678677)|WF_CRITERIA_BEGIN|[Account: Acme 0012A00002DMSWM]|Sync_Contact_addresses_with_Account301F00000000KiR|01QF0000000bD5P|ON_ALL_CHANGES|0
+23:10:20.605 (6171785742)|WF_FORMULA|Formula:ENCODED:[treatNullAsNull]true|Values:
+23:10:20.605 (6171792820)|WF_CRITERIA_END|true
+23:10:20.605 (6189182068)|WF_SPOOL_ACTION_BEGIN|Workflow
+23:10:20.605 (6189218972)|WF_ACTION| Flow Trigger: 1;
+23:10:20.605 (6189223631)|WF_RULE_EVAL_END
+23:10:20.605 (6226392263)|WF_FLOW_ACTION_BEGIN|09LF0000000CdE0
+23:10:21.226 (6226513710)|FLOW_CREATE_INTERVIEW_BEGIN|00DF00000008HCg|300F0000000TrwS|301F00000000KiR
+23:10:21.226 (6478319709)|FLOW_CREATE_INTERVIEW_END|73551f13090f4fb3e56b17dee2c315d732442af-44a2|Sync Contact addresses with Account
+23:10:21.478 (6478738900)|FLOW_START_INTERVIEWS_BEGIN|1
+23:10:21.478 (6478766823)|FLOW_START_INTERVIEW_BEGIN|73551f13090f4fb3e56b17dee2c315d732442af-44a2|Sync Contact addresses with Account
+23:10:21.478 (6503399754)|FLOW_START_INTERVIEW_END|73551f13090f4fb3e56b17dee2c315d732442af-44a2|Sync Contact addresses with Account
+23:10:21.478 (6503424906)|FLOW_START_INTERVIEWS_END|1
+23:10:20.605 (6504444570)|WF_FLOW_ACTION_END|09LF0000000CdE0
+23:10:20.605 (6504554632)|WF_ACTIONS_END| Flow Trigger: 1;
+23:10:20.605 (6504564227)|CODE_UNIT_FINISHED|Workflow:Account
+23:10:20.605 (6507616409)|DML_END|[4]
+23:10:21.558 (6558054348)|CUMULATIVE_LIMIT_USAGE
+23:10:21.558 (6558054348)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 1 out of 10000
+  Maximum CPU time: 68 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.558 (6558054348)|LIMIT_USAGE_FOR_NS|datahugapps|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 1 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.558 (6558054348)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.558 (6558054348)|LIMIT_USAGE_FOR_NS|MC4SF|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:10:21.558 (6558054348)|CUMULATIVE_LIMIT_USAGE_END
+
+23:10:20.605 (6558125365)|CODE_UNIT_FINISHED|execute_anonymous_apex
+23:10:20.605 (6559371435)|EXECUTION_FINISHED

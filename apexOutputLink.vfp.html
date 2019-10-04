@@ -1,0 +1,26 @@
+<apex:outputLink target="_top" value="{!IF(AND(isUserInNewNoteGroup),
+                  '/apex/NoteApprovalProcessPage',
+                  '/p/process/ProcessInstanceWorkitemWizardStageManager'))?id=
+                  {!item_to_approve.processid}&
+                  noteID={!item_to_approve.id}&
+                  notetype={!item_to_approve.notetype}"
+                  rendered="{!(item_to_approve.notetype == 'Relationship Note')}">
+                  Approve/Reject</apex:outputLink>
+
+<apex:outputLink target="_top" value="{!IF(AND(isUserInNewNoteGroup, item_to_approve.noteV2),
+                 '/apex/InvestmentNoteApproval',
+                 '/p/process/ProcessInstanceWorkitemWizardStageManager')}?id=
+                 {!item_to_approve.processid}&
+                 noteID={!item_to_approve.id}&
+                 notetype={!item_to_approve.notetype}"
+                 rendered={!(item_to_approve.notetype == 'Investment Note')}">
+                 Approve/Reject</apex:outputLink>
+
+<apex:outputLink target="_top" value="{!IF(AND(isUserInNewNoteGroup),
+                  '/apex/ApproveMassEmailSendRequestPage',
+                  '/p/process/ProcessInstanceWorkitemWizardStageManager')}?id=
+                  {!item_to_approve.processid}&
+                  noteID={!item_to_approve.id}&
+                  notetype={!item_to_approve.notetype}"
+                  rendered={!(item_to_approve.notetype == 'Approve Mass Email')}">
+                  Approve/Reject</apex:outputLink>

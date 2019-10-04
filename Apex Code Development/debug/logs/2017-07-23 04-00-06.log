@@ -1,0 +1,20 @@
+26.0 APEX_CODE,DEBUG;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,DEBUG;WAVE,INFO;WORKFLOW,INFO
+04:00:05.20 (20129071)|SOQL_EXECUTE_BEGIN|[10]|Aggregations:0|SELECT Id, Contact_Id__c, Session_Id__c, Notes__c, Category_Id__c, OwnerId, Long_Notes__c FROM Call_Update_Queue__c 
+04:00:05.20 (30153933)|SOQL_EXECUTE_END|[10]|Rows:0
+04:00:05.45 (45176262)|CUMULATIVE_LIMIT_USAGE
+04:00:05.45 (45176262)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 200
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 60000
+  Maximum heap size: 0 out of 12000000
+  Number of callouts: 0 out of 0
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 0
+  Number of queueable jobs added to the queue: 0 out of 1
+  Number of Mobile Apex push calls: 0 out of 10
+
+04:00:05.45 (45176262)|CUMULATIVE_LIMIT_USAGE_END
+

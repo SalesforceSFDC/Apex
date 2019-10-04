@@ -1,0 +1,44 @@
+30.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+00:15:01.27 (27520824)|ENTERING_MANAGED_PKG|synety
+00:15:01.27 (31699981)|SOQL_EXECUTE_BEGIN|[16]|Aggregations:0|SELECT ID, Call_Session_Id__c, IsProcessed__c, CallDurationInSeconds, To__c, From__c, Batch_Exception__c, CreatedById, CreatedDate FROM Task 
+00:15:01.27 (41340370)|SOQL_EXECUTE_END|[16]|Rows:0
+00:15:01.55 (55690135)|CUMULATIVE_LIMIT_USAGE
+00:15:01.55 (55690135)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 200
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 60000
+  Maximum heap size: 0 out of 12000000
+  Number of callouts: 0 out of 0
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 0
+  Number of queueable jobs added to the queue: 0 out of 1
+  Number of Mobile Apex push calls: 0 out of 10
+
+00:15:01.55 (55690135)|CUMULATIVE_LIMIT_USAGE_END
+
+t of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+00:15:00.145 (145110473)|LIMIT_USAGE_FOR_NS|synety|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+00:15:00.145 (145110473)|CUMULATIVE_LIMIT_USAGE_END
+

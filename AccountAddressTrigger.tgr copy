@@ -1,0 +1,37 @@
+trigger AccountAddressTrigger on Account (before insert, before update) {
+
+  for(Account a : Trigger.New) {
+    if (Match_Billing_Address__c = true) {
+      a.ShippingPostalCode == a.BillingPostalCode;
+    }
+  }
+
+
+  if (Trigger.isInsert) {
+        if (Trigger.isBefore) {
+            // Process before insert
+        } else if (Trigger.isAfter) {
+            // Process after insert
+        }
+    }
+    else if (Trigger.isDelete) {
+        // Process after delete
+    }
+
+    if (Match_Billing_Address__c = true) {
+       ShippingPostalCode = BillingPostalCode
+    }
+    System.debug('Hello World!');
+
+}
+
+// the `for` loop iterates over contacts, andfor each contact,
+// it sets a new value for the Description__c field
+// if the department field matches a certain value.
+
+for (Contact badCon : conList) {
+  if (badcon.Department__c == 'Finance') {
+      badCon.Description__c = 'New Description';
+  }
+
+}

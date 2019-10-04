@@ -1,0 +1,59 @@
+40.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: // Create a list of account records from a SOQL query
+Execute Anonymous: List<Account> accs = [SELECT Id, Name FROM Account WHERE Name = 'Siebel']; 
+Execute Anonymous: 
+Execute Anonymous: // Loop through the list and update the Name field
+Execute Anonymous: for(Account a : accs){
+Execute Anonymous:    a.Name = 'Oracle';
+Execute Anonymous: }
+Execute Anonymous: 
+Execute Anonymous: // Update the database
+Execute Anonymous: update accs;
+00:12:28.1 (1779585)|USER_INFO|[EXTERNAL]|005F0000003vMsP|glassjar2014@gmail.com|Pacific Standard Time|GMT-07:00
+00:12:28.1 (1804436)|EXECUTION_STARTED
+00:12:28.1 (1808178)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+00:12:28.1 (2025104)|VARIABLE_SCOPE_BEGIN|[2]|accs|List<Account>|true|false
+00:12:28.1 (2155374)|HEAP_ALLOCATE|[72]|Bytes:3
+00:12:28.1 (2196322)|HEAP_ALLOCATE|[77]|Bytes:152
+00:12:28.1 (2211825)|HEAP_ALLOCATE|[342]|Bytes:408
+00:12:28.1 (2230981)|HEAP_ALLOCATE|[355]|Bytes:408
+00:12:28.1 (2245284)|HEAP_ALLOCATE|[467]|Bytes:48
+00:12:28.1 (2272944)|HEAP_ALLOCATE|[139]|Bytes:6
+00:12:28.1 (2294501)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:8
+00:12:28.1 (2414592)|STATEMENT_EXECUTE|[1]
+00:12:28.1 (2417062)|STATEMENT_EXECUTE|[2]
+00:12:28.1 (2420487)|HEAP_ALLOCATE|[2]|Bytes:50
+00:12:28.1 (2433629)|HEAP_ALLOCATE|[2]|Bytes:4
+00:12:28.1 (2476989)|HEAP_ALLOCATE|[50]|Bytes:5
+00:12:28.1 (2500688)|HEAP_ALLOCATE|[56]|Bytes:5
+00:12:28.1 (2507794)|HEAP_ALLOCATE|[64]|Bytes:7
+00:12:28.1 (2736724)|SOQL_EXECUTE_BEGIN|[2]|Aggregations:0|SELECT Id, Name FROM Account WHERE Name = 'Siebel'
+00:12:28.1 (13453597)|SOQL_EXECUTE_END|[2]|Rows:0
+00:12:28.1 (13480480)|HEAP_ALLOCATE|[2]|Bytes:4
+00:12:28.1 (13493010)|HEAP_ALLOCATE|[2]|Bytes:0
+00:12:28.1 (13524655)|HEAP_ALLOCATE|[2]|Bytes:4
+00:12:28.1 (13558689)|VARIABLE_ASSIGNMENT|[2]|accs|[]|0x25125ce1
+00:12:28.1 (13774376)|HEAP_ALLOCATE|[5]|Bytes:5
+00:12:28.1 (13813146)|VARIABLE_ASSIGNMENT|[5]|a|null|
+00:12:28.1 (13819098)|STATEMENT_EXECUTE|[5]
+00:12:28.1 (13820822)|STATEMENT_EXECUTE|[10]
+00:12:28.1 (13890429)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+00:12:28.13 (13923018)|CUMULATIVE_LIMIT_USAGE
+00:12:28.13 (13923018)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+00:12:28.13 (13923018)|CUMULATIVE_LIMIT_USAGE_END
+
+00:12:28.1 (13953386)|CODE_UNIT_FINISHED|execute_anonymous_apex
+00:12:28.1 (15046530)|EXECUTION_FINISHED

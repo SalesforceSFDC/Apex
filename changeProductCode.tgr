@@ -1,0 +1,9 @@
+trigger changeProductCode on Product2 (before insert) {
+    List<Product2> productList = trigger.new; //trigger.new will return a newer list of records
+    // iterate over every record available in this product list
+    for(product2 pro:productList) {
+        if(pro.productCode != null && pro.productCode = '') {
+            pro.productCode = 'XYZ-' + pro.productCode;
+        }
+    }
+}

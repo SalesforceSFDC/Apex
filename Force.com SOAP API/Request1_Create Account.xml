@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:enterprise.soap.sforce.com" xmlns:urn1="urn:sobject.enterprise.soap.sforce.com">
+   <soapenv:Header>
+      <urn:SessionHeader>
+         <urn:sessionId>00DF00000008HCg!AQ0AQI.HjHsyFVAEvogHxyDRcXHd7l2afuQXljyfb6GKC7f8AS4Vzao2.UTfG0hXFVgGHVUup03H0plvK7mNuj0bl6IpKfw5</urn:sessionId>
+      </urn:SessionHeader>
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn:create>
+         <!--Zero or more repetitions:-->
+         <urn:sObjects xsi:type="urn1:Account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <!--Zero or more repetitions:-->
+            <Name>Bluebeards Grog House</Name>
+            <Description>It is better than Blackbeards.</Description>
+         </urn:sObjects>
+      </urn:create>
+   </soapenv:Body>
+</soapenv:Envelope>

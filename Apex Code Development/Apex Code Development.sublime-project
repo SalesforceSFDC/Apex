@@ -1,0 +1,30 @@
+{
+    "folders": [
+        {
+            "folder_exclude_patterns": [
+                "config/.symbols"
+            ],
+            "path": "."
+        }
+    ],
+    "settings": {
+        "auto_complete_triggers": [
+            {
+                "characters": ".",
+                "selector": "source - comment"
+            },
+            {
+                "characters": ":",
+                "selector": "text.html - comment"
+            },
+            {
+                "characters": "<",
+                "selector": "text.html - comment"
+            },
+            {
+                "characters": " ",
+                "selector": "text.html - comment"
+            }
+        ]
+    }
+}

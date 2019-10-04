@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:enterprise.soap.sforce.com">
+   <soapenv:Header>
+
+   </soapenv:Header>
+   <soapenv:Body>
+      <urn:login>
+         <urn:username>glassjar2014@gmail.com</urn:username>
+         <urn:password>P3rf0rmance0I4bf9l2EABNF16LCeBtdruM</urn:password>
+      </urn:login>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+<sessionId>00DF00000008HCg!AQ0AQIkxCTAMd0MzUkoZ4PTJFUZsdzw9AIqnQXlitUG2vMEZOhO7D_38LxIDAZLQGvWeNQbFiC4pOrWNuWV6YsVUgxON1ZdH</sessionId>
+
+<serverUrl>https://crmsystems-dev-ed.my.salesforce.com/services/Soap/c/40.0/00DF00000008HCg/0DF2A0000000QJY</serverUrl>
+
+00DF00000008HCg!AQ0AQM1oFGv8QgOSn7i0RIsADWivYfxTxWxcvh.zInPKov6ejQTp5jmyfpd7aB31JnBLF7xIqcn26dsdCvkoiK39zBwGrGai
+
+00DF00000008HCg!AQ0AQM1oFGv8QgOSn7i0RIsADWivYfxTxWxcvh.zInPKov6ejQTp5jmyfpd7aB31JnBLF7xIqcn26dsdCvkoiK39zBwGrGai
+
+00DF00000008HCg!AQ0AQM1oFGv8QgOSn7i0RIsADWivYfxTxWxcvh.zInPKov6ejQTp5jmyfpd7aB31JnBLF7xIqcn26dsdCvkoiK39zBwGrGai

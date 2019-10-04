@@ -1,0 +1,40 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:enterprise.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <soapenv:Body>
+      <loginResponse>
+         <result>
+            <metadataServerUrl>https://crmsystems-dev-ed.my.salesforce.com/services/Soap/m/40.0/00DF00000008HCg</metadataServerUrl>
+            <passwordExpired>false</passwordExpired>
+            <sandbox>false</sandbox>
+            <serverUrl>https://crmsystems-dev-ed.my.salesforce.com/services/Soap/c/40.0/00DF00000008HCg</serverUrl>
+            <sessionId>00DF00000008HCg!AQ0AQI.HjHsyFVAEvogHxyDRcXHd7l2afuQXljyfb6GKC7f8AS4Vzao2.UTfG0hXFVgGHVUup03H0plvK7mNuj0bl6IpKfw5</sessionId>
+            <userId>005F0000003vMsPIAU</userId>
+            <userInfo>
+               <accessibilityMode>false</accessibilityMode>
+               <chatterExternal>false</chatterExternal>
+               <currencySymbol>$</currencySymbol>
+               <orgAttachmentFileSizeLimit>5242880</orgAttachmentFileSizeLimit>
+               <orgDefaultCurrencyIsoCode>USD</orgDefaultCurrencyIsoCode>
+               <orgDefaultCurrencyLocale>en_US</orgDefaultCurrencyLocale>
+               <orgDisallowHtmlAttachments>false</orgDisallowHtmlAttachments>
+               <orgHasPersonAccounts>false</orgHasPersonAccounts>
+               <organizationId>00DF00000008HCgMAM</organizationId>
+               <organizationMultiCurrency>false</organizationMultiCurrency>
+               <organizationName>CRM Systems</organizationName>
+               <profileId>00eF0000001AHflIAG</profileId>
+               <roleId>00EF00000017qJ7MAI</roleId>
+               <sessionSecondsValid>7200</sessionSecondsValid>
+               <userDefaultCurrencyIsoCode xsi:nil="true"/>
+               <userEmail>vukdukic@gmail.com</userEmail>
+               <userFullName>Vuk Dukic</userFullName>
+               <userId>005F0000003vMsPIAU</userId>
+               <userLanguage>en_US</userLanguage>
+               <userLocale>en_US</userLocale>
+               <userName>glassjar2014@gmail.com</userName>
+               <userTimeZone>America/Los_Angeles</userTimeZone>
+               <userType>Standard</userType>
+               <userUiSkin>Theme3</userUiSkin>
+            </userInfo>
+         </result>
+      </loginResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

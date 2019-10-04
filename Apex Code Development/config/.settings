@@ -1,0 +1,17 @@
+{
+    "projectName": "Apex Code Development",
+    "username": "glassjar2014@gmail.com",
+    "id": "be836b10-6f2b-11e7-b60f-23779102cd8d",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://crmsystems-dev-ed.my.salesforce.com",
+    "workspace": "/Users/vukdukic/Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "StaticResource"
+    ]
+}

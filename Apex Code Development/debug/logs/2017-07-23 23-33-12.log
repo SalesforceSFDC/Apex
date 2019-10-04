@@ -1,0 +1,654 @@
+40.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+Execute Anonymous: // Create a list of contacts
+Execute Anonymous: List<Contact> conList = new List<Contact> {
+Execute Anonymous:     new Contact(FirstName='Joe',LastName='Smith',Department='Finance'),
+Execute Anonymous:         new Contact(FirstName='Kathy',LastName='Smith',Department='Technology'),
+Execute Anonymous:         new Contact(FirstName='Caroline',LastName='Roth',Department='Finance'),
+Execute Anonymous:         new Contact(FirstName='Kim',LastName='Shain',Department='Education')};
+Execute Anonymous:             
+Execute Anonymous: // Bulk insert all contacts with one DML call
+Execute Anonymous: insert conList;
+Execute Anonymous: 
+Execute Anonymous: // List to hold the new contacts to update
+Execute Anonymous: List<Contact> listToUpdate = new List<Contact>();
+Execute Anonymous: 
+Execute Anonymous: // Iterate through the list and add a title only
+Execute Anonymous: //   if the department is Finance
+Execute Anonymous: for(Contact con : conList) {
+Execute Anonymous:     if (con.Department == 'Finance') {
+Execute Anonymous:         con.Title = 'Financial analyst';
+Execute Anonymous:         // Add updated contact sObject to the list.
+Execute Anonymous:         listToUpdate.add(con);
+Execute Anonymous:     }
+Execute Anonymous: }
+Execute Anonymous: 
+Execute Anonymous: // Bulk update all contacts with one DML call
+Execute Anonymous: update listToUpdate;
+23:33:07.1 (1410227)|USER_INFO|[EXTERNAL]|005F0000003vMsP|glassjar2014@gmail.com|Pacific Standard Time|GMT-07:00
+23:33:07.1 (1435659)|EXECUTION_STARTED
+23:33:07.1 (1440280)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+23:33:07.1 (1663505)|VARIABLE_SCOPE_BEGIN|[2]|conList|List<Contact>|true|false
+23:33:07.1 (1918656)|VARIABLE_SCOPE_BEGIN|[12]|listToUpdate|List<Contact>|true|false
+23:33:07.1 (2051743)|HEAP_ALLOCATE|[72]|Bytes:3
+23:33:07.1 (2103257)|HEAP_ALLOCATE|[77]|Bytes:152
+23:33:07.1 (2124813)|HEAP_ALLOCATE|[342]|Bytes:408
+23:33:07.1 (2143514)|HEAP_ALLOCATE|[355]|Bytes:408
+23:33:07.1 (2157762)|HEAP_ALLOCATE|[467]|Bytes:48
+23:33:07.1 (2215100)|HEAP_ALLOCATE|[139]|Bytes:6
+23:33:07.1 (2239864)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:29
+23:33:07.1 (2437261)|STATEMENT_EXECUTE|[1]
+23:33:07.1 (2440365)|STATEMENT_EXECUTE|[2]
+23:33:07.1 (2445130)|HEAP_ALLOCATE|[2]|Bytes:4
+23:33:07.1 (2599487)|HEAP_ALLOCATE|[3]|Bytes:4
+23:33:07.1 (2694296)|HEAP_ALLOCATE|[3]|Bytes:3
+23:33:07.1 (2767517)|VARIABLE_ASSIGNMENT|[3]|this.FirstName|"Joe"|0x6bfa3ca9
+23:33:07.1 (2776466)|HEAP_ALLOCATE|[3]|Bytes:5
+23:33:07.1 (2796012)|VARIABLE_ASSIGNMENT|[3]|this.LastName|"Smith"|0x6bfa3ca9
+23:33:07.1 (2802372)|HEAP_ALLOCATE|[3]|Bytes:7
+23:33:07.1 (2816911)|VARIABLE_ASSIGNMENT|[3]|this.Department|"Finance"|0x6bfa3ca9
+23:33:07.1 (2864352)|HEAP_ALLOCATE|[4]|Bytes:4
+23:33:07.1 (2872301)|HEAP_ALLOCATE|[4]|Bytes:5
+23:33:07.1 (2889474)|VARIABLE_ASSIGNMENT|[4]|this.FirstName|"Kathy"|0x1a9be38a
+23:33:07.1 (2903645)|VARIABLE_ASSIGNMENT|[4]|this.LastName|"Smith"|0x1a9be38a
+23:33:07.1 (2908783)|HEAP_ALLOCATE|[4]|Bytes:10
+23:33:07.1 (2919773)|VARIABLE_ASSIGNMENT|[4]|this.Department|"Technology"|0x1a9be38a
+23:33:07.1 (2937018)|HEAP_ALLOCATE|[5]|Bytes:4
+23:33:07.1 (2943060)|HEAP_ALLOCATE|[5]|Bytes:8
+23:33:07.1 (2956662)|VARIABLE_ASSIGNMENT|[5]|this.FirstName|"Caroline"|0x4142c23c
+23:33:07.1 (2961825)|HEAP_ALLOCATE|[5]|Bytes:4
+23:33:07.1 (2972238)|VARIABLE_ASSIGNMENT|[5]|this.LastName|"Roth"|0x4142c23c
+23:33:07.1 (2984639)|VARIABLE_ASSIGNMENT|[5]|this.Department|"Finance"|0x4142c23c
+23:33:07.1 (2999169)|HEAP_ALLOCATE|[6]|Bytes:4
+23:33:07.1 (3004704)|HEAP_ALLOCATE|[6]|Bytes:3
+23:33:07.1 (3018386)|VARIABLE_ASSIGNMENT|[6]|this.FirstName|"Kim"|0x1aa49a12
+23:33:07.1 (3023503)|HEAP_ALLOCATE|[6]|Bytes:5
+23:33:07.1 (3034179)|VARIABLE_ASSIGNMENT|[6]|this.LastName|"Shain"|0x1aa49a12
+23:33:07.1 (3039274)|HEAP_ALLOCATE|[6]|Bytes:9
+23:33:07.1 (3049544)|VARIABLE_ASSIGNMENT|[6]|this.Department|"Education"|0x1aa49a12
+23:33:07.1 (3070203)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:20
+23:33:07.1 (3108300)|VARIABLE_ASSIGNMENT|[2]|conList|[{"FirstName":"Joe","LastName":"Smith","Department":"Finance"},{"FirstName":"Kathy","LastName":"Smith","Department":"Technology"},{"FirstName":"Caroline","LastName":"Roth","Department":"Finance"},{"FirstName":"Kim","LastName":"Shain","Department":"Education"}]|0x6505e7cb
+23:33:07.1 (3119163)|STATEMENT_EXECUTE|[9]
+23:33:07.1 (3155639)|HEAP_ALLOCATE|[50]|Bytes:5
+23:33:07.1 (3184367)|HEAP_ALLOCATE|[56]|Bytes:5
+23:33:07.1 (3195907)|HEAP_ALLOCATE|[64]|Bytes:7
+23:33:07.1 (3252249)|DML_BEGIN|[9]|Op:Insert|Type:Contact|Rows:4
+23:33:07.1 (3285066)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:20
+23:33:07.574 (574455217)|ENTERING_MANAGED_PKG|MC4SF
+23:33:07.576 (576009829)|CUMULATIVE_LIMIT_USAGE
+23:33:07.576 (576009829)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 4 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:07.576 (576009829)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:09.100 (2100740811)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2103685549)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2103747809)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2103797112)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2103854219)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2103959924)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2120582018)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2120657549)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2120701450)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2122377243)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2122408357)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137112670)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137147235)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137178725)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137188609)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137222469)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137232065)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137262443)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137271632)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137294421)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137302520)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137328294)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137337100)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137362505)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137371049)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137397954)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137406780)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137433726)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137442856)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137467180)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137476828)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137504787)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137513785)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137535243)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137543322)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137564283)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137574886)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137603075)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137611776)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137638039)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2137646541)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2138892394)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2138933740)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139156829)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139176453)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139220898)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139233469)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139272381)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139283702)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139326514)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139339598)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139375679)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139386019)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139426457)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139437211)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139469485)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.100 (2139819274)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.139 (2139894170)|CUMULATIVE_LIMIT_USAGE
+23:33:09.139 (2139894170)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 4 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.139 (2139894170)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:09.203 (2203642140)|CODE_UNIT_STARTED|[EXTERNAL]|01qF0000000WOJH|ExampleTrigger on Contact trigger event BeforeInsert for [new, new, new, new]
+23:33:09.203 (2203732305)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:20
+23:33:09.203 (2203869293)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:33:09.203 (2203891660)|VARIABLE_SCOPE_BEGIN|[1]|this|ExampleTrigger|true|false
+23:33:09.203 (2203945521)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x1e624d98
+23:33:09.203 (2204009904)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:33:09.203 (2204025205)|VARIABLE_SCOPE_BEGIN|[1]|this|ExampleTrigger|true|false
+23:33:09.203 (2204045648)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x1e624d98
+23:33:09.203 (2204056583)|STATEMENT_EXECUTE|[1]
+23:33:09.204 (2204062025)|CUMULATIVE_LIMIT_USAGE
+23:33:09.204 (2204062025)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 4 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.204 (2204062025)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:09.203 (2205469634)|CODE_UNIT_FINISHED|ExampleTrigger on Contact trigger event BeforeInsert for [new, new, new, new]
+23:33:09.203 (2253102972)|CODE_UNIT_STARTED|[EXTERNAL]|01qF00000015gcc|OnContact1 on Contact trigger event BeforeInsert for [new, new, new, new]
+23:33:09.203 (2253157256)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:20
+23:33:09.203 (2253264245)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:33:09.203 (2253285703)|VARIABLE_SCOPE_BEGIN|[1]|this|OnContact1|true|false
+23:33:09.203 (2253325369)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x2a5ff4fc
+23:33:09.203 (2253429701)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:33:09.203 (2253469811)|VARIABLE_SCOPE_BEGIN|[1]|this|OnContact1|true|false
+23:33:09.203 (2253489636)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x2a5ff4fc
+23:33:09.203 (2253497536)|STATEMENT_EXECUTE|[1]
+23:33:09.203 (2253498908)|STATEMENT_EXECUTE|[2]
+23:33:09.203 (2255603309)|VARIABLE_SCOPE_BEGIN|[7]|PersonAccountSupport.AccountFields|Set<String>|true|true
+23:33:09.203 (2255619110)|VARIABLE_SCOPE_BEGIN|[5]|PersonAccountSupport.FakePersonAccountDuringTest|Boolean|false|true
+23:33:09.203 (2255633420)|VARIABLE_SCOPE_BEGIN|[42]|PersonAccountSupport.FakePersonContactIDs|List<Id>|true|true
+23:33:09.203 (2255640648)|VARIABLE_SCOPE_BEGIN|[44]|PersonAccountSupport.UpdatingPersonContact|Boolean|false|true
+23:33:09.203 (2255662153)|HEAP_ALLOCATE|[2]|Bytes:10
+23:33:09.203 (2255687492)|METHOD_ENTRY|[3]|01pF0000003bHZk|PersonAccountSupport.PersonAccountSupport()
+23:33:09.203 (2255694057)|STATEMENT_EXECUTE|[3]
+23:33:09.203 (2255698186)|STATEMENT_EXECUTE|[3]
+23:33:09.203 (2255699331)|STATEMENT_EXECUTE|[5]
+23:33:09.203 (2255711377)|HEAP_ALLOCATE|[5]|Bytes:5
+23:33:09.203 (2255726237)|VARIABLE_ASSIGNMENT|[5]|PersonAccountSupport.FakePersonAccountDuringTest|false
+23:33:09.203 (2255729957)|STATEMENT_EXECUTE|[7]
+23:33:09.203 (2255736821)|VARIABLE_ASSIGNMENT|[7]|PersonAccountSupport.AccountFields|null|
+23:33:09.203 (2255740215)|STATEMENT_EXECUTE|[42]
+23:33:09.203 (2255744216)|VARIABLE_ASSIGNMENT|[42]|PersonAccountSupport.FakePersonContactIDs|null|
+23:33:09.203 (2255747484)|STATEMENT_EXECUTE|[44]
+23:33:09.203 (2255750216)|HEAP_ALLOCATE|[44]|Bytes:5
+23:33:09.203 (2255755685)|VARIABLE_ASSIGNMENT|[44]|PersonAccountSupport.UpdatingPersonContact|false
+23:33:09.203 (2255764694)|METHOD_EXIT|[3]|PersonAccountSupport
+23:33:09.203 (2255826286)|METHOD_ENTRY|[2]|01pF0000003bHZk|PersonAccountSupport.processContactTrigger1(Boolean, List<Contact>, Map<Id,Contact>)
+23:33:09.203 (2255862947)|VARIABLE_SCOPE_BEGIN|[32]|isBefore|Boolean|false|false
+23:33:09.203 (2255872480)|VARIABLE_ASSIGNMENT|[32]|isBefore|true
+23:33:09.203 (2255877814)|VARIABLE_SCOPE_BEGIN|[32]|newlist|List<Contact>|true|false
+23:33:09.203 (2273379517)|VARIABLE_ASSIGNMENT|[32]|newlist|[{"cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Joe","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"LastName":"Smith","Data_Quality_Score__ (1 more) ...":0,"MR_Total_Referral_Am (16 more) ...":0.00},{"cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Technology","mkto2__Original_Sour (10 more) ...":"salesforce.com","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Kathy","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"LastName":"Smith","Data_Quality_Score__ (1 more) ...":0,"MR_Total_Referral_Am (16 more) ...":0.00},{"cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Caroline","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"LastName":"Roth","Data_Quality_Score__ (1 more) ...":0,"MR_Total_Referral_Am (16 more) ...":0.00},{"cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Education","mkto2__Original_Sour (10 more) ...":"salesforce.com","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Kim","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"LastName":"Shain","Data_Quality_Score__ (1 more) ...":0,"MR_Total_Referral_Am (16 more) ...":0.00}]|0x10df85fb
+23:33:09.203 (2273528281)|VARIABLE_SCOPE_BEGIN|[32]|oldmap|Map<Id,Contact>|true|false
+23:33:09.203 (2273549228)|VARIABLE_ASSIGNMENT|[32]|oldmap|null|
+23:33:09.203 (2273566734)|STATEMENT_EXECUTE|[33]
+23:33:09.203 (2273727465)|HEAP_ALLOCATE|[34]|Bytes:5
+23:33:09.203 (2273761424)|HEAP_ALLOCATE|[34]|Bytes:4
+23:33:09.203 (2273781035)|VARIABLE_SCOPE_BEGIN|[34]|ct|Contact|true|false
+23:33:09.203 (2275673744)|VARIABLE_ASSIGNMENT|[34]|ct|{"cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Joe","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"LastName":"Smith","Data_Quality_Score__ (1 more) ...":0,"MR_Total_Referral_Am (16 more) ...":0.00}|0x587a7d4
+23:33:09.203 (2275700437)|STATEMENT_EXECUTE|[35]
+23:33:09.203 (2275719453)|STATEMENT_EXECUTE|[38]
+23:33:09.203 (2275726597)|HEAP_ALLOCATE|[38]|Bytes:9
+23:33:09.203 (2277813836)|VARIABLE_ASSIGNMENT|[38]|this.Level2__c|"Secondary"|0x587a7d4
+23:33:09.203 (2277844287)|HEAP_ALLOCATE|[34]|Bytes:5
+23:33:09.203 (2277862593)|HEAP_ALLOCATE|[34]|Bytes:4
+23:33:09.203 (2277872802)|VARIABLE_SCOPE_BEGIN|[34]|ct|Contact|true|false
+23:33:09.203 (2280024735)|VARIABLE_ASSIGNMENT|[34]|ct|{"cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Technology","mkto2__Original_Sour (10 more) ...":"salesforce.com","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Kathy","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"LastName":"Smith","Data_Quality_Score__ (1 more) ...":0,"MR_Total_Referral_Am (16 more) ...":0.00}|0x20f1114a
+23:33:09.203 (2280052349)|STATEMENT_EXECUTE|[35]
+23:33:09.203 (2280068484)|STATEMENT_EXECUTE|[38]
+23:33:09.203 (2282155573)|VARIABLE_ASSIGNMENT|[38]|this.Level2__c|"Secondary"|0x20f1114a
+23:33:09.203 (2282185665)|HEAP_ALLOCATE|[34]|Bytes:5
+23:33:09.203 (2282203927)|HEAP_ALLOCATE|[34]|Bytes:4
+23:33:09.203 (2282213121)|VARIABLE_SCOPE_BEGIN|[34]|ct|Contact|true|false
+23:33:09.203 (2284048599)|VARIABLE_ASSIGNMENT|[34]|ct|{"cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Caroline","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"LastName":"Roth","Data_Quality_Score__ (1 more) ...":0,"MR_Total_Referral_Am (16 more) ...":0.00}|0x6201d548
+23:33:09.203 (2284086261)|STATEMENT_EXECUTE|[35]
+23:33:09.203 (2284102431)|STATEMENT_EXECUTE|[38]
+23:33:09.203 (2286678193)|VARIABLE_ASSIGNMENT|[38]|this.Level2__c|"Secondary"|0x6201d548
+23:33:09.203 (2286712675)|HEAP_ALLOCATE|[34]|Bytes:5
+23:33:09.203 (2286733043)|HEAP_ALLOCATE|[34]|Bytes:4
+23:33:09.203 (2286744258)|VARIABLE_SCOPE_BEGIN|[34]|ct|Contact|true|false
+23:33:09.203 (2288626534)|VARIABLE_ASSIGNMENT|[34]|ct|{"cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Education","mkto2__Original_Sour (10 more) ...":"salesforce.com","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Kim","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"LastName":"Shain","Data_Quality_Score__ (1 more) ...":0,"MR_Total_Referral_Am (16 more) ...":0.00}|0xe9d64ae
+23:33:09.203 (2288667516)|STATEMENT_EXECUTE|[35]
+23:33:09.203 (2288693265)|STATEMENT_EXECUTE|[38]
+23:33:09.203 (2290767384)|VARIABLE_ASSIGNMENT|[38]|this.Level2__c|"Secondary"|0xe9d64ae
+23:33:09.203 (2290799721)|HEAP_ALLOCATE|[34]|Bytes:5
+23:33:09.203 (2290820120)|VARIABLE_ASSIGNMENT|[34]|ct|null|
+23:33:09.203 (2290836666)|METHOD_EXIT|[2]|01pF0000003bHZk|PersonAccountSupport.processContactTrigger1(Boolean, List<Contact>, Map<Id,Contact>)
+23:33:09.290 (2290853598)|CUMULATIVE_LIMIT_USAGE
+23:33:09.290 (2290853598)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 4 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.290 (2290853598)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:09.203 (2299618456)|CODE_UNIT_FINISHED|OnContact1 on Contact trigger event BeforeInsert for [new, new, new, new]
+23:33:09.471 (2471837065)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2471990648)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2472021529)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2472090966)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2472230052)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2492956404)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2493117675)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2493134006)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2493169393)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2493175399)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2493370738)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.471 (2494083334)|SOQL_EXECUTE_BEGIN|[349]|Aggregations:0|SELECT Id, Name FROM Map_Object__c WHERE (Sobject_Name__c = :tmpVar1 AND Real_Time_Geocode__c = TRUE AND Status__c = 'Active')
+23:33:09.471 (2497703041)|SOQL_EXECUTE_END|[349]|Rows:0
+23:33:09.498 (2498019427)|CUMULATIVE_LIMIT_USAGE
+23:33:09.498 (2498019427)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 1 out of 150
+  Number of DML rows: 4 out of 10000
+  Maximum CPU time: 58 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.498 (2498019427)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.498 (2498019427)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:09.203 (2541105625)|DML_END|[9]
+23:33:09.203 (2541171717)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:20
+23:33:09.203 (2541195376)|STATEMENT_EXECUTE|[12]
+23:33:09.203 (2541204186)|HEAP_ALLOCATE|[12]|Bytes:4
+23:33:09.203 (2541271869)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:33:09.203 (2541296579)|VARIABLE_ASSIGNMENT|[12]|listToUpdate|[]|0x3f97cc6
+23:33:09.203 (2541366632)|HEAP_ALLOCATE|[16]|Bytes:5
+23:33:09.203 (2541392940)|HEAP_ALLOCATE|[16]|Bytes:20
+23:33:09.203 (2541407436)|VARIABLE_SCOPE_BEGIN|[16]|con|Contact|true|false
+23:33:09.203 (2541446133)|VARIABLE_ASSIGNMENT|[16]|con|{"FirstName":"Joe","LastName":"Smith","Department":"Finance","Id":"0032A00002bacioQAA"}|0x6bfa3ca9
+23:33:09.203 (2541454144)|STATEMENT_EXECUTE|[16]
+23:33:09.203 (2541505904)|STATEMENT_EXECUTE|[17]
+23:33:09.203 (2541507811)|STATEMENT_EXECUTE|[18]
+23:33:09.203 (2541511253)|HEAP_ALLOCATE|[18]|Bytes:17
+23:33:09.203 (2541564123)|VARIABLE_ASSIGNMENT|[18]|this.Title|"Financial analyst"|0x6bfa3ca9
+23:33:09.203 (2541570893)|STATEMENT_EXECUTE|[20]
+23:33:09.203 (2541617745)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:33:09.203 (2541634977)|HEAP_ALLOCATE|[16]|Bytes:5
+23:33:09.203 (2541646321)|HEAP_ALLOCATE|[16]|Bytes:20
+23:33:09.203 (2541653060)|VARIABLE_SCOPE_BEGIN|[16]|con|Contact|true|false
+23:33:09.203 (2541669025)|VARIABLE_ASSIGNMENT|[16]|con|{"FirstName":"Kathy","LastName":"Smith","Department":"Technology","Id":"0032A00002bacipQAA"}|0x1a9be38a
+23:33:09.203 (2541674925)|STATEMENT_EXECUTE|[16]
+23:33:09.203 (2541686411)|STATEMENT_EXECUTE|[17]
+23:33:09.203 (2541694566)|HEAP_ALLOCATE|[16]|Bytes:5
+23:33:09.203 (2541703730)|HEAP_ALLOCATE|[16]|Bytes:20
+23:33:09.203 (2541708613)|VARIABLE_SCOPE_BEGIN|[16]|con|Contact|true|false
+23:33:09.203 (2541745865)|VARIABLE_ASSIGNMENT|[16]|con|{"FirstName":"Caroline","LastName":"Roth","Department":"Finance","Id":"0032A00002baciqQAA"}|0x4142c23c
+23:33:09.203 (2541755406)|STATEMENT_EXECUTE|[16]
+23:33:09.203 (2541769051)|STATEMENT_EXECUTE|[17]
+23:33:09.203 (2541770342)|STATEMENT_EXECUTE|[18]
+23:33:09.203 (2541820978)|VARIABLE_ASSIGNMENT|[18]|this.Title|"Financial analyst"|0x4142c23c
+23:33:09.203 (2541827925)|STATEMENT_EXECUTE|[20]
+23:33:09.203 (2541836924)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:33:09.203 (2541849680)|HEAP_ALLOCATE|[16]|Bytes:5
+23:33:09.203 (2541859927)|HEAP_ALLOCATE|[16]|Bytes:20
+23:33:09.203 (2541866297)|VARIABLE_SCOPE_BEGIN|[16]|con|Contact|true|false
+23:33:09.203 (2541880749)|VARIABLE_ASSIGNMENT|[16]|con|{"FirstName":"Kim","LastName":"Shain","Department":"Education","Id":"0032A00002bacirQAA"}|0x1aa49a12
+23:33:09.203 (2541886086)|STATEMENT_EXECUTE|[16]
+23:33:09.203 (2541895290)|STATEMENT_EXECUTE|[17]
+23:33:09.203 (2541902640)|HEAP_ALLOCATE|[16]|Bytes:5
+23:33:09.203 (2541912703)|VARIABLE_ASSIGNMENT|[16]|con|null|
+23:33:09.203 (2541916903)|STATEMENT_EXECUTE|[25]
+23:33:09.203 (2541959444)|DML_BEGIN|[25]|Op:Update|Type:Contact|Rows:2
+23:33:09.203 (2541991492)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+23:33:09.560 (2560044419)|ENTERING_MANAGED_PKG|MC4SF
+23:33:09.560 (2560542220)|CUMULATIVE_LIMIT_USAGE
+23:33:09.560 (2560542220)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of DML rows: 6 out of 10000
+  Maximum CPU time: 58 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.560 (2560542220)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 1 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.560 (2560542220)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:09.563 (2563780894)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.563 (2563860434)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.563 (2563881393)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.563 (2563929929)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.563 (2564019300)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.563 (2564101605)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.563 (2564699165)|SOQL_EXECUTE_BEGIN|[311]|Aggregations:0|SELECT Name From Map_Object__c 
+23:33:09.563 (2582924265)|SOQL_EXECUTE_END|[311]|Rows:0
+23:33:09.563 (2583451834)|ENTERING_MANAGED_PKG|geopointe
+23:33:09.583 (2583532915)|CUMULATIVE_LIMIT_USAGE
+23:33:09.583 (2583532915)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of DML rows: 6 out of 10000
+  Maximum CPU time: 58 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.583 (2583532915)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.583 (2583532915)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:09.203 (2587253573)|CODE_UNIT_STARTED|[EXTERNAL]|01qF00000015gcc|OnContact1 on Contact trigger event BeforeUpdate for [0032A00002bacio, 0032A00002baciq]
+23:33:09.203 (2587296275)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+23:33:09.203 (2587305840)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+23:33:09.203 (2587340495)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:33:09.203 (2587349757)|VARIABLE_SCOPE_BEGIN|[1]|this|OnContact1|true|false
+23:33:09.203 (2587379681)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x75a79ec5
+23:33:09.203 (2587403779)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:4
+23:33:09.203 (2587408501)|VARIABLE_SCOPE_BEGIN|[1]|this|OnContact1|true|false
+23:33:09.203 (2587417680)|VARIABLE_ASSIGNMENT|[1]|this|{}|0x75a79ec5
+23:33:09.203 (2587423432)|STATEMENT_EXECUTE|[1]
+23:33:09.203 (2587425099)|STATEMENT_EXECUTE|[2]
+23:33:09.203 (2587464939)|METHOD_ENTRY|[2]|01pF0000003bHZk|PersonAccountSupport.processContactTrigger1(Boolean, List<Contact>, Map<Id,Contact>)
+23:33:09.203 (2587474901)|VARIABLE_SCOPE_BEGIN|[32]|isBefore|Boolean|false|false
+23:33:09.203 (2587484511)|VARIABLE_ASSIGNMENT|[32]|isBefore|true
+23:33:09.203 (2587488262)|VARIABLE_SCOPE_BEGIN|[32]|newlist|List<Contact>|true|false
+23:33:09.203 (2592249669)|VARIABLE_ASSIGNMENT|[32]|newlist|[{"LastModifiedDate":"2017-07-24T06:33:10.000Z","cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (31 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","CreatedById":"005F0000003vMsPIAU","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","Level2__c":"Secondary","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Joe","HasOptedOutOfEmail":false,"Title":"Financial analyst","datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"SystemModstamp":"2017-07-24T06:33:10.000Z","mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"CreatedDate":"2017-07-24T06:33:10.000Z","LastName":"Smith","Id":"0032A00002bacioQAA","Data_Quality_Score__ (1 more) ...":20,"LastModifiedById":"005F0000003vMsPIAU","MR_Total_Referral_Am (16 more) ...":0.00},{"LastModifiedDate":"2017-07-24T06:33:10.000Z","cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (31 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","CreatedById":"005F0000003vMsPIAU","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","Level2__c":"Secondary","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Caroline","HasOptedOutOfEmail":false,"Title":"Financial analyst","datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"SystemModstamp":"2017-07-24T06:33:10.000Z","mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"CreatedDate":"2017-07-24T06:33:10.000Z","LastName":"Roth","Id":"0032A00002baciqQAA","Data_Quality_Score__ (1 more) ...":20,"LastModifiedById":"005F0000003vMsPIAU","MR_Total_Referral_Am (16 more) ...":0.00}]|0xd9ff697
+23:33:09.203 (2592303838)|VARIABLE_SCOPE_BEGIN|[32]|oldmap|Map<Id,Contact>|true|false
+23:33:09.203 (2596806322)|VARIABLE_ASSIGNMENT|[32]|oldmap|{"0032A00002bacioQAA":{"LastModifiedDate":"2017-07-24T06:33:10.000Z","cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","CreatedById":"005F0000003vMsPIAU","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","Level2__c":"Secondary","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Joe","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"SystemModstamp":"2017-07-24T06:33:10.000Z","mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"CreatedDate":"2017-07-24T06:33:10.000Z","LastName":"Smith","Id":"0032A00002bacioQAA","Data_Quality_Score__ (1 more) ...":0,"LastModifiedById":"005F0000003vMsPIAU","MR_Total_Referral_Am (16 more) ...":0.00},"0032A00002baciqQAA":{"LastModifiedDate":"2017-07-24T06:33:10.000Z","cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (42 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","CreatedById":"005F0000003vMsPIAU","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","Level2__c":"Secondary","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Caroline","HasOptedOutOfEmail":false,"datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"SystemModstamp":"2017-07-24T06:33:10.000Z","mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"CreatedDate":"2017-07-24T06:33:10.000Z","LastName":"Roth","Id":"0032A00002baciqQAA","Data_Quality_Score__ (1 more) ...":0,"LastModifiedById":"005F0000003vMsPIAU","MR_Total_Referral_Am (16 more) ...":0.00}}|0x489c0904
+23:33:09.203 (2596861419)|STATEMENT_EXECUTE|[33]
+23:33:09.203 (2596902930)|HEAP_ALLOCATE|[34]|Bytes:5
+23:33:09.203 (2596924466)|HEAP_ALLOCATE|[34]|Bytes:4
+23:33:09.203 (2596936629)|VARIABLE_SCOPE_BEGIN|[34]|ct|Contact|true|false
+23:33:09.203 (2598719557)|VARIABLE_ASSIGNMENT|[34]|ct|{"LastModifiedDate":"2017-07-24T06:33:10.000Z","cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (31 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","CreatedById":"005F0000003vMsPIAU","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","Level2__c":"Secondary","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Joe","HasOptedOutOfEmail":false,"Title":"Financial analyst","datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"SystemModstamp":"2017-07-24T06:33:10.000Z","mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"CreatedDate":"2017-07-24T06:33:10.000Z","LastName":"Smith","Id":"0032A00002bacioQAA","Data_Quality_Score__ (1 more) ...":20,"LastModifiedById":"005F0000003vMsPIAU","MR_Total_Referral_Am (16 more) ...":0.00}|0x1f588b41
+23:33:09.203 (2598751808)|STATEMENT_EXECUTE|[35]
+23:33:09.203 (2598773022)|STATEMENT_EXECUTE|[38]
+23:33:09.203 (2600535822)|VARIABLE_ASSIGNMENT|[38]|this.Level2__c|"Secondary"|0x1f588b41
+23:33:09.203 (2600562560)|HEAP_ALLOCATE|[34]|Bytes:5
+23:33:09.203 (2600579050)|HEAP_ALLOCATE|[34]|Bytes:4
+23:33:09.203 (2600587520)|VARIABLE_SCOPE_BEGIN|[34]|ct|Contact|true|false
+23:33:09.203 (2602270864)|VARIABLE_ASSIGNMENT|[34]|ct|{"LastModifiedDate":"2017-07-24T06:33:10.000Z","cirrusadv__Created_b (19 more) ...":false,"DoNotCall":false,"Total_Urgent_Referra (5 more) ...":0,"MR_Total_Routine_Ref (9 more) ...":0,"HasOptedOutOfFax":false,"Total_Referral_Amoun (11 more) ...":0.00,"Do_Not_Contact__c":false,"Data_Quality_Descrip (7 more) ...":"Missing: Phone, Emai (31 more) ...","Department":"Finance","mkto2__Original_Sour (10 more) ...":"salesforce.com","CreatedById":"005F0000003vMsPIAU","OwnerId":"005F0000003vMsPIAU","RecordTypeId":"012F0000000WamDIAS","MR_Advocacy__c":"_IM1_/servlet/servle (58 more) ...","MR_Influence_Icon__c":"_IM1_/servlet/servle (52 more) ...","Level2__c":"Secondary","MR_Total_Referrals__ (1 more) ...":0,"IsDeleted":false,"IsEmailBounced":false,"FirstName":"Caroline","HasOptedOutOfEmail":false,"Title":"Financial analyst","datahugapps__Activit (10 more) ...":"Inactive","MR_KOL__c":false,"SystemModstamp":"2017-07-24T06:33:10.000Z","mkto2__Original_Sour (10 more) ...":"Contact","CleanStatus":"Pending","MR_Years_of_Experien (5 more) ...":0,"CreatedDate":"2017-07-24T06:33:10.000Z","LastName":"Roth","Id":"0032A00002baciqQAA","Data_Quality_Score__ (1 more) ...":20,"LastModifiedById":"005F0000003vMsPIAU","MR_Total_Referral_Am (16 more) ...":0.00}|0x56407fd9
+23:33:09.203 (2602301815)|STATEMENT_EXECUTE|[35]
+23:33:09.203 (2602318144)|STATEMENT_EXECUTE|[38]
+23:33:09.203 (2604035443)|VARIABLE_ASSIGNMENT|[38]|this.Level2__c|"Secondary"|0x56407fd9
+23:33:09.203 (2604061044)|HEAP_ALLOCATE|[34]|Bytes:5
+23:33:09.203 (2604077660)|VARIABLE_ASSIGNMENT|[34]|ct|null|
+23:33:09.203 (2604092297)|METHOD_EXIT|[2]|01pF0000003bHZk|PersonAccountSupport.processContactTrigger1(Boolean, List<Contact>, Map<Id,Contact>)
+23:33:09.604 (2604106220)|CUMULATIVE_LIMIT_USAGE
+23:33:09.604 (2604106220)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of DML rows: 6 out of 10000
+  Maximum CPU time: 58 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.604 (2604106220)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:09.604 (2604106220)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:09.203 (2606384567)|CODE_UNIT_FINISHED|OnContact1 on Contact trigger event BeforeUpdate for [0032A00002bacio, 0032A00002baciq]
+23:33:10.848 (3848274772)|ENTERING_MANAGED_PKG|Dropbox_for_SF
+23:33:10.848 (3856050656)|ENTERING_MANAGED_PKG|Dropbox_for_SF
+23:33:10.848 (3856135771)|ENTERING_MANAGED_PKG|Dropbox_for_SF
+23:33:10.848 (3860723803)|ENTERING_MANAGED_PKG|Dropbox_for_SF
+23:33:10.848 (3861389027)|ENTERING_MANAGED_PKG|Dropbox_for_SF
+23:33:10.848 (3884553988)|ENTERING_MANAGED_PKG|Dropbox_for_SF
+23:33:10.848 (3884680386)|ENTERING_MANAGED_PKG|Dropbox_for_SF
+23:33:10.848 (3885419208)|ENTERING_MANAGED_PKG|Dropbox_for_SF
+23:33:10.848 (3885539708)|ENTERING_MANAGED_PKG|Dropbox_for_SF
+23:33:10.885 (3885693106)|CUMULATIVE_LIMIT_USAGE
+23:33:10.885 (3885693106)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of DML rows: 6 out of 10000
+  Maximum CPU time: 99 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:10.885 (3885693106)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:10.885 (3885693106)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:10.890 (3890107108)|ENTERING_MANAGED_PKG|MC4SF
+23:33:10.890 (3907089705)|ENTERING_MANAGED_PKG|MC4SF
+23:33:10.909 (3909217810)|CUMULATIVE_LIMIT_USAGE
+23:33:10.909 (3909217810)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of DML rows: 6 out of 10000
+  Maximum CPU time: 99 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:10.909 (3909217810)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:10.909 (3909217810)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:10.913 (3913762004)|ENTERING_MANAGED_PKG|geopointe
+23:33:10.913 (3913917986)|ENTERING_MANAGED_PKG|geopointe
+23:33:10.913 (3913960853)|ENTERING_MANAGED_PKG|geopointe
+23:33:10.913 (3914011186)|ENTERING_MANAGED_PKG|geopointe
+23:33:10.913 (3914119655)|ENTERING_MANAGED_PKG|geopointe
+23:33:10.913 (3914196478)|ENTERING_MANAGED_PKG|geopointe
+23:33:10.914 (3914479061)|CUMULATIVE_LIMIT_USAGE
+23:33:10.914 (3914479061)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of DML rows: 6 out of 10000
+  Maximum CPU time: 99 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:10.914 (3914479061)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:10.914 (3914479061)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:10.935 (3935779642)|DML_END|[25]
+23:33:10.935 (3935840266)|HEAP_ALLOCATE|[EXTERNAL]|Bytes:12
+23:33:10.974 (3974332998)|CUMULATIVE_LIMIT_USAGE
+23:33:10.974 (3974332998)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 2 out of 150
+  Number of DML rows: 6 out of 10000
+  Maximum CPU time: 99 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:10.974 (3974332998)|LIMIT_USAGE_FOR_NS|geopointe|
+  Number of SOQL queries: 2 out of 100
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 10000
+  Maximum heap size: 0 out of 6000000
+  Number of callouts: 0 out of 100
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 50
+  Number of queueable jobs added to the queue: 0 out of 50
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:33:10.974 (3974332998)|CUMULATIVE_LIMIT_USAGE_END
+
+23:33:10.935 (3974393034)|CODE_UNIT_FINISHED|execute_anonymous_apex
+23:33:10.935 (3975543121)|EXECUTION_FINISHED

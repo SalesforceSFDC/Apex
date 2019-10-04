@@ -1,0 +1,16 @@
+{
+    "testClass.cls": {
+        "createdById": "005F0000003vMsPIAU",
+        "createdByName": "Vuk Dukic",
+        "createdDate": "2017-07-23T04:35:43.000Z",
+        "fileName": "unpackaged/classes/testClass.cls",
+        "fullName": "testClass",
+        "id": "01p2A000004D3nkQAC",
+        "lastModifiedById": "005F0000003vMsPIAU",
+        "lastModifiedByName": "Vuk Dukic",
+        "lastModifiedDate": "2017-07-23T04:35:43.000Z",
+        "manageableState": "unmanaged",
+        "type": "ApexClass",
+        "mmState": "clean"
+    }
+}

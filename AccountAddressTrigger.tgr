@@ -1,0 +1,10 @@
+trigger AccountAddressTrigger on Account (before insert, before update) {
+  List<Account> acctList = new List<Account>();
+
+  for (Account a : Trigger.new) {
+    List<Account>
+  }
+
+  for (Account a : [SELECT Id FROM Account
+                    WHERE Id IN ])
+}

@@ -1,0 +1,21 @@
+30.0 APEX_CODE,FINEST;APEX_PROFILING,INFO;CALLOUT,INFO;DB,INFO;SYSTEM,DEBUG;VALIDATION,INFO;VISUALFORCE,INFO;WAVE,INFO;WORKFLOW,INFO
+23:15:01.24 (24478424)|ENTERING_MANAGED_PKG|synety
+23:15:01.24 (28066201)|SOQL_EXECUTE_BEGIN|[16]|Aggregations:0|SELECT ID, Call_Session_Id__c, IsProcessed__c, CallDurationInSeconds, To__c, From__c, Batch_Exception__c, CreatedById, CreatedDate FROM Task 
+23:15:01.24 (66470993)|SOQL_EXECUTE_END|[16]|Rows:0
+23:15:01.82 (82393354)|CUMULATIVE_LIMIT_USAGE
+23:15:01.82 (82393354)|LIMIT_USAGE_FOR_NS|(default)|
+  Number of SOQL queries: 0 out of 200
+  Number of query rows: 0 out of 50000
+  Number of SOSL queries: 0 out of 20
+  Number of DML statements: 0 out of 150
+  Number of DML rows: 0 out of 10000
+  Maximum CPU time: 0 out of 60000
+  Maximum heap size: 0 out of 12000000
+  Number of callouts: 0 out of 0
+  Number of Email Invocations: 0 out of 10
+  Number of future calls: 0 out of 0
+  Number of queueable jobs added to the queue: 0 out of 1
+  Number of Mobile Apex push calls: 0 out of 10
+
+23:15:01.82 (82393354)|CUMULATIVE_LIMIT_USAGE_END
+

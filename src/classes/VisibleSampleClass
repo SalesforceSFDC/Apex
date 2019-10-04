@@ -1,0 +1,38 @@
+public class VisibleSampleClass {
+    // Private member variables
+    @TestVisible private Integer recordNumber = 0;
+    @TestVisible private String areaCode = '415';
+    // Public member variable
+    public Integer maxRecords = 1000;
+
+    // Private inner class
+    @TestVisible class Employee {
+        String fullName;
+        String phone;
+
+        // Constructor 
+        @TestVisible Employee(String s, String ph) {
+            fullName = s;
+            phone = ph;
+        }
+    }
+
+    // Private method
+    @TestVisible private String privateMethod(Employee e) {
+        System.debug('I am private');
+        recordNumber++;
+        String phone = areaCode + '' + e.phone;
+        String s = e.fullName + '\'s phone number is ' + phone;
+        System.debug(s);
+        return s;
+    }
+
+    // Private method
+    @TestVisible void publicMethod() {
+        maxRecords++;
+        System.debug('I am public');
+    }
+
+    // Private custom exception class
+    @TestVisible private class MyException extends Exception {}
+}

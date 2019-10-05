@@ -332,3 +332,4 @@ for (Database.SaveResult sr : srList) {
 }
 
 ```
+* SOQL query limits are 100 SOQL queries for synchronous Apex and 200 for asynchronous Apex

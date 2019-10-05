@@ -43,5 +43,24 @@ operate on.
  in `Trigger.New`:`WHERE AccountId IN :Trigger.New`.
 
  Example shows query to get all related opps 
- */ 
+*/ 
+trigger SoqlTriggerBulk on Account (after update) {
+    // Perform SOQL query once
+    // Get the related opps for the accounts 
+    // and iterate over those records
+    for (Opportunity opp : 
+        [SELECT Id, Name, CloseDate FROM Opportunity
+            WHERE AccountId IN :Trigger.New]){
+                // do some other process
+            }
+}
+
+/**
+Triggers execute on batches of 200 records at a time.
+If 400 records cause a trigger to fire, the trigger fires twice,
+once for each 200 records.
+
+SOQL for loop record batching
+ */
+
  

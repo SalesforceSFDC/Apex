@@ -63,4 +63,75 @@ once for each 200 records.
 SOQL for loop record batching
  */
 
- 
+ /**
+When performing DML calls in a trigger or in a class,
+perform DML calls on a collection of sObjects when possible.
+
+Apex runtime allows up to 150 DML calls in one transaction.
+
+This example performs an update call inside a for loop that
+iterates over related opps.
+
+It adds the Opp sObject to update to a list of opportunities
+(oppsToUpdate) in the loop.
+
+Nest, the trigger performs the DML call outside the loop on this
+list after all opps have been added to the list.
+
+This pattern uses only one DML call regardless of the number of 
+sObjects being updated.
+ */
+trigger DmlTriggerBulk on Account(after update) {
+    // Get the related opps for the accounts
+    List<Opportunity> relatedOpps = [SELECT Id, Name, Probability
+        FROM Opportunity WHERE AccountId IN :Trigger.New];
+
+    List<Opportunity> oppsToUpdate = new List<Opportunity>();
+    // Iterate over the related opportunities
+    for (Opportunity opp : relatedOpps) {
+        // Update the description when probability is greater 
+        // than 50% but less than 100%
+         if ((opp.Probability >= 50) && (opp.Probability < 100)) {
+            opp.Description = 'New description for opportunity.';
+            oppsToUpdate.add(opp);
+         }
+    }
+
+    // Perform DML on a collection
+    update oppsToUpdate;
+}
+
+
+/**
+With `After` Trigger we can query the affected records from the database
+SOQL query that returns all accounts in this trigger that don’t have related opportunities:
+ */
+ [SELECT Id,Name FROM Account WHERE Id IN :Trigger.New AND
+                                             Id NOT IN (SELECT AccountId FROM Opportunity)]
+// iterate over those records by using a SOQL for loop
+for(Account a : [SELECT Id,Name FROM Account WHERE Id IN :Trigger.New AND
+                                         Id NOT IN (SELECT AccountId FROM Opportunity)]){
+}
+
+trigger AddRelatedRecord on Account(after insert, after update) {
+    List<Opportunity> oppList = new List<Opportunity>();
+    
+    // Add an opportunity for each account if it doesn't already have one.
+    // Iterate over accounts that are in this trigger but that don't have opportunities.
+    for (Account a : [SELECT Id,Name FROM Account
+                     WHERE Id IN :Trigger.New AND
+                     Id NOT IN (SELECT AccountId FROM Opportunity)]) {
+        // Add a default opportunity for this account
+        oppList.add(new Opportunity(Name=a.Name + ' Opportunity',
+                                   StageName='Prospecting',
+                                   CloseDate=System.today().addMonths(1),
+                                   AccountId=a.Id)); 
+    }
+    
+    if (oppList.size() > 0) {
+        insert oppList;
+    }
+}
+
+
+

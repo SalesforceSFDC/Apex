@@ -61,9 +61,9 @@ If 400 records cause a trigger to fire, the trigger fires twice,
 once for each 200 records.
 
 SOQL for loop record batching
- */
 
- /**
+=========================================================
+
 When performing DML calls in a trigger or in a class,
 perform DML calls on a collection of sObjects when possible.
 

@@ -1,6 +1,6 @@
 ## Table of Contents
   * [Asynchronous Programming](#asynchronous-programming)
-  * [Future Apex](#future-apex)
+  * [Future Methods](#future-methods)
 
 1. Use a map because it doesn't allow duplicate values
 

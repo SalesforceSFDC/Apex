@@ -5,7 +5,7 @@
 * [PMD Source Code Analyzer Project](https://pmd.github.io/latest/pmd_userdocs_installation.html#running-pmd-via-command-line)
  * [Apex Reserved Keywords](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_reserved_words.htm)
  * [Object Reference for Salesforce and Force.com](https://developer.salesforce.com/docs/atlas.en-us.206.0.object_reference.meta/object_reference/sforce_api_objects_concepts.htm)
- * [Startung With Apex](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_intro.htm)
+ * [Starting With Apex](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_intro.htm)
  * The `global` access modifier, which is more permissive than the `public` modifier and allows access across namespaces and applications.
  * http://avionsalesforce.blogspot.com/
  * https://trendspro.builtwith.com/dashboard

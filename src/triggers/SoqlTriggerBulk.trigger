@@ -104,6 +104,7 @@ trigger DmlTriggerBulk on Account(after update) {
 
 /**
 With `After` Trigger we can query the affected records from the database
+
 SOQL query that returns all accounts in this trigger that don’t have related opportunities:
  */
  [SELECT Id,Name FROM Account WHERE Id IN :Trigger.New AND

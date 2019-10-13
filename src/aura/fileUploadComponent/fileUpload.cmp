@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller="FileUploadController">
+	<!-- 'parentId' Aura Attribute for store the Id for Parent Record where we are attach our file -->  
+   <aura:attribute name="parentId" type="Id" default="0016F000024nYzwQAE" />
+ <!-- 'showLoadingSpinner' attribute for show/hide the uploading image and msg in aura:if-->
+   <aura:attribute name="showLoadingSpinner" type="boolean" default="false" />
+ <!-- 'fileName' attribute for display the selected file name -->  
+   <aura:attribute name="fileName" type="String" default="No File Selected.." />
+ <!-- Lightning Input with file type and on file change call the 'handleFilesChange' controller --> 
+ 
+   <lightning:input aura:id="fileId" onchange="{!c.handleFilesChange}" type="file" name="file" label="Upload Attachment" multiple="false"/>
+   <div class="slds-text-body_small slds-text-color_error">{!v.fileName} </div>
+ 
+ <!--use aura:if for show-hide the loading spinner image--> 
+   <aura:if isTrue="{!v.showLoadingSpinner}">
+      <div class="slds-text-body_small slds-text-color_error">Uploading... 
+         <img src="/auraFW/resources/aura/images/spinner.gif" class="spinner-img" alt="Loading"/>'
+      </div>
+   </aura:if>
+   
+	 <br/>
+ 
+   <button class="slds-button slds-button_brand" onclick="{!c.doSave}">Upload Attachment</button>	
+</aura:component>

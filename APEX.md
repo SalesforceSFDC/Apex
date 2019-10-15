@@ -41,6 +41,7 @@
    * [SOQL](#soql)
    * [SOSL](#sosl)
    * [Triggers](#triggers)
+   * [Variables](#variables)
    * [Visualforce](#visualforce)
    * [Workflow Rules](#workflow-rules)
    
@@ -569,3 +570,7 @@ A platform event trigger runs in its own process asynchronously and isn’t part
 * the Apex `UserInfo.getUserId()` statement returns the Automated Process entity.
 #### Apex Trigger Limitations
 Platform event triggers share many of the same limitations of custom and standard object triggers. For example, you can’t make Apex callouts synchronously from triggers.
+
+## Variables
+
+### Instance Variables

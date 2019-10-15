@@ -12,8 +12,8 @@ public class OpportunityTriggerHandler {
                 if (contactRolesForOpportunityList != null && !contactRolesForOpportunityList.isEmpty()) {
                     for (OpportunityContactRole cr : contactRolesForOpportunityList) {
                         contactRolesInOpportunity.add(cr.Role);
+                    }
                 }
-            }
                 
                 if(!contactRolesInOpportunity.containsAll(allContactRoles)) {
                     opportunity.addError('All Specified Opportunity Contact Roles must be present for each stage to be selected');

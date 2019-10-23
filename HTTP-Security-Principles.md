@@ -16,14 +16,14 @@ Working OSI (Open Systems Interconnection) Model:
 
 ### Sample GET Request
 ```
-GET /courses HTTP/1.1  
-Host: codebashing.com 
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36 
+GET /courses HTTP/1.1
+Host: codebashing.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36
 Referer: https://codebashing.com/
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
 Accept-Encoding: gzip, deflate
-Accept-Language: en-US,en;q=0.9,ru;q=0.8 
-Cache-Control: max-age=0  
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Cache-Control: max-age=0
 Upgrade-Insecure-Requests: 1
 Connection: close
 ```
@@ -40,18 +40,18 @@ Connection: close
 
 ### Sample GET Response
 ```
-HTTP/1.1 200 OK 
-Content-Type: text/html; charset=utf-8 
-Server: nginx/1.11.9 
-X-Frame-Options: ALLOW-FROM https://academy.checkmarx.net 
-ETag: W/"8ca5dd4f507a4295e629491c" 
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Server: nginx/1.11.9
+X-Frame-Options: ALLOW-FROM https://academy.checkmarx.net
+ETag: W/"8ca5dd4f507a4295e629491c"
 Cache-Control: max-age=0, private, must-revalidate
 Set-Cookie: trackingCookie=user1357272
-X-Request-Id: 295e586f-7cab-4530-b5cb-1c 
-X-Runtime: 0.2243 
-Connection: close 
-Content-Length: 8576 
-<!DOCTYPE html> 
+X-Request-Id: 295e586f-7cab-4530-b5cb-1c
+X-Runtime: 0.2243
+Connection: close
+Content-Length: 8576
+<!DOCTYPE html>
 <-- Web Page content -->
 ```
 * `Content-Type` header defines the type of content that resides in the response body
@@ -65,17 +65,17 @@ Content-Length: 8576
 
 ### Sample POST Request
 ```
-POST /login HTTP/1.1  
-Host: www.lotsofgoods.me 
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36  
+POST /login HTTP/1.1
+Host: www.lotsofgoods.me
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36
 Referer: https://codebashing.com/
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
 Accept-Encoding: gzip, deflate
-Accept-Language: en-US,en;q=0.9  
+Accept-Language: en-US,en;q=0.9
 Upgrade-Insecure-Requests: 1
-Content-Type: application/x-www-form-urlencoded  
+Content-Type: application/x-www-form-urlencoded
 Connection: close
-Content-Length: 46  
+Content-Length: 46
 login=alice&password=correcthorsebatterystaple
 ```
 * `POST` is an HTTP verb used to send data to the server and change the application state
@@ -83,15 +83,15 @@ login=alice&password=correcthorsebatterystaple
 
 ### Sample HTTP POST Response
 ```
-HTTP/1.1 200 OK 
-Content-Type: text/html; charset=utf-8 
-Server: nginx/1.11.9 
-ETag: W/"d18a59b032422092a1daaccd9b46bbf4" 
-Cache-Control: max-age=0, private, must-revalidate 
-Set-Cookie: sessionid=26161af57b9de30f9b67d16be83700113f8742a136c26d3d2e90b677b85934fe   
-Connection: close 
-Content-Length: 1467 
-<!DOCTYPE html> 
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Server: nginx/1.11.9
+ETag: W/"d18a59b032422092a1daaccd9b46bbf4"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: sessionid=26161af57b9de30f9b67d16be83700113f8742a136c26d3d2e90b677b85934fe
+Connection: close
+Content-Length: 1467
+<!DOCTYPE html>
 <-- Web Page content -->
 ```
 
@@ -159,33 +159,33 @@ When HTTP v1.1 is used in HTTP requests, it presents them in a human-readable fo
 
 ```
 GET /courses HTTP/1.1
-Host: codebashing.com 
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36 
-Origin: https://codebashing.com    
+Host: codebashing.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36
+Origin: https://codebashing.com
 Referer: https://codebashing.com/dashboard
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*;q=0.8
 Accept-Encoding: gzip, deflate
-Accept-Language: en-US,en;q=0.9,ru;q=0.8 
-Cache-Control: max-age=0  
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Cache-Control: max-age=0
 Upgrade-Insecure-Requests: 1
-Cookie: sessionid=b3cd288f3e3d499ca8e45fbae696f7b5  
+Cookie: sessionid=b3cd288f3e3d499ca8e45fbae696f7b5
 Connection: close
 ```
 
 ```
-HTTP/1.1 200 OK 
+HTTP/1.1 200 OK
 Date: Sat, 08 March 2019 12:33:14 GMT
-Server: nginx/1.11.9 
-X-Frame-Options: ALLOW-FROM https://academy.checkmarx.net 
-ETag: W/"8ca5dd4f507a4295e629491c" 
-Cache-Control: max-age=0, private, must-revalidate 
+Server: nginx/1.11.9
+X-Frame-Options: ALLOW-FROM https://academy.checkmarx.net
+ETag: W/"8ca5dd4f507a4295e629491c"
+Cache-Control: max-age=0, private, must-revalidate
 Set-Cookie: trackingCookie=user135727
-X-Request-Id: 295e586f-7cab-4530-b5cb-1c 
-X-Runtime: 0.2243 
-Connection: close 
-Content-Type: text/html; charset=utf-8 
-Content-Length: 8576 
-<!DOCTYPE html> 
+X-Request-Id: 295e586f-7cab-4530-b5cb-1c
+X-Runtime: 0.2243
+Connection: close
+Content-Type: text/html; charset=utf-8
+Content-Length: 8576
+<!DOCTYPE html>
 <-- Web Page content -->
 ```
 
@@ -205,34 +205,34 @@ Description of other HTTP methods could be found under the following links:
 https://tools.ietf.org/html/rfc7231 and https://tools.ietf.org/html/rfc5789
 
 ```
-POST /login HTTP/1.1  
-Host: lotsofgoods.me 
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36  
-Origin: https://codebashing.com    
+POST /login HTTP/1.1
+Host: lotsofgoods.me
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36
+Origin: https://codebashing.com
 Referer: https://codebashing.com/courses
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
 Accept-Encoding: gzip, deflate
-Accept-Language: en-US,en;q=0.9  
+Accept-Language: en-US,en;q=0.9
 Upgrade-Insecure-Requests: 1
 Cookie: sessionid=55fc9da99a9d425c8ec8c597fd5bec61
-Content-Type: application/x-www-form-urlencoded  
-Content-Length: 46    
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 46
 Connection: close
-login=alice&password=correcthorsebatterystaple  
+login=alice&password=correcthorsebatterystaple
 ```
 
 ```
 GET /courses HTTP/1.1
-Host: codebashing.com 
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36 
-Origin: https://codebashing.com    
+Host: codebashing.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36
+Origin: https://codebashing.com
 Referer: https://codebashing.com/dashboard
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
 Accept-Encoding: gzip, deflate
-Accept-Language: en-US,en;q=0.9,ru;q=0.8 
-Cache-Control: max-age=0  
+Accept-Language: en-US,en;q=0.9,ru;q=0.8
+Cache-Control: max-age=0
 Upgrade-Insecure-Requests: 1
-Cookie:sessionid=b3cd288f3e3d499ca8e45fbae696f7b5  
+Cookie:sessionid=b3cd288f3e3d499ca8e45fbae696f7b5
 Connection: close
 ```
 
@@ -365,7 +365,7 @@ When the user agent (usually, a browser) is trying to guess the content type, it
 
 In HTTP response, there is an X-Content-Type-Options header that has a single nosniff directive. It indicates that the user agent should not perform MIME sniffing and should treat the body content as the content of the type specified in the Content-Type header.
 
-X-Content-Type-Options is also not a security header, but together with Content-Type, they make a valuable input into the defense-in-depth strategy. Don't let the user agent guess the content type, because missing content type check can lead to the execution of content that should not be executed, or to a security controls bypass. 
+X-Content-Type-Options is also not a security header, but together with Content-Type, they make a valuable input into the defense-in-depth strategy. Don't let the user agent guess the content type, because missing content type check can lead to the execution of content that should not be executed, or to a security controls bypass.
 
 ### Referer
 Referer header contains the address of the webpage that sent the HTTP request. It's is set by the browser and cannot be set using Javascript.
@@ -859,3 +859,60 @@ Access-Control-Allow-Headers
 
 The header specifies the headers that may be used in the original cross-origin requests to the resource. Simple response headers are available by default, but custom headers will require whitelisting.
 
+## Apex Security and Sharing
+Apex runs in system context - the current user's permissions, field-level security, and sharing rules are not taken into account during code execution.
+Web services can be restricted by permissions, but execute in system context once they are initiated.
+
+Enforcing sharing rules by using the with sharing keyword doesn’t enforce the user's permissions and field-level security. Apex code always has access to all fields and objects in an organization, ensuring that code won’t fail to run because of hidden fields or objects for a user.
+
+Enforcing the current user's sharing rules can impact:
+• SOQL and SOSL queries. A query may return fewer rows than it would operating in system context.
+• DML operations. An operation may fail because the current user doesn't have the correct permissions. For example, if the user specifies a foreign key value that exists in the organization, but which the current user does not have access to.
+
+Apex doesn't enforce object-level and field-level permissions by default, you can enforce these permissions in your SOQL queries by using `WITH SECURITY_ENFORCED`.
+
+Enforce object-level and field-level permissions in your code by explicitly calling the sObject describe result methods (of `Schema.DescribeSObjectResult`) and the field describe result methods (of `Schema.DescribeFieldResult`) that check the current user's access permission levels. In this way, you can verify if the current user has the necessary permissions, and only if he or she has sufficient permissions, you can then perform a specific DML operation or a query.
+
+For example, you can call the `isAccessible`, `isCreateable`, or `isUpdateable` methods of `Schema.DescribeSObjectResult` to verify whether the current user has read, create, or update access to an sObject, respectively.
+
+`Schema.DescribeFieldResult` exposes access control methods to call to check the current user's read, create, or update access for a field.  In addition, you can call `isDleteable` method provided by `Schema.DescribeSObjectResult` to check if the current user has permission to delete a specific sObject.
+
+### Calling Access Control Methods
+To check the field-level update permission of the contact's email field before updating it:
+```java
+if (Schema.SObjectType.Contact.fields.Email.isUpdateable()) {
+    // Update email address
+}
+```
+
+To check the field level create permission of the contact's email address field before creating a new contact:
+```java
+if (Schema.SObjectType.Contact.fields.Email.isCreateable()) {
+    // Create new contact
+}
+```
+
+To check the field-level read permission of the contact's email field before querying for this field:
+```java
+if (Schema.SObjectType.Contact.fields.Email.isAccessible()) {
+    Contact c = [SELECT Email FROM Contact WHERE Id =:Id];
+}
+```
+
+To check the object-level permission for the contact before deleting the contact
+```java
+if (Schema.SObjectType.Contact.isDeletable()) {
+    // Delete contact
+}
+```
+
+If you call the `SObject describe result` and `field describe result` access control methods, the verification of object and field-level permissions is performed in addition to the sharing rules that are in effect.
+* Sometimes, the access level granted by a sharing rule could conflict with an object-level or field-level permission.
+
+## Apex Class Security
+Specify which users can execute methods in a top-level class based on their user profile or permission sets.  You can only set security on Apex classes and not on permission sets.
+
+## Apex Managed Sharing
+Sharing is the act of granting a user or group of users permission to perform a set of actions on a record or set of records. Sharing access can be granted using the Salesforce user interface and Lightning Platform, or programmatically using Apex.
+
+Sharing enables record-level access control for all custom objects, as well as many standard objects (such as Account, Contact, Opportunity and Case). Administrators first set an object’s organization-wide default sharing access level, and then grant additional access based on record ownership, the role hierarchy, sharing rules, and manual sharing. Developers can then use Apex managed sharing to grant additional access programmatically with Apex.

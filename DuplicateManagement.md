@@ -1,4 +1,5 @@
 * see DuplicateError Class
+* [Create Reports on Duplicate Records](https://help.salesforce.com/articleView?id=duplicate_management_custom_report_types.htm&type=5)
 
 response = cbsmssk1.SecureKey.call(
                cbsmssk1.SecureKey.Service.MONORAIL,

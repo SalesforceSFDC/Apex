@@ -52,4 +52,3 @@ if (sr.isSuccess()) {
     System.debug('Duplicate account has been inserted in Salesforce!');
 }
 ```
-

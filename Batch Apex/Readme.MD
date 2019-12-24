@@ -18,3 +18,23 @@ To collect the records or objects to pass to the interface method `execute`, cal
 <br/>
 If you use a `QueryLocator` object, the governor limit for the total number of records retrieved by SOQL queries is bypassed.  For example, a batch Apex job for the Account object can return a `QueryLocator` for all account records (up to 50 million) in an org.  
 <br/>
+#### Execute Method
+```java
+global void execute(Database.BatchableContext bc, list<P>){}
+```
+To do the required processing for each chunk of data, use the execute method.  This method is called for each batch of records that you pass to it.
+
+This method takes the following:
+* A reference to the `Database.BatchableContext` object
+* A list of sObjects, such as `List<sObject>`, or a list of parameterized types.  If you are using a `Database.QueryLocator`, use the returned list.
+#### Finish Method
+```java
+global void finish(Database.BatchableContext bc){}
+```
+
+To send confirmation emails or execute post-processing operations, use the `finish` method.  This method is called after all batches are processed.
+
+* Each execution of a batch Apex job is considered a discrete transaction.  
+* In batch Apex, if the first transaction succeeds but the second fails, the database updates made in the first transaction are not rolled back.
+
+## Using `Database.BatchableContext`

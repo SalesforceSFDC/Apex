@@ -10,6 +10,9 @@
 To use batch Apex, write an Apex class that implements the Salesforce-provided interface `Database.Batchable` and then invoke the class programmatically.
 <br/>
 The Database.Batchable interface contains three methods that must be implemented.<br/>
- * Start Method:
+#### Start Method:
+```java
+global (Database.QueryLocator | Iterable<sObject>) start(Database.BatchableContext bc)
+```
 
 

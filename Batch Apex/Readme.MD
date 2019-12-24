@@ -37,4 +37,9 @@ To send confirmation emails or execute post-processing operations, use the `fini
 * Each execution of a batch Apex job is considered a discrete transaction.  
 * In batch Apex, if the first transaction succeeds but the second fails, the database updates made in the first transaction are not rolled back.
 
-## Using `Database.BatchableContext`
+### Using `Database.BatchableContext`
+All the methods in the `Database.Batchable` interface require a reference to a `Database.BatchableContext` object.  Use this object to track the progress of the bacth job.
+
+| name | Arguments | Returns | Description |
+| --- | --- | --- | --- |
+| getjobID | | ID | Returns the ID of the AsyncApexJob object associated with this batch job as a string.  Use this method to track the progress of records in the batch job.  You can use this ID with the System.abortJob method. |

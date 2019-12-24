@@ -13,10 +13,10 @@ The Database.Batchable interface contains three methods that must be implemented
   `global (Database.QueryLocator | Iterable<sObject>) start(Database.BatchableContext ***bc***) {}`
   * This method returns either a `Database.QueryLocator` object or an iterable that contains the records or objects passed to the job.
   * a batch Apex job for the Account object can return a QueryLocator for all account records (up to 50 million records) in an org<br/>
-<b>Execute Method</b> = `global void execute(Database.BatchableContext ***BC***, list<P>){}`
+<b>Execute Method</b>: `global void execute(Database.BatchableContext ***BC***, list<P>){}`
   * To do the required processing for each chunk of data, use the execute method
   *  This method is called for each batch of records that you pass to it<br/>
-<b>Finish Method</b> = `global void finish(Database.BatchableContext ***BC***){}`
+<b>Finish Method</b>: `global void finish(Database.BatchableContext ***BC***){}`
   * To send confirmation emails or execute post-processing operations, use the finish method. 
   * This method is called after all batches are processed.
 * Each execution of a batch Apex job is considered a discrete transaction.

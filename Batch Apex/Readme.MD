@@ -14,5 +14,7 @@ The Database.Batchable interface contains three methods that must be implemented
 ```java
 global (Database.QueryLocator | Iterable<sObject>) start(Database.BatchableContext bc)
 ```
-
-
+To collect the records or objects to pass to the interface method `execute`, call the start method at the beginning of a batch Apex job.  This method returns either a `Database.QueryLocator` object or an iterable that contains the records or objects passed to the job.
+<br/>
+If you use a `QueryLocator` object, the governor limit for the total number of records retrieved by SOQL queries is bypassed.  For example, a batch Apex job for the Account object can return a `QueryLocator` for all account records (up to 50 million) in an org.  
+<br/>

@@ -7,7 +7,8 @@
 * You can evaluate your current count by viewing the Scheduled Jobs page in Salesforce or programmatically using SOAP API to query the AsyncApexJob object.
 
 ### Using Batch Apex
-* To use batch Apex, write an Apex class that implements the Salesforce-provided interface `Database.Batchable` and then invoke the class programmatically.<br/>
+<p>To use batch Apex, write an Apex class that implements the Salesforce-provided interface `Database.Batchable` and then invoke the class programmatically.</p>
+<br/>
 The Database.Batchable interface contains three methods that must be implemented.<br/>
  <b>Start Method</b>: <br/>
   `global (Database.QueryLocator | Iterable<sObject>) start(Database.BatchableContext ***bc***) {}`

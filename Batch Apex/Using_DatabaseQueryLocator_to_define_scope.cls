@@ -13,5 +13,12 @@ global class SearchAndReplace implements Database.Batchable<sObject> {
         Value = v;
     }
 
-    
+    global Database.QueryLocator start(Database.BatchableContext BC) {
+        return Database.getQueryLocator(query);
+    }
+
+    global void execute(Database.BatchableContext BC, List<sObject> scope) {
+        for(sObject)
+    }
+
 }

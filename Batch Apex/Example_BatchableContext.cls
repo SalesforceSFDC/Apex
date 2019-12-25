@@ -1,3 +1,5 @@
+// The following example uses the Database.BatchableContext to query the 
+// AsyncApexJob associated with the batch job.
 global void finish (Database.BatchableContext BC) {
   // Get the ID of the AsyncApexJob representing this batch job from Database.BatchableContext.
   // Query the AyncApexJob object to retrieve the current job's information

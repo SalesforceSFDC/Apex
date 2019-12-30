@@ -184,7 +184,7 @@ for(String t : tea){
   * To store information that is shared across instances of a class, use a static variable.
   * All instances of the same class share a single copy of the static variable. 
   * Local variable names are evaluated before class names.
-
+  * With `static` method you do not need to create an instance of the class to access the method - you can just use the name of the class followed by dot (.) and the name of the method.
 ## Instance Methods and Variables
 * Instance methods and member variables are used by an instance of a class, that is, by an object. 
 * An instance member variable is declared inside a class, but not within a method. 
@@ -494,4 +494,3 @@ It then shows, in the `referenceNew()` method, that the List argument can't be c
 
 ## 
 
-To create an additional set of governor limits during the execution of a single test class use `

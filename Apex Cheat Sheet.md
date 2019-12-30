@@ -1,7 +1,13 @@
 ## Table of Contents
+* [Database Methods](#database-methods)
+* [DML Statements](#dml-statements)
+* [For Loops](#for-loops)
+* [Important Reserved Keywords](#important-reserved-keywords)
+* [Instance Methods and Variables](#instance-methods-and-variables)
+* [SOQL For Loops](#soql-for-loops)
+* [Static Methods](#static-methods)
 * [Using Relationship Queries](#using-relationship-queries)
 * 
-
 
 
 ## Using Relationship Queries

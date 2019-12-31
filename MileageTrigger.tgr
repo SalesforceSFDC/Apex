@@ -1,4 +1,0 @@
-Trigger MileageTrigger on Milage__c (before insert, before update) {
-  Set<Id> ids = Trigger.newMap.keySet();
-  List<User> c = [SELECT Id FROM user WHERE Mileageid__c in :ids];
-}

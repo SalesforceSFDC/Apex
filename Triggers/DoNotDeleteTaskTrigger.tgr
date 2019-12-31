@@ -1,5 +1,0 @@
-trigger DoNotDeleteTrigger on Task (before Delete) {
-  for(Task getTask : (list<Task> Trigger.old) {
-    getTask.addError('Tasks cannot be deleted');
-  }
-}

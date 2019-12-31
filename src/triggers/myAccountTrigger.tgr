@@ -1,0 +1,16 @@
+// Trigger uses Boolean context variables like Trigger.new and Trigger.isDelete // to define code that only executes for specific trigger conditions
+
+trigger myAccountTrigger on Account(before delete, before insert, before       update, after delete, after insert, after update) {
+
+  if (Trigger.new) {
+    if (Trigger.isDelete) {
+
+      // In a before delete trigger, the trigger accesses the records that will // be deleted with the Trigger.old list.
+      for (Account a : Trigger.old) {
+        if (a.name != 'okToDelete') {
+            a.addError('You can\'t delete this record!');
+        }
+      }
+    }
+  }
+}

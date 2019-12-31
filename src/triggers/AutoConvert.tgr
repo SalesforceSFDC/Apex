@@ -1,0 +1,42 @@
+// Declare trigger and name it AutoConverter, trigger is on th Lead object
+Trigger AutoConverter on Lead (after insert) {
+// SOQL call to fetch the LeadStatus object that coincides with the conversion criteria
+     LeadStatus convertStatus = [
+          select MasterLabel
+          from LeadStatus
+          where IsConverted = true
+          limit 1
+     ];
+/**
+  * Trigger will handle bulk insertion of data
+  * Declare a variable that is a list of Database.LeadConvert objects
+  * this variable will be a place to store all of the leads we need to convert.
+**/
+     List<Database.LeadConvert> leadConverts = new List<Database.LeadConvert>();
+// Loop thtough ever newly created lead in our new list (Trigger.new), assign it to a temporary variable lead
+// Loop will handle bulk inserts
+     for (Lead lead: Trigger.new) {
+     // business login to check if the lead will be converted
+     // if the lead is not converted and (&&) here add additional logic (i.e. WebForm__c)
+          if (!lead.isConverted) {
+                // Create a new Database.LeadConvert object that will convert the lead
+               Database.LeadConvert lc = new Database.LeadConvert();
+                // Create a new String variable that holds the lead name that will be used for the Opportunity's name
+               String oppName = lead.Name;
+                // Set the lead id on the lead convert (lc) vairable
+               lc.setLeadId(lead.Id);
+                // Set the opportunity name on the lead convert (lc) variable
+               lc.setOpportunityName(oppName);
+               // Set the converted status of the lead to the MasterLabel field on LeadStatus object
+               lc.setConvertedStatus(convertStatus.MasterLabel);
+
+               leadConverts.add(lc);
+          }
+     }
+    // check to see if we have actually added any leads for to convert (in order not to waste any DML operations)
+     if (!leadConverts.isEmpty()) {
+          // Assign a list of Database.LeadConvertResult objects (lcr) that are returned from our Database.convertLead call
+          // Pass list of leadConverts to the method.  Method will auto convert qualifying leads into new Opps with same name as lead.
+          List<Database.LeadConvertResult> lcr = Database.convertLead(leadConverts);
+     }
+}

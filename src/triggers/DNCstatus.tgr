@@ -1,0 +1,36 @@
+trigger on object1__c (before insert, before update){
+
+  List<ID> OppIds = New List<ID>();
+
+  for(Object1__c o : Trigger.new){
+    if(o.text_field__c == 'Complete' && o.Opportunity__c != null){
+      OppIds.add(o.Opportunity__c);
+    }
+  }
+
+  List<Opportunity__c> oppList = [SELECT id, checkbox__c, status FROM Opportunity WHERE id in :OppIds];
+  for(integer i = 0 ; i < oppList.size(); i++){
+    oppList[i].checkbox__c = true;
+    oppList[i].status = 'Approved';
+  }
+
+  update oppList;
+}
+
+// Update the text box for the DNC Status
+trigger on Lead (before insert, before update) {
+
+  List<ID> LeadIds = New List<ID>();
+
+  for(Lead l : Trigger.new){
+    if(l.DNC_Status__c == 'Do Not Touch' l.Lead != null) {
+      LeadIds.add(l.Lead);
+    }
+  }
+
+  List<Lead> leadList = [SELECT id, DNC_Status__c, status FROM
+  Lead WHERE id in :LeadIds];
+  for (integer i = 0; i < leadList(),; i++){
+    leadList[i].
+  }
+}

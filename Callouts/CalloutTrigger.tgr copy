@@ -1,0 +1,6 @@
+/**
+Triggers that calls the method in the class to make a callout asynchronously.
+**/
+trigger CalloutTrigger on Account (before insert, before update) {
+  CalloutClass.makeCallout();
+}

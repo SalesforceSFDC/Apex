@@ -1122,3 +1122,25 @@ It then shows, in the `referenceNew()` method, that the List argument can't be c
 5. The called method assigns the passed-in argument to a newly created List that contains new Integer values.
 6.  When the method returns, the original createMe variable doesn’t point to the new List but still points to the original List, which is empty.
 
+
+* class defines the type of object
+* you cannot assign member variables to an object
+
+
+```java 
+public class Student {
+  // define members of the class
+  public String firstName;
+  public String lastName;
+  public Integer age;
+  public Double gpa;
+}
+```
+* you have to create an instance of an object
+```java
+Student j = new Student();
+j.firstName = 'Janko';
+```
+* you cannot define members in the object, you have to add them to the class first
+
+In JavaScript, objects are defined dynamically without class.

@@ -1134,6 +1134,7 @@ public class Student {
   public String lastName;
   public Integer age;
   public Double gpa;
+  public Boolean appliedForFinancialAid;
 }
 ```
 * you have to create an instance of an object

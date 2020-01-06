@@ -23,4 +23,15 @@ public class StudentAidController {
         }
         return null;
     }
+
+    @AuraEnabled
+    public static void applyForAidAction(ID studentID){
+        List<Student__c> students = [SELECT ID, appliedForFinancialAid__c
+                                        FROM Student__c
+                                        WHERE ID = :studentID];
+        if(students.size() > 0) {
+            students[0].appliedForFinancialAid__c = true;
+            update students;
+        }
+    }
 }

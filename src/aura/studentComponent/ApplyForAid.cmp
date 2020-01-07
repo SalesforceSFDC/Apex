@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global"
+                controller="StudentAidController">
+    <aura:attribute name="student"
+                    type="Student__c"
+                    required="true"
+                    default="{
+                             	'sobjecttype' : 'Student__c',
+                             	'appliedForFinancialAid__c' : false
+                             }"/>
+    <aura:handler name="init"
+                  action="{!c.doInit}"
+                  value="{!this}"/>
+    
+    <p>
+        Financial Aid Status: <ui:outputText value="{!if(v.student.appliedForFinancialAid__c,
+                                                    	'Applied', 'No application on file')}" />
+        <ui:button label="Apply for financial aid" press="{!c.applyForAid}" />
+    </p>
+</aura:component>

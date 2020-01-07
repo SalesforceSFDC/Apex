@@ -295,6 +295,8 @@ global void finish(Database.BatchableContext BC){}
 Triger.new is a command which returns the list of records that have been added recently to the sObjects. To be more precise, those records will be returned which are yet to be saved to the database. Note that this sObject list is only available in insert and update triggers, and the records can only be modified in before triggers.
 
 But just for your information, Trigger.old returns a list of the old versions of the sObject records. Note that this sObject list is only available in update and delete triggers.
+
+You should not build special purpose triggers but have one trigger for every object
 ## Sets
 Sets can have any of the following data types:
 * Primitive types
@@ -1145,3 +1147,4 @@ j.firstName = 'Janko';
 * you cannot define members in the object, you have to add them to the class first
 
 In JavaScript, objects are defined dynamically without class.
+

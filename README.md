@@ -79,13 +79,13 @@ Class variables (static fields) are fields declared with the static modifier; th
 Local variables store temporary state inside a method. 
 Parameters are variables that provide extra information to a method; both local variables and parameters are always classified as "variables" (not "fields"). 
 
-    The term "instance variable" is another name for non-static field.
-    The term "class variable" is another name for static field.
-    A local variable stores temporary state; it is declared inside a method.
-    A variable declared within the opening and closing parenthesis of a method is called a parameter.
-    What are the eight primitive data types supported by the Java programming language? byte, short, int, long, float, double, boolean, char
-    Character strings are represented by the class java.lang.String.
-    An array is a container object that holds a fixed number of values of a single type.
+* The term "instance variable" is another name for non-static field.
+* The term "class variable" is another name for static field.
+* A local variable stores temporary state; it is declared inside a method.
+* A variable declared within the opening and closing parenthesis of a method is called a parameter.
+* What are the eight primitive data types supported by the Java programming language? byte, short, int, long, float, double, boolean, char
+* Character strings are represented by the class java.lang.String.
+* An array is a container object that holds a fixed number of values of a single type.
 
 All objects have state and behavior, that is, things that an object knows about itself, and things that an object can do.
 

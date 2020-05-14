@@ -1,3 +1,8 @@
+/*
+* Some other context variables return a Boolean value to indicate whether the trigger was fired due to an update or 
+* some other event. These variables are useful when a trigger combines multiple events. 
+*/
+
 trigger ContextExampleTrigger on Account (before insert, after insert, after delete) {
   if (Trigger.isInsert) {
     if (Trigger.isBefore) {

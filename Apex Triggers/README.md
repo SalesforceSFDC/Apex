@@ -30,3 +30,10 @@ Triggers can fire when one record is inserted, or when many records are inserted
 
 ### Using Trigger Exceptions
 To prevent saving records in a trigger, call the `addError()` method on the sObject in question.  The `addError()` method throws a fatal error inside a trigger.  The error message is displayed in the user interface and is logged.
+
+Calling addError() in a trigger causes the entire set of operations to roll back, except when bulk DML is called with partial success.
+* If a DML statement in Apex spawned the trigger, any error rolls back the entire operation. However, the runtime engine still processes every record in the operation to compile a comprehensive list of errors.
+* If a bulk DML call in the Lightning Platform API spawned the trigger, the runtime engine sets the bad records aside. The runtime engine then attempts a partial save of the records that did not generate errors.
+
+### Triggers and Callouts
+To make a callout from a trigger, call a class method that executes asynchronously.  Such a method is called a future method and is annotated with `@future(callout=true)`.  

@@ -48,3 +48,6 @@ Best practices:
 * The SOQL query is connected to the trigger context records by using the IN clause and binding the Trigger.New variable in the WHERE clause—WHERE Id IN :Trigger.New. This WHERE condition filters the accounts to only those records that fired this trigger.
 
 Triggers execute on batches of 200 records at a time. So if 400 records cause a trigger to fire, the trigger fires twice, once for each 200 records. For this reason, you don’t get the benefit of SOQL for loop record batching in triggers, because triggers batch up records as well. The SOQL for loop is called twice in this example, but a standalone SOQL query would also be called twice. However, the SOQL for loop still looks more elegant than iterating over a collection variable!
+
+### Performing Bulk DML
+The Apex runtime allows up to 150 DML calls in one transaction.

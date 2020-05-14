@@ -37,3 +37,14 @@ Calling addError() in a trigger causes the entire set of operations to roll back
 
 ### Triggers and Callouts
 To make a callout from a trigger, call a class method that executes asynchronously.  Such a method is called a future method and is annotated with `@future(callout=true)`.  
+
+### Performing Bulk SOQL
+Query limits are:
+* 100 SOQL queries for synchronous Apex or 
+* 200 for asynchronous Apex.
+
+Best practices:
+* The SOQL query uses an inner query—(SELECT Id FROM Opportunities)—to get related opportunities of accounts.
+* The SOQL query is connected to the trigger context records by using the IN clause and binding the Trigger.New variable in the WHERE clause—WHERE Id IN :Trigger.New. This WHERE condition filters the accounts to only those records that fired this trigger.
+
+Triggers execute on batches of 200 records at a time. So if 400 records cause a trigger to fire, the trigger fires twice, once for each 200 records. For this reason, you don’t get the benefit of SOQL for loop record batching in triggers, because triggers batch up records as well. The SOQL for loop is called twice in this example, but a standalone SOQL query would also be called twice. However, the SOQL for loop still looks more elegant than iterating over a collection variable!

@@ -1,8 +1,11 @@
 ### Types of Triggers
+
 * Before triggers - are used to update or validate record values before they are saved to the database.
 * After triggers - are used to access field values that are set by the system (such as record's Id or `LastModifiedDate` field), and to affect changes in other records.  The records that fire the after trigger are read-only.
 
 ### Using Context Variables
+Triggers are often used to access and manage records related to the records in the trigger context - the records that caused this trigger to fire.
+
 To access the records that caused the trigger to fire, use context variables. 
 * `Trigger.New` contains all the records that were inserted in `insert` or `update` triggers. 
 * `Trigger.Old` provides the old version of sObjects before they were updated in update triggers, or a list of deleted sObjects in delete triggers. 
@@ -24,3 +27,6 @@ Triggers can fire when one record is inserted, or when many records are inserted
 | oldMap | A map of IDs to the old versions of the sObject records.  This map is only available in update and delete triggers. |
 | operationType | Returns an enum of type System.TriggerOperation corresponding to the current operation.  Possible values of the System.TriggerOperation enum are: BEFORE_INSERT, BEFORE_UPDATE, BEFORE_DELETE,AFTER_INSERT, AFTER_UPDATE, AFTER_DELETE, and AFTER_UNDELETE. If you vary your programming logic based on different trigger types, consider using the switch statement with different permutations of unique trigger execution enum states. |
 | size | The total number of records in a trigger invocation, both old and new. |
+
+### Using Trigger Exceptions
+To prevent saving records in a trigger, call the `addError()` method on the sObject in question.  The `addError()` method throws a fatal error inside a trigger.  The error message is displayed in the user interface and is logged.
